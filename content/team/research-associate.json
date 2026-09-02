@@ -1,0 +1,225 @@
+{
+  "slug": "li-ta-hsu",
+  "name": "Professor Li-Ta Hsu",
+  "role": "Mentor",
+  "photo": "assets/li-ta-hsu.jpg",
+  "photoSource": "https://ipnl.io/en/people/li-ta-hsu/",
+  "bio": "Li-Ta Hsu is an Associate Professor in the Department of Aeronautical and Aviation Engineering at The Hong Kong Polytechnic University. His research covers urban GNSS, autonomous navigation, signal processing, visual positioning, and LiDAR SLAM.",
+  "email": "lt.hsu@polyu.edu.hk",
+  "phone": "(+852) 3400 8061",
+  "orcid": "https://orcid.org/0000-0002-0352-741X",
+  "scholarUrl": "",
+  "scopusUrl": "https://www.scopus.com/authid/detail.uri?authorId=35219760300",
+  "sourceUrl": "https://research.polyu.edu.hk/en/persons/li-ta-hsu/",
+  "affiliations": [
+    "Associate Professor, Department of Aeronautical and Aviation Engineering",
+    "Member of RIAIoT, RILS, RISUD, SCRI and RIAM",
+    "Member, PolyU Academy for Interdisciplinary Research"
+  ],
+  "publicationNames": [
+    "Professor Li-Ta Hsu",
+    "Li-Ta Hsu",
+    "L. T. Hsu",
+    "Hsu, L.-T."
+  ],
+  "interests": [
+    "Urban GNSS",
+    "Autonomous navigation",
+    "Signal processing",
+    "LiDAR SLAM",
+    "Visual positioning"
+  ],
+  "education": [
+    {
+      "qualification": "BSc in Aeronautics and Astronautics",
+      "institution": "National Cheng Kung University",
+      "year": "2007"
+    },
+    {
+      "qualification": "PhD in Aeronautics and Astronautics",
+      "institution": "National Cheng Kung University",
+      "year": "2013"
+    }
+  ],
+  "bibliometrics": {
+    "citations": 7566,
+    "hIndex": 47,
+    "totalOutputs": 308,
+    "firstYear": 2007,
+    "latestYear": 2026,
+    "similarProfiles": 6,
+    "prizeCount": 12,
+    "activityCount": 14,
+    "source": "Scopus via PolyU Scholars Hub"
+  },
+  "activity": {
+    "2007": 1,
+    "2008": 3,
+    "2009": 2,
+    "2010": 5,
+    "2011": 5,
+    "2013": 3,
+    "2014": 1,
+    "2015": 13,
+    "2016": 16,
+    "2017": 9,
+    "2018": 14,
+    "2019": 24,
+    "2020": 27,
+    "2021": 37,
+    "2022": 24,
+    "2023": 39,
+    "2024": 42,
+    "2025": 24,
+    "2026": 19
+  },
+  "outputBreakdown": [
+    { "label": "Journal article", "count": 154 },
+    { "label": "Conference article in proceedings or book", "count": 115 },
+    { "label": "Patents granted", "count": 14 },
+    { "label": "Conference article", "count": 13 },
+    { "label": "Professional article", "count": 5 },
+    { "label": "Chapter in an edited book", "count": 2 },
+    { "label": "Research book or monograph", "count": 1 },
+    { "label": "Conference presentation", "count": 1 },
+    { "label": "Letter", "count": 1 },
+    { "label": "Review article", "count": 1 },
+    { "label": "Licensing agreement", "count": 1 }
+  ],
+  "fingerprint": [
+    { "label": "Global Navigation Satellite System", "score": 100, "thesaurus": "Keyphrases" },
+    { "label": "Urban Canyon", "score": 65, "thesaurus": "Keyphrases" },
+    { "label": "Non-line-of-sight (NLoS)", "score": 56, "thesaurus": "Keyphrases" },
+    { "label": "Satellite System", "score": 44, "thesaurus": "Computer Science" },
+    { "label": "Factor Graph Optimization", "score": 38, "thesaurus": "Keyphrases" },
+    { "label": "Urban Areas", "score": 36, "thesaurus": "Keyphrases" },
+    { "label": "Global Positioning System", "score": 35, "thesaurus": "Engineering" },
+    { "label": "Multipath", "score": 32, "thesaurus": "Keyphrases" },
+    { "label": "Optical Radar", "score": 29, "thesaurus": "Engineering" },
+    { "label": "Positioning Accuracy", "score": 29, "thesaurus": "Keyphrases" },
+    { "label": "Pseudorange", "score": 27, "thesaurus": "Engineering" },
+    { "label": "Urban Environment", "score": 24, "thesaurus": "Keyphrases" },
+    { "label": "Global Navigation Satellite System Positioning", "score": 23, "thesaurus": "Keyphrases" },
+    { "label": "Hong Kong", "score": 22, "thesaurus": "Keyphrases" },
+    { "label": "3D Mapping", "score": 21, "thesaurus": "Keyphrases" },
+    { "label": "Smartphone", "score": 20, "thesaurus": "Keyphrases" },
+    { "label": "Positioning Error", "score": 18, "thesaurus": "Keyphrases" },
+    { "label": "GNSS Positioning", "score": 17, "thesaurus": "Keyphrases" },
+    { "label": "GNSS Observations", "score": 17, "thesaurus": "Keyphrases" },
+    { "label": "Positioning Performance", "score": 16, "thesaurus": "Keyphrases" },
+    { "label": "Inertial Navigation Systems", "score": 16, "thesaurus": "Engineering" },
+    { "label": "LiDAR", "score": 15, "thesaurus": "Keyphrases" },
+    { "label": "3D Building Model", "score": 15, "thesaurus": "Keyphrases" },
+    { "label": "Extended Kalman Filter", "score": 15, "thesaurus": "Engineering" },
+    { "label": "Real-time Kinematic", "score": 14, "thesaurus": "Keyphrases" },
+    { "label": "Autonomous Vehicles", "score": 14, "thesaurus": "Computer Science" },
+    { "label": "3D LiDAR", "score": 13, "thesaurus": "Keyphrases" },
+    { "label": "Pedestrian", "score": 13, "thesaurus": "Keyphrases" },
+    { "label": "Fault Detection", "score": 12, "thesaurus": "Engineering" },
+    { "label": "Vector Tracking", "score": 9, "thesaurus": "Keyphrases" },
+    { "label": "Integrity Monitoring", "score": 8, "thesaurus": "Keyphrases" },
+    { "label": "Shadow Matching", "score": 9, "thesaurus": "Keyphrases" }
+  ],
+  "profileCollaborators": [
+    "Weisong Wen",
+    "Guohao Zhang",
+    "Pengcheng Yan",
+    "Xiao Xia",
+    "Max Jwo Lem Lee"
+  ],
+  "collaborationLocations": [
+    { "label": "Hong Kong", "detail": "PolyU and IPNL", "x": 79, "y": 48 },
+    { "label": "Japan", "detail": "Academic and research experience", "x": 84, "y": 40 },
+    { "label": "United Kingdom", "detail": "Academic and research experience", "x": 50, "y": 34 },
+    { "label": "Taiwan", "detail": "Education and research network", "x": 81, "y": 47 }
+  ],
+  "featuredOutputs": [
+    {
+      "year": "2026",
+      "type": "Patent",
+      "title": "3D LiDAR aided global navigation satellite system and method for non-line-of-sight detection and correction",
+      "authors": "Li-Ta Hsu and Weisong Wen",
+      "venue": "Patent CA3,156,087",
+      "href": "https://research.polyu.edu.hk/en/publications/3d-lidar-aided-global-navigation-satellite-system-and-the-method--4/"
+    },
+    {
+      "year": "2026",
+      "type": "Journal article",
+      "title": "Accurate Wi-Fi RTT Indoor Positioning With NLOS Mitigation by Floor Map: A Multiwall Modeling Approach",
+      "authors": "Q. Liang, G. Zhang and L. T. Hsu",
+      "venue": "IEEE Transactions on Instrumentation and Measurement",
+      "openAccess": true,
+      "href": "https://research.polyu.edu.hk/en/publications/accurate-wi-fi-rtt-indoor-positioning-with-nlos-mitigation-by-flo/"
+    },
+    {
+      "year": "2026",
+      "type": "Journal article",
+      "title": "Cauchy-Gaussian Overbound for Heavy-tailed GNSS Measurement Errors",
+      "authors": "Z. Li, P. Yan, W. Wen and L.-T. Hsu",
+      "venue": "Navigation / arXiv",
+      "openAccess": true,
+      "href": "https://research.polyu.edu.hk/en/publications/cauchy-gaussian-overbound-for-heavy-tailed-gnss-measurement-error/"
+    },
+    {
+      "year": "2026",
+      "type": "Journal article",
+      "title": "Certifiable Alignment of GNSS and Local Frames via Lagrangian Duality",
+      "authors": "B. Song, M. Giamou, P. Yan, C. Xia and L. T. Hsu",
+      "venue": "IEEE Robotics and Automation Letters",
+      "citationCount": 1,
+      "href": "https://research.polyu.edu.hk/en/publications/certifiable-alignment-of-gnss-and-local-frames-via-lagrangian-dua/"
+    },
+    {
+      "year": "2026",
+      "type": "Journal article",
+      "title": "Multipath Parameter Estimation Using GNSS Receiver Doppler Measurements",
+      "authors": "J. Fang, B. Xu, X. Liu and L. T. Hsu",
+      "venue": "IEEE Transactions on Aerospace and Electronic Systems",
+      "doi": "10.1109/TAES.2026.3683035",
+      "keywords": ["Multipath", "GNSS Observations", "Doppler Measurement", "Positioning Accuracy"],
+      "href": "https://research.polyu.edu.hk/en/publications/multipath-parameter-estimation-using-gnss-receiver-doppler-measur/"
+    },
+    {
+      "year": "2024",
+      "type": "Journal article",
+      "title": "A Survey on Cooperative Positioning Using GNSS Measurements",
+      "authors": "R. Jin, G. Zhang, L. T. Hsu and Y. Hu",
+      "venue": "IEEE Transactions on Intelligent Vehicles",
+      "doi": "10.1109/TIV.2024.3397879",
+      "keywords": ["GNSS Positioning", "Urban Environment", "Integrity Monitoring", "Autonomous Vehicles"],
+      "href": "https://research.polyu.edu.hk/en/publications/a-survey-on-cooperative-positioning-using-gnss-measurements/"
+    },
+    {
+      "year": "2017",
+      "type": "Journal article",
+      "title": "Intelligent Viaduct Recognition and Driving Altitude Determination Using GPS Data",
+      "authors": "L. T. Hsu, Y. Gu and S. Kamijo",
+      "venue": "IEEE Transactions on Intelligent Vehicles",
+      "doi": "10.1109/TIV.2017.2737325",
+      "keywords": ["Urban Canyon", "Global Positioning System", "Autonomous Vehicles", "Positioning Accuracy"],
+      "href": "https://research.polyu.edu.hk/en/publications/intelligent-viaduct-recognition-and-driving-altitude-determinatio/"
+    }
+  ],
+  "prizes": [
+    { "title": "2021 World's Top 2% most-cited Scientists", "date": "October 2022", "type": "Research distinction" },
+    { "title": "2023 World's Top 2% most-cited Scientists", "date": "October 2023", "type": "Research distinction" },
+    { "title": "2024 World's Top 2% Most-Cited Scientists", "date": "September 2024", "type": "Research distinction" },
+    { "title": "2025 World's Top 2% Most-Cited Scientists", "date": "September 2025", "type": "Research distinction" },
+    { "title": "Gold Medal with Congratulations of the Jury", "date": "March 2026", "type": "International Exhibition of Inventions Geneva" }
+  ],
+  "activities": [
+    { "title": "GitHub as a Supplementary Educational Tool", "date": "March 2023", "type": "Invited talk" },
+    { "title": "2021 Institute of Navigation International Technical Meeting", "date": "2021", "type": "Panel chair" },
+    { "title": "Frontiers in Robotics and AI", "date": "2021", "type": "Journal reviewer" },
+    { "title": "Sustainability", "date": "2020-2021", "type": "Journal reviewer" },
+    { "title": "Remote Sensing", "date": "2020-2021", "type": "Journal reviewer" }
+  ],
+  "media": [
+    {
+      "title": "PolyU civil aviation engineering master's programme feature",
+      "date": "21 January 2022",
+      "type": "Media contribution"
+    }
+  ],
+  "order": 2
+}

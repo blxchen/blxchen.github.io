@@ -1,0 +1,43 @@
+{
+  "slug": "research-collaborators",
+  "title": "Research Collaborators",
+  "type": "Research and Development",
+  "location": "Remote / Hong Kong",
+  "deadline": "Rolling",
+  "dek": "Collaborate on focused projects in GNSS, urban positioning, atmospheric sensing, autonomous navigation, or navigation simulation.",
+  "tags": [
+    "GNSS",
+    "Navigation",
+    "Research collaboration"
+  ],
+  "body": [
+    "This opportunity is for students and researchers interested in developing a focused research output, experiment, dataset, simulator, or working paper together.",
+    "Possible areas include urban and smartphone GNSS, multipath and NLOS, GNSS reflectometry, radio occultation, autonomous navigation, sensor fusion, and browser-based simulation. Project scope, authorship, responsibilities, and timelines will be agreed before work begins."
+  ],
+  "requirements": [
+    "Reliable communication and the ability to agree on a realistic project scope and timeline.",
+    "Careful documentation of methods, sources, assumptions, code, and progress.",
+    "Respect for research ethics, data permissions, intellectual property, and accurate attribution.",
+    "Willingness to give and receive constructive feedback."
+  ],
+  "perks": [
+    "Work on a clearly scoped GNSS or navigation research problem with flexible remote coordination.",
+    "Receive peer feedback on methods, code, analysis, visualisation, and technical writing.",
+    "Build a concrete research artifact such as an experiment, dataset note, simulator contribution, poster, or working-paper section.",
+    "Receive visible credit appropriate to your documented contribution; authorship is discussed using the agreed project scope and actual contributions."
+  ],
+  "fitIf": [
+    "You are a student, independent researcher, developer, or early-career researcher who can take ownership of a bounded task.",
+    "You are curious about GNSS, positioning, atmospheric sensing, autonomous systems, or research software.",
+    "You can explain what you tried, what worked, what failed, and what evidence supports your conclusions.",
+    "You are comfortable learning unfamiliar technical material and asking focused questions."
+  ],
+  "preferred": [
+    "Experience with Python, data analysis, scientific computing, geospatial data, signal processing, or technical writing.",
+    "Familiarity with GitHub, reproducible notebooks, research documentation, or collaborative code review.",
+    "Interest in smartphone GNSS, multipath and NLOS, GNSS-R, radio occultation, FORMOSAT/COSMIC data, UAV navigation, or sensor fusion.",
+    "A short example of previous work, coursework, code, writing, or a proposed research question. Relevant experience is helpful but not mandatory."
+  ],
+  "engagementNote": "This is an independent, project-based research collaboration rather than an employment offer. Funding, expenses, deliverables, attribution, and any authorship expectations must be agreed in writing for each project before work begins.",
+  "order": 1
+}

@@ -1,0 +1,37 @@
+{
+  "slug": "opportunity-slug",
+  "title": "Opportunity Title",
+  "type": "Research collaboration",
+  "location": "Remote / Hong Kong",
+  "deadline": "Rolling",
+  "dek": "One concise sentence describing the opportunity and its research focus.",
+  "tags": [
+    "Research area",
+    "Relevant method",
+    "Collaboration"
+  ],
+  "body": [
+    "Explain who the opportunity is for and what collaborators may work on.",
+    "Describe possible research areas, expected outputs, and how scope and responsibilities will be agreed."
+  ],
+  "perks": [
+    "Describe a realistic benefit such as flexible coordination or feedback.",
+    "Describe a concrete artifact or learning opportunity.",
+    "Explain how contribution credit will be handled without guaranteeing authorship."
+  ],
+  "requirements": [
+    "List a genuine minimum requirement.",
+    "State expectations for communication and documentation.",
+    "Include research ethics, data permissions, and attribution where relevant."
+  ],
+  "fitIf": [
+    "Describe the type of person who could succeed in the opportunity.",
+    "Describe the interests, habits, or working style that would make someone a good fit."
+  ],
+  "preferred": [
+    "List useful but non-mandatory skills or experience.",
+    "Invite a short example of previous work or a proposed research question."
+  ],
+  "engagementNote": "Clarify whether this is employment or an independent collaboration, and state how funding, expenses, deliverables, attribution, and authorship expectations will be agreed.",
+  "order": 10
+}

@@ -1,0 +1,19 @@
+{
+  "slug": "paper-title",
+  "year": "2026",
+  "type": "Working paper",
+  "title": "Working Paper Title",
+  "authors": "Researcher Name",
+  "venue": "Working manuscript — not published or peer reviewed",
+  "abstract": "Draft abstract. State clearly that the manuscript is in progress and unpublished.",
+  "status": "In progress",
+  "paperUrl": "assets/papers/paper-title.pdf",
+  "keywords": [
+    "Research topic one",
+    "Research topic two"
+  ],
+  "profileSlugs": [
+    "researcher-name"
+  ],
+  "order": 10
+}

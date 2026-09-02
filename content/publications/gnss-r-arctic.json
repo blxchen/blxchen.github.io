@@ -1,0 +1,23 @@
+{
+  "slug": "gnss-r-within-arctic-environments",
+  "year": "2026",
+  "type": "Working paper",
+  "title": "GNSS-R Within Arctic Environments",
+  "authors": "Brandon Ling-xuan Chen",
+  "venue": "Working project — title to be updated upon publication",
+  "abstract": "An ongoing project using TRITON (FORMOSAT-7R) data for Arctic data processing, GNSS reflectometry through Python, and self-taught mathematical modelling for data analysis and processing.",
+  "status": "In progress since June 2026",
+  "keywords": [
+    "GNSS reflectometry",
+    "Arctic environments",
+    "TRITON",
+    "FORMOSAT-7R",
+    "Python",
+    "Mathematical modelling",
+    "Data processing"
+  ],
+  "profileSlugs": [
+    "brandon-chen"
+  ],
+  "order": 1
+}

@@ -1,0 +1,141 @@
+{
+  "slug": "brandon-chen",
+  "name": "Brandon Ling-xuan Chen",
+  "role": "Independent and Affiliated Researcher",
+  "photo": "assets/headshot-placeholder.svg",
+  "bio": "Brandon is a student at Island School and an independent and affiliated researcher in aerospace navigation. His work focuses on GNSS for autonomous navigation and intelligent transport, including urban positioning, multipath and non-line-of-sight reception, and multi-sensor simulation.",
+  "email": "chen.brandon1213@gmail.com",
+  "orcid": "https://orcid.org/0009-0007-6761-0259",
+  "linkedin": "https://www.linkedin.com/in/brandon-chen-gnss/",
+  "github": "https://github.com/blxchen",
+  "publicationNames": [
+    "Brandon Ling-xuan Chen",
+    "Brandon Chen"
+  ],
+  "affiliations": [
+    "Independent and Affiliated Researcher, Department of Aeronautical and Aviation Engineering, The Hong Kong Polytechnic University",
+    "Student, Island School",
+    "Student Member, Institute of Navigation"
+  ],
+  "education": [
+    {
+      "year": "Expected 2028",
+      "qualification": "Secondary education",
+      "institution": "Island School"
+    }
+  ],
+  "interests": [
+    "Global Navigation Satellite Systems",
+    "Positioning, Navigation and Timing",
+    "Autonomous navigation",
+    "Intelligent transport",
+    "Urban GNSS",
+    "Multipath and NLOS",
+    "3D mapping-aided GNSS",
+    "Multi-sensor navigation",
+    "Ionospheric effects"
+  ],
+  "similarProfileSlugs": [
+    "li-ta-hsu",
+    "ng-derek-hoi-wah"
+  ],
+  "experience": [
+    {
+      "year": "April 2026-present",
+      "title": "Independent and Affiliated Researcher",
+      "text": "Department of Aeronautical and Aviation Engineering, The Hong Kong Polytechnic University.",
+      "href": "https://www.linkedin.com/in/brandon-chen-gnss/",
+      "linkLabel": "View LinkedIn profile"
+    },
+    {
+      "year": "April 2026-present",
+      "title": "Student Member",
+      "text": "Institute of Navigation.",
+      "href": "https://orcid.org/0009-0007-6761-0259",
+      "linkLabel": "View ORCID record"
+    }
+  ],
+  "activities": [
+    {
+      "title": "Student Member",
+      "date": "April 2026-present",
+      "type": "Institute of Navigation"
+    }
+  ],
+  "collaborationLocations": [
+    {
+      "label": "Hong Kong",
+      "detail": "Study and research affiliation",
+      "x": 79,
+      "y": 48
+    },
+    {
+      "label": "Taiwan",
+      "detail": "Public ORCID location",
+      "x": 81,
+      "y": 47
+    }
+  ],
+  "cv": [
+    {
+      "title": "Research focus",
+      "items": [
+        {
+          "label": "GNSS for autonomous navigation, unmanned aerial vehicles, autonomous vehicles, and intelligent transport"
+        },
+        {
+          "label": "Urban positioning, multipath and NLOS mitigation, 3D mapping-aided GNSS, and multi-sensor navigation"
+        },
+        {
+          "label": "Ionospheric and tropospheric effects in GNSS simulation"
+        }
+      ]
+    },
+    {
+      "title": "Experience and education",
+      "items": [
+        {
+          "label": "Independent and Affiliated Researcher, Department of Aeronautical and Aviation Engineering, The Hong Kong Polytechnic University",
+          "note": "April 2026-present",
+          "href": "https://www.linkedin.com/in/brandon-chen-gnss/"
+        },
+        {
+          "label": "Student Member, Institute of Navigation",
+          "note": "April 2026-present",
+          "href": "https://orcid.org/0009-0007-6761-0259"
+        },
+        {
+          "label": "Student, Island School",
+          "note": "Expected 2028"
+        }
+      ]
+    },
+    {
+      "title": "Technical skills",
+      "items": [
+        {
+          "label": "Python, SQL, SolidWorks CAD, and Autodesk Fusion 360"
+        },
+        {
+          "label": "Browser-based GNSS and UAV simulation through UAVLab and NavLab",
+          "href": "https://github.com/blxchen"
+        }
+      ]
+    },
+    {
+      "title": "Working papers",
+      "items": [
+        {
+          "label": "Three working-paper projects",
+          "note": "UAVLab and NavLab are separate simulator projects",
+          "href": "https://www.linkedin.com/in/brandon-chen-gnss/details/projects/"
+        }
+      ]
+    },
+    {
+      "title": "Profiles",
+      "source": "profiles"
+    }
+  ],
+  "order": 1
+}

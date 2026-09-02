@@ -1,0 +1,92 @@
+{
+  "slug": "ng-derek-hoi-wah",
+  "name": "Ng Derek Hoi Wah",
+  "role": "PhD Student, Intelligent Positioning and Navigation Laboratory",
+  "photo": "assets/ng-derek-hoi-wah.jpg",
+  "sourceUrl": "https://ipnl.io/en/people/ng-derek-hoi-wah/",
+  "publicationNames": [
+    "Hoi-Wah Ng",
+    "Ng, Hoi-Wah",
+    "Ng Derek Hoi Wah"
+  ],
+  "affiliations": [
+    "PhD Student, Intelligent Positioning and Navigation Laboratory (IPNL)",
+    "Department of Aeronautical and Aviation Engineering, The Hong Kong Polytechnic University"
+  ],
+  "bio": "Derek is a PhD student at the Intelligent Positioning and Navigation Laboratory. He joined the laboratory as a research assistant in 2025 and is a recipient of the Hong Kong PhD Fellowship Scheme. His work contributes to reliable, low-power positioning across urban and indoor environments.",
+  "education": [
+    {
+      "year": "2025-present",
+      "qualification": "PhD student and Hong Kong PhD Fellowship Scheme recipient",
+      "institution": "The Hong Kong Polytechnic University"
+    }
+  ],
+  "interests": [
+    "Global Navigation Satellite Systems",
+    "Urban navigation",
+    "Sensor fusion",
+    "Integrity monitoring",
+    "Low-power positioning",
+    "3D mapping-aided GNSS"
+  ],
+  "bibliometrics": {
+    "totalOutputs": 2,
+    "citations": 0,
+    "hIndex": 0,
+    "firstYear": 2026,
+    "latestYear": 2026,
+    "similarProfiles": 2,
+    "source": "IPNL public profile and publication record"
+  },
+  "activity": {
+    "2026": 2
+  },
+  "outputBreakdown": [
+    { "label": "Journal article", "count": 2 }
+  ],
+  "fingerprint": [
+    { "label": "Global Navigation Satellite Systems", "score": 100, "thesaurus": "Profile topics" },
+    { "label": "3D Mapping-Aided GNSS", "score": 82, "thesaurus": "Automatically extracted" },
+    { "label": "Low-Power Positioning", "score": 76, "thesaurus": "Automatically extracted" },
+    { "label": "Urban Navigation", "score": 70, "thesaurus": "Profile topics" },
+    { "label": "Snapshot GNSS", "score": 64, "thesaurus": "Automatically extracted" },
+    { "label": "Sensor Fusion", "score": 58, "thesaurus": "Profile topics" },
+    { "label": "Indoor Positioning", "score": 52, "thesaurus": "Automatically extracted" },
+    { "label": "Integrity Monitoring", "score": 46, "thesaurus": "Profile topics" }
+  ],
+  "profileCollaborators": [
+    "Hoi-Fung Ng",
+    "Li-Ta Hsu",
+    "John-Ross Rizzo",
+    "Chin-Lok Tsang",
+    "Yiran Luo",
+    "Di Hai"
+  ],
+  "collaborationLocations": [
+    { "label": "Hong Kong", "detail": "PolyU Intelligent Positioning and Navigation Laboratory", "x": 79, "y": 48 }
+  ],
+  "featuredOutputs": [
+    {
+      "year": "2026",
+      "type": "Journal article",
+      "title": "Three-Dimensional Mapping-Aided Global Navigation Satellite System in Global Navigation Satellite System-Accessible Indoor Areas",
+      "authors": "Hoi-Wah Ng, Hoi-Fung Ng, Li-Ta Hsu and John-Ross Rizzo",
+      "venue": "Sensors",
+      "doi": "10.3390/s26031058",
+      "openAccess": true,
+      "keywords": ["3D Mapping-Aided GNSS", "Indoor Positioning", "Sensor Fusion", "Urban Navigation"],
+      "href": "https://doi.org/10.3390/s26031058"
+    },
+    {
+      "year": "2026",
+      "type": "Journal article",
+      "title": "Ultra-Low Power GNSS L5 Band Snapshot Positioning: A Two-Step Approach",
+      "authors": "Chin-Lok Tsang, Hoi-Wah Ng, Yiran Luo, Di Hai and Li-Ta Hsu",
+      "venue": "IEEE Internet of Things Journal",
+      "doi": "10.1109/JIOT.2026.3680038",
+      "keywords": ["Low-Power Positioning", "Snapshot GNSS", "Global Navigation Satellite Systems", "Internet of Things"],
+      "href": "https://doi.org/10.1109/JIOT.2026.3680038"
+    }
+  ],
+  "order": 3
+}

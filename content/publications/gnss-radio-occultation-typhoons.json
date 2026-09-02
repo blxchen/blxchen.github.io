@@ -1,0 +1,21 @@
+{
+  "slug": "gnss-radio-occultation-typhoons-formosat-7-cosmic-2",
+  "year": "2026",
+  "type": "Working paper",
+  "title": "GNSS Radio Occultation on Typhoons FORMOSAT-7/COSMIC-2",
+  "authors": "Brandon Ling-xuan Chen",
+  "venue": "Working project — not published or peer reviewed",
+  "abstract": "An ongoing project examining GNSS radio occultation in relation to typhoons using FORMOSAT-7/COSMIC-2.",
+  "status": "In progress",
+  "keywords": [
+    "GNSS radio occultation",
+    "Typhoons",
+    "FORMOSAT-7",
+    "COSMIC-2",
+    "Atmospheric sensing"
+  ],
+  "profileSlugs": [
+    "brandon-chen"
+  ],
+  "order": 3
+}

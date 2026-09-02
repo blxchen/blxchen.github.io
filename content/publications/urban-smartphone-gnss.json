@@ -1,0 +1,23 @@
+{
+  "slug": "urban-smartphone-gnss",
+  "year": "2026",
+  "type": "Working paper",
+  "title": "Urban Smartphone GNSS (not publication title)",
+  "authors": "Brandon Ling-xuan Chen, Hoi-Wah Ng and Li-Ta Hsu",
+  "venue": "Working project associated with the PolyU Department of Aeronautical and Aviation Engineering",
+  "abstract": "An ongoing research project on urban smartphone GNSS, data analysis, and academic research. The current project name is not the final publication title.",
+  "status": "In progress since April 2026",
+  "keywords": [
+    "Urban GNSS",
+    "Smartphone positioning",
+    "Global Navigation Satellite Systems",
+    "Data analysis",
+    "Academic research"
+  ],
+  "profileSlugs": [
+    "brandon-chen",
+    "ng-derek-hoi-wah",
+    "li-ta-hsu"
+  ],
+  "order": 2
+}

@@ -1,0 +1,17 @@
+{
+  "slug": "urban-gnss",
+  "number": "02",
+  "title": "Urban GNSS, Multipath and NLOS",
+  "dek": "Robust positioning in dense environments affected by signal blockage, multipath, and non-line-of-sight reception.",
+  "image": "assets/kaohsiung-backdrop.jpg",
+  "tags": [
+    "Urban GNSS",
+    "Multipath",
+    "NLOS"
+  ],
+  "body": [
+    "Buildings can block or reflect satellite signals, producing non-line-of-sight measurements and multipath errors that degrade positioning.",
+    "This work explores 3D mapping-aided GNSS, shadow matching, robust weighting, and factor graph optimization as methods for studying and improving urban navigation."
+  ],
+  "order": 2
+}

@@ -1,0 +1,376 @@
+{
+  "contact": {
+    "email": "chen.brandon1213@gmail.com",
+    "location": "Hong Kong / Taiwan"
+  },
+  "profile": {
+    "name": "Brandon Ling-xuan Chen",
+    "title": "Independent and Affiliated Researcher",
+    "brand": {
+      "leftLogo": "assets/logo-left-placeholder.svg",
+      "rightLogo": "assets/logo-right-placeholder.svg",
+      "wordmark": "Brandon Ling-xuan Chen",
+      "subtitle": "GNSS and Navigation Research"
+    },
+    "shortBio": "Independent and affiliated researcher in aerospace navigation, focused on GNSS, positioning, autonomous navigation, and intelligent transport.",
+    "headshot": "assets/headshot-placeholder.svg",
+    "heroImage": "assets/kaohsiung-backdrop.jpg",
+    "heroCredit": {
+      "label": "Kaohsiung waterfront photo",
+      "author": "Charlie Chan",
+      "source": "https://unsplash.com/photos/city-skyline-across-a-bay-with-colorful-buildings-u0JlhFaQQrc",
+      "license": "Unsplash License",
+      "licenseUrl": "https://unsplash.com/license"
+    },
+    "links": [
+      {
+        "label": "LinkedIn",
+        "href": "https://www.linkedin.com/in/brandon-chen-gnss/"
+      },
+      {
+        "label": "ORCID",
+        "href": "https://orcid.org/0009-0007-6761-0259"
+      },
+      {
+        "label": "GitHub",
+        "href": "https://github.com/blxchen"
+      }
+    ],
+    "stats": [
+      {
+        "value": "3",
+        "label": "Research areas"
+      },
+      {
+        "value": "2",
+        "label": "Open-source simulators"
+      },
+      {
+        "value": "3",
+        "label": "Working papers"
+      }
+    ]
+  },
+  "homepage": {
+    "status": [
+      {
+        "label": "Now drafting",
+        "value": "3 working papers",
+        "note": "Project titles remain provisional until publication"
+      },
+      {
+        "label": "Open-source labs",
+        "value": "2 public projects",
+        "note": "UAVLab and NavLab on GitHub"
+      },
+      {
+        "label": "Research focus",
+        "value": "GNSS + PNT",
+        "note": "Autonomous navigation, multipath, and NLOS"
+      }
+    ],
+    "tabs": [
+      {
+        "key": "autonomous-navigation",
+        "label": "Autonomous Navigation",
+        "title": "GNSS for autonomous navigation",
+        "copy": "GNSS, positioning, and multi-sensor navigation for autonomous vehicles, unmanned aerial vehicles, and intelligent transport systems.",
+        "points": [
+          "UAVs",
+          "Autonomous vehicles",
+          "Intelligent transport"
+        ]
+      },
+      {
+        "key": "urban-gnss",
+        "label": "Urban GNSS",
+        "title": "Urban GNSS, multipath, and NLOS",
+        "copy": "Positioning in dense environments where buildings obstruct and reflect satellite signals, with emphasis on 3D mapping-aided GNSS and robust estimation.",
+        "points": [
+          "Multipath",
+          "NLOS",
+          "3DMA GNSS"
+        ]
+      },
+      {
+        "key": "navigation-simulation",
+        "label": "Navigation Simulation",
+        "title": "Multi-sensor navigation simulation",
+        "copy": "Interactive browser-based tools for studying GNSS, sensor fusion, UAV dynamics, atmospheric delay, and navigation algorithms.",
+        "points": [
+          "Sensor fusion",
+          "Factor graphs",
+          "Ionosphere"
+        ]
+      }
+    ],
+    "capabilities": [
+      {
+        "number": "01",
+        "icon": "orbit",
+        "title": "Urban GNSS",
+        "copy": "Positioning methods for environments affected by satellite blockage, multipath, and non-line-of-sight reception.",
+        "keywords": [
+          "3DMA GNSS",
+          "Multipath",
+          "NLOS"
+        ],
+        "linksLabel": "Selected pages",
+        "links": [
+          {
+            "label": "Urban GNSS, multipath, and NLOS",
+            "href": "research/urban-gnss/"
+          },
+          {
+            "label": "NavLab project",
+            "href": "https://github.com/blxchen/iono-gnss"
+          }
+        ]
+      },
+      {
+        "number": "02",
+        "icon": "target",
+        "title": "Autonomous navigation",
+        "copy": "GNSS and multi-sensor navigation for UAVs, autonomous vehicles, and intelligent transport systems.",
+        "keywords": [
+          "UAVs",
+          "Autonomous vehicles",
+          "Intelligent transport"
+        ],
+        "linksLabel": "Selected pages",
+        "links": [
+          {
+            "label": "GNSS for autonomous navigation",
+            "href": "research/autonomous-navigation/"
+          },
+          {
+            "label": "UAVLab project",
+            "href": "https://github.com/blxchen/UAVLab"
+          }
+        ]
+      },
+      {
+        "number": "03",
+        "icon": "signal",
+        "title": "Navigation simulation",
+        "copy": "Open-source browser laboratories for comparing GNSS, 3DMA, WLS, factor graph optimization, and sensor-fusion methods.",
+        "keywords": [
+          "WebGL",
+          "Sensor fusion",
+          "Factor graphs"
+        ],
+        "linksLabel": "Selected pages",
+        "links": [
+          {
+            "label": "Multi-sensor navigation simulation",
+            "href": "research/navigation-simulation/"
+          },
+          {
+            "label": "Working papers",
+            "href": "research/publications/"
+          }
+        ]
+      },
+      {
+        "number": "04",
+        "icon": "shield",
+        "title": "Atmospheric GNSS effects",
+        "copy": "Simulation of ionospheric and tropospheric delay, including synthetic disturbance scenarios for navigation experiments.",
+        "keywords": [
+          "Ionosphere",
+          "Troposphere",
+          "Signal delay"
+        ],
+        "linksLabel": "Selected pages",
+        "links": [
+          {
+            "label": "NavLab project",
+            "href": "https://github.com/blxchen/iono-gnss"
+          },
+          {
+            "label": "Research updates",
+            "href": "news/"
+          }
+        ]
+      }
+    ]
+  },
+  "nav": [
+    {
+      "label": "Home",
+      "url": "index.html"
+    },
+    {
+      "label": "About",
+      "url": "about/"
+    },
+    {
+      "label": "Research",
+      "url": "research/",
+      "children": [
+        {
+          "label": "Interests",
+          "url": "research/"
+        },
+        {
+          "label": "Experience",
+          "url": "research/experience/"
+        },
+        {
+          "label": "Research Profile",
+          "url": "research/profile/"
+        },
+        {
+          "label": "Team",
+          "url": "research/team/"
+        },
+        {
+          "label": "Working Papers",
+          "url": "research/publications/"
+        }
+      ]
+    },
+    {
+      "label": "Media",
+      "url": "media/"
+    },
+    {
+      "label": "News",
+      "url": "news/"
+    },
+    {
+      "label": "Blog",
+      "url": "blog/"
+    },
+    {
+      "label": "CV",
+      "url": "cv/"
+    },
+    {
+      "label": "Get Involved",
+      "url": "get-involved/",
+      "children": [
+        {
+          "label": "Contact",
+          "url": "get-involved/contact/"
+        },
+        {
+          "label": "Recruitment",
+          "url": "get-involved/recruitment/"
+        }
+      ]
+    }
+  ],
+  "pages": {
+    "home": {
+      "template": "home",
+      "title": "Home"
+    },
+    "about": {
+      "template": "about",
+      "title": "About Brandon Ling-xuan Chen",
+      "kicker": "About",
+      "intro": "Brandon Ling-xuan Chen is a student at Island School and an independent and affiliated researcher in aerospace navigation.",
+      "paragraphs": [
+        "My research focuses on Global Navigation Satellite Systems (GNSS) for autonomous navigation and intelligent transport, including unmanned aerial vehicles and autonomous vehicles.",
+        "I am particularly interested in urban positioning, multipath and non-line-of-sight reception, 3D mapping-aided GNSS, multi-sensor navigation, and ionospheric effects. UAVLab and NavLab are open-source simulators. My three separate working-paper projects cover Arctic GNSS reflectometry, urban smartphone GNSS, and GNSS radio occultation for typhoons."
+      ]
+    },
+    "research": {
+      "template": "research",
+      "title": "Research",
+      "kicker": "Research",
+      "intro": "My research centres on GNSS, Positioning, Navigation and Timing, and simulation for autonomous and urban navigation."
+    },
+    "research/experience": {
+      "template": "timeline",
+      "title": "Experience",
+      "kicker": "Experience",
+      "intro": "Current research affiliations and membership, cross-checked against my LinkedIn-linked ORCID record.",
+      "entries": [
+        {
+          "year": "April 2026-present",
+          "title": "Independent and Affiliated Researcher",
+          "text": "Department of Aeronautical and Aviation Engineering, The Hong Kong Polytechnic University.",
+          "href": "https://www.linkedin.com/in/brandon-chen-gnss/",
+          "linkLabel": "Open LinkedIn profile"
+        }
+      ]
+    },
+    "research/profile": {
+      "template": "researchProfile",
+      "title": "Research Profile",
+      "kicker": "Research intelligence",
+      "intro": "Explore research interests, research records, and automatically calculated topic fingerprints."
+    },
+    "admin": {
+      "template": "admin",
+      "title": "Content Control Room",
+      "kicker": "Free GitHub workflow",
+      "intro": "Manage researcher profiles, working papers, photos, and generated fingerprints directly from VS Code or GitHub without a paid backend."
+    },
+    "research/team": {
+      "template": "team",
+      "title": "Team",
+      "kicker": "People",
+      "intro": "Brandon's research profile and related researchers connected by shared interests in GNSS and navigation."
+    },
+    "research/publications": {
+      "template": "publications",
+      "title": "Working Papers",
+      "kicker": "Work in progress",
+      "intro": "Three working-paper projects are in progress. Their titles remain provisional, and none is presented as published or peer reviewed. UAVLab and NavLab remain separate simulator projects."
+    },
+    "media": {
+      "template": "collection",
+      "collection": "media",
+      "title": "Media",
+      "kicker": "Media",
+      "intro": "No talks, interviews, recordings, or press mentions are currently listed."
+    },
+    "news": {
+      "template": "collection",
+      "collection": "news",
+      "title": "News",
+      "kicker": "News",
+      "intro": "Updates on UAVLab, NavLab, and current GNSS and navigation projects."
+    },
+    "blog": {
+      "template": "collection",
+      "collection": "blog",
+      "title": "Blog",
+      "kicker": "Blog",
+      "intro": "Project notes on GNSS, autonomous navigation, and browser-based simulation."
+    },
+    "cv": {
+      "template": "cv",
+      "title": "CV",
+      "kicker": "Curriculum Vitae",
+      "intro": "A concise web CV covering GNSS and navigation research, current affiliations, open-source simulators, and working-paper projects maintained on LinkedIn."
+    },
+    "get-involved": {
+      "template": "getInvolved",
+      "title": "Get Involved",
+      "kicker": "Get Involved",
+      "intro": "Get in touch about GNSS, navigation simulation, autonomous systems, or research collaboration."
+    },
+    "get-involved/contact": {
+      "template": "contact",
+      "title": "Contact",
+      "kicker": "Contact",
+      "intro": "For GNSS, navigation simulation, or research collaboration inquiries, send a note directly by email."
+    },
+    "get-involved/recruitment": {
+      "template": "recruitment",
+      "title": "Recruitment",
+      "kicker": "Recruitment",
+      "intro": "Research collaboration opportunities in GNSS, positioning, atmospheric sensing, autonomous navigation, and simulation."
+    },
+    "contact": {
+      "template": "contact",
+      "title": "Contact",
+      "kicker": "Contact",
+      "intro": "For GNSS, navigation simulation, or research collaboration inquiries, send a note directly by email."
+    }
+  }
+}

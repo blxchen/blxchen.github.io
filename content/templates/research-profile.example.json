@@ -1,0 +1,49 @@
+{
+  "slug": "researcher-name",
+  "name": "Researcher Name",
+  "role": "Researcher",
+  "photo": "assets/researcher-name.jpg",
+  "sourceUrl": "",
+  "email": "",
+  "orcid": "",
+  "linkedin": "https://www.linkedin.com/in/researcher-name/",
+  "github": "",
+  "scholarUrl": "",
+  "publicationNames": [
+    "Researcher Name"
+  ],
+  "affiliations": [
+    "Institution or research group"
+  ],
+  "bio": "Short public biography.",
+  "education": [
+    {
+      "year": "2026-present",
+      "qualification": "Degree or appointment",
+      "institution": "Institution"
+    }
+  ],
+  "interests": [
+    "Research topic one",
+    "Research topic two"
+  ],
+  "similarProfileSlugs": [],
+  "collaborationLocations": [
+    {
+      "label": "Hong Kong",
+      "detail": "Primary research location",
+      "x": 79,
+      "y": 48
+    }
+  ],
+  "experience": [
+    {
+      "year": "Current",
+      "title": "Professional and research experience",
+      "text": "The current experience record is maintained on LinkedIn.",
+      "href": "https://www.linkedin.com/in/researcher-name/",
+      "linkLabel": "View experience on LinkedIn"
+    }
+  ],
+  "order": 10
+}

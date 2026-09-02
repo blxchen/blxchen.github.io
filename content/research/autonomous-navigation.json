@@ -1,0 +1,17 @@
+{
+  "slug": "autonomous-navigation",
+  "number": "01",
+  "title": "GNSS for Autonomous Navigation",
+  "dek": "Positioning and multi-sensor navigation for unmanned aerial vehicles, autonomous vehicles, and intelligent transport systems.",
+  "image": "assets/kaohsiung-backdrop.jpg",
+  "tags": [
+    "GNSS",
+    "Autonomous navigation",
+    "Intelligent transport"
+  ],
+  "body": [
+    "This research area studies how GNSS and complementary sensors support autonomous navigation for unmanned aerial vehicles and ground vehicles.",
+    "UAVLab provides an open-source simulation environment for UAV dynamics, satellite navigation, inertial sensing, LiDAR, cameras, atmospheric effects, and urban signal blockage."
+  ],
+  "order": 1
+}

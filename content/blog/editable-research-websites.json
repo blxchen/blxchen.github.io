@@ -1,0 +1,11 @@
+{
+  "slug": "building-uavlab",
+  "date": "2026-07-30",
+  "title": "Building UAVLab as a Multi-Sensor Navigation Sandbox",
+  "dek": "Project notes on a local WebGL environment for UAV dynamics, GNSS, urban navigation, and sensor fusion.",
+  "body": [
+    "UAVLab is an open-source engineering sandbox that runs locally in a web browser. It brings together a 3D city environment, UAV motion, multi-constellation GNSS, inertial sensing, LiDAR, cameras, atmospheric effects, and urban signal blockage.",
+    "The simulator is designed for exploration and education rather than certified flight or navigation. It supports comparisons between weighted least squares, 3D mapping-aided methods, NLOS weighting, and factor graph optimization using synthetic scenarios."
+  ],
+  "order": 1
+}

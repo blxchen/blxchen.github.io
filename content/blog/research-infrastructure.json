@@ -1,0 +1,11 @@
+{
+  "slug": "what-navlab-simulates",
+  "date": "2026-07-30",
+  "title": "What NavLab Simulates in Urban GNSS",
+  "dek": "A project note on satellite geometry, 3DMA, atmospheric delay, and synthetic ionospheric disturbances.",
+  "body": [
+    "NavLab is an interactive browser laboratory for examining how satellite geometry, buildings, measurement error, and atmospheric delay affect a GNSS position solution.",
+    "The project compares weighted least squares, 3D mapping-aided GNSS, and factor graph optimization. Its typhoon and travelling-ionospheric-disturbance scenarios are synthetic educational models, not official space-weather products."
+  ],
+  "order": 2
+}

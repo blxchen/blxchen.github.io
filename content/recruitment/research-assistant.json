@@ -1,0 +1,37 @@
+{
+  "slug": "research-assistant",
+  "title": "Research Assistant",
+  "type": "Research and Development",
+  "location": "Remote / Hong Kong",
+  "deadline": "Rolling",
+  "dek": "Assist with basic tasks related to GNSS, PNT and Earth Remote Sensing, including collecting data, RINEX processing, RTKLIB.",
+  "tags": [
+    "GNSS",
+    "Earth Remote Sensing",
+    "Collaboration"
+  ],
+  "body": [
+    "This opportunity is excellent for high school / university students with interests in PNT and navigation. We are seeking people who are able to collect data and edit papers.",
+    "You may work in PNT and GNSS, or Atmospheric Science. Your work will be agreed with a contract and you will be credited appropriately."
+  ],
+  "perks": [
+    "Credited appropriately (can be publication mention), and recommendations provided..",
+    "Learn the in's and out's of the PNT industry,such as data collection and RTKLIB.",
+    "If you contribute the work appropriate for co-authorship, it will be guaranteed without doubt."
+  ],
+  "requirements": [
+    "Basic RTKLIB, Python and knowledge in GNSSLogger / use of receivers.",
+    "Precise and clear communication skills and ability to work remotely.",
+    "Ethical behaviour that follows the guidelines highlighted in potential offers."
+  ],
+  "fitIf": [
+    "If you love PNT, or want to dive into it.",
+    "If you are knowledgable or trying to learn more about GNSS."
+  ],
+  "preferred": [
+    "Python, C++, RTKLIB, SQL, Data Processing.",
+    "Prior experience is not required but will boost the application. Includes classes and internships."
+  ],
+  "engagementNote": "Funding is not provided. This is unpaid and therefore consent will be properly obtained.",
+  "order": 10
+}

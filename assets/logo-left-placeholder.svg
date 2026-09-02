@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 72" role="img" aria-label="Left logo placeholder">
+  <rect width="180" height="72" fill="none"/>
+  <path d="M28 46c-7 0-12-5-12-12s5-12 12-12 12 5 12 12-5 12-12 12Zm0-8c2 0 4-2 4-4s-2-4-4-4-4 2-4 4 2 4 4 4Z" fill="#8c1515"/>
+  <path d="M58 50V22h9v19h16v9H58Zm31 0V22h9v28h-9Zm18 0V22h11l13 16V22h9v28h-10l-14-17v17h-9Z" fill="#2e2d29"/>
+  <circle cx="151" cy="21" r="5" fill="#007c92"/>
+</svg>

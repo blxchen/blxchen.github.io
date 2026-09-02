@@ -1,0 +1,17 @@
+{
+  "slug": "navigation-simulation",
+  "number": "03",
+  "title": "Multi-Sensor Navigation Simulation",
+  "dek": "Interactive browser laboratories for GNSS, UAV dynamics, sensor fusion, atmospheric delay, and navigation algorithms.",
+  "image": "assets/kaohsiung-backdrop.jpg",
+  "tags": [
+    "Simulation",
+    "Sensor fusion",
+    "Ionosphere"
+  ],
+  "body": [
+    "UAVLab and NavLab are open-source, browser-based engineering environments for exploring navigation concepts with synthetic data.",
+    "The projects compare weighted least squares, 3D mapping-aided GNSS, and factor graph optimization while modelling satellite geometry, sensor measurements, urban masking, and atmospheric delay."
+  ],
+  "order": 3
+}
