@@ -1,9 +1,9 @@
 {
   "slug": "brandon-chen",
   "name": "Brandon Ling-xuan Chen",
-  "role": "Independent and Affiliated Researcher",
+  "role": "Research Assistant",
   "photo": "assets/headshot-placeholder.svg",
-  "bio": "Brandon is a student at Island School and an independent and affiliated researcher in aerospace navigation. His work focuses on GNSS for autonomous navigation and intelligent transport, including urban positioning, multipath and non-line-of-sight reception, and multi-sensor simulation.",
+  "bio": "Brandon is a student at Island School and an Research Assistant in aerospace navigation. His work focuses on GNSS for autonomous navigation and intelligent transport, including urban positioning, multipath and non-line-of-sight reception, and multi-sensor simulation.",
   "email": "chen.brandon1213@gmail.com",
   "orcid": "https://orcid.org/0009-0007-6761-0259",
   "linkedin": "https://www.linkedin.com/in/brandon-chen-gnss/",
@@ -13,7 +13,7 @@
     "Brandon Chen"
   ],
   "affiliations": [
-    "Independent and Affiliated Researcher, Department of Aeronautical and Aviation Engineering, The Hong Kong Polytechnic University",
+    "Research Assistant, Department of Aeronautical and Aviation Engineering, The Hong Kong Polytechnic University",
     "Student, Island School",
     "Student Member, Institute of Navigation"
   ],
@@ -42,7 +42,7 @@
   "experience": [
     {
       "year": "April 2026-present",
-      "title": "Independent and Affiliated Researcher",
+      "title": "Research Assistant",
       "text": "Department of Aeronautical and Aviation Engineering, The Hong Kong Polytechnic University.",
       "href": "https://www.linkedin.com/in/brandon-chen-gnss/",
       "linkLabel": "View LinkedIn profile"
@@ -95,7 +95,7 @@
       "title": "Experience and education",
       "items": [
         {
-          "label": "Independent and Affiliated Researcher, Department of Aeronautical and Aviation Engineering, The Hong Kong Polytechnic University",
+          "label": "Research Assistant, Department of Aeronautical and Aviation Engineering, The Hong Kong Polytechnic University",
           "note": "April 2026-present",
           "href": "https://www.linkedin.com/in/brandon-chen-gnss/"
         },

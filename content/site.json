@@ -5,14 +5,14 @@
   },
   "profile": {
     "name": "Brandon Ling-xuan Chen",
-    "title": "Independent and Affiliated Researcher",
+    "title": "Research Assistant",
     "brand": {
       "leftLogo": "assets/logo-left-placeholder.svg",
       "rightLogo": "assets/logo-right-placeholder.svg",
       "wordmark": "Brandon Ling-xuan Chen",
       "subtitle": "GNSS and Navigation Research"
     },
-    "shortBio": "Independent and affiliated researcher in aerospace navigation, focused on GNSS, positioning, autonomous navigation, and intelligent transport.",
+    "shortBio": "Research Assistant in aerospace navigation, focused on GNSS, positioning, autonomous navigation, and intelligent transport.",
     "headshot": "assets/headshot-placeholder.svg",
     "heroImage": "assets/kaohsiung-backdrop.jpg",
     "heroCredit": {
@@ -270,7 +270,7 @@
       "template": "about",
       "title": "About Brandon Ling-xuan Chen",
       "kicker": "About",
-      "intro": "Brandon Ling-xuan Chen is a student at Island School and an independent and affiliated researcher in aerospace navigation.",
+      "intro": "Brandon Ling-xuan Chen is a student at Island School and an Research Assistant in aerospace navigation.",
       "paragraphs": [
         "My research focuses on Global Navigation Satellite Systems (GNSS) for autonomous navigation and intelligent transport, including unmanned aerial vehicles and autonomous vehicles.",
         "I am particularly interested in urban positioning, multipath and non-line-of-sight reception, 3D mapping-aided GNSS, multi-sensor navigation, and ionospheric effects. UAVLab and NavLab are open-source simulators. My three separate working-paper projects cover Arctic GNSS reflectometry, urban smartphone GNSS, and GNSS radio occultation for typhoons."
@@ -290,7 +290,7 @@
       "entries": [
         {
           "year": "April 2026-present",
-          "title": "Independent and Affiliated Researcher",
+          "title": "Research Assistant",
           "text": "Department of Aeronautical and Aviation Engineering, The Hong Kong Polytechnic University.",
           "href": "https://www.linkedin.com/in/brandon-chen-gnss/",
           "linkLabel": "Open LinkedIn profile"

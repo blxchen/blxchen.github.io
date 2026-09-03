@@ -5,14 +5,14 @@ window.SITE_DATA = {
   },
   "profile": {
     "name": "Brandon Ling-xuan Chen",
-    "title": "Independent and Affiliated Researcher",
+    "title": "Research Assistant",
     "brand": {
       "leftLogo": "assets/logo-left-placeholder.svg",
       "rightLogo": "assets/logo-right-placeholder.svg",
       "wordmark": "Brandon Ling-xuan Chen",
       "subtitle": "GNSS and Navigation Research"
     },
-    "shortBio": "Brandon is a student at Island School and an independent and affiliated researcher in aerospace navigation. His work focuses on GNSS for autonomous navigation and intelligent transport, including urban positioning, multipath and non-line-of-sight reception, and multi-sensor simulation.",
+    "shortBio": "Brandon is a student at Island School and an Research Assistant in aerospace navigation. His work focuses on GNSS for autonomous navigation and intelligent transport, including urban positioning, multipath and non-line-of-sight reception, and multi-sensor simulation.",
     "headshot": "assets/headshot-placeholder.svg",
     "heroImage": "assets/kaohsiung-backdrop.jpg",
     "heroCredit": {
@@ -270,7 +270,7 @@ window.SITE_DATA = {
       "template": "about",
       "title": "About Brandon Ling-xuan Chen",
       "kicker": "About",
-      "intro": "Brandon Ling-xuan Chen is a student at Island School and an independent and affiliated researcher in aerospace navigation.",
+      "intro": "Brandon Ling-xuan Chen is a student at Island School and an Research Assistant in aerospace navigation.",
       "paragraphs": [
         "My research focuses on Global Navigation Satellite Systems (GNSS) for autonomous navigation and intelligent transport, including unmanned aerial vehicles and autonomous vehicles.",
         "I am particularly interested in urban positioning, multipath and non-line-of-sight reception, 3D mapping-aided GNSS, multi-sensor navigation, and ionospheric effects. UAVLab and NavLab are open-source simulators. My three separate working-paper projects cover Arctic GNSS reflectometry, urban smartphone GNSS, and GNSS radio occultation for typhoons."
@@ -290,7 +290,7 @@ window.SITE_DATA = {
       "entries": [
         {
           "year": "April 2026-present",
-          "title": "Independent and Affiliated Researcher",
+          "title": "Research Assistant",
           "text": "Department of Aeronautical and Aviation Engineering, The Hong Kong Polytechnic University.",
           "href": "https://www.linkedin.com/in/brandon-chen-gnss/",
           "linkLabel": "View LinkedIn profile"
@@ -440,9 +440,9 @@ window.SITE_DATA = {
     {
       "slug": "brandon-chen",
       "name": "Brandon Ling-xuan Chen",
-      "role": "Independent and Affiliated Researcher",
+      "role": "Research Assistant",
       "photo": "assets/headshot-placeholder.svg",
-      "bio": "Brandon is a student at Island School and an independent and affiliated researcher in aerospace navigation. His work focuses on GNSS for autonomous navigation and intelligent transport, including urban positioning, multipath and non-line-of-sight reception, and multi-sensor simulation.",
+      "bio": "Brandon is a student at Island School and an Research Assistant in aerospace navigation. His work focuses on GNSS for autonomous navigation and intelligent transport, including urban positioning, multipath and non-line-of-sight reception, and multi-sensor simulation.",
       "email": "chen.brandon1213@gmail.com",
       "orcid": "https://orcid.org/0009-0007-6761-0259",
       "linkedin": "https://www.linkedin.com/in/brandon-chen-gnss/",
@@ -452,7 +452,7 @@ window.SITE_DATA = {
         "Brandon Chen"
       ],
       "affiliations": [
-        "Independent and Affiliated Researcher, Department of Aeronautical and Aviation Engineering, The Hong Kong Polytechnic University",
+        "Research Assistant, Department of Aeronautical and Aviation Engineering, The Hong Kong Polytechnic University",
         "Student, Island School",
         "Student Member, Institute of Navigation"
       ],
@@ -481,7 +481,7 @@ window.SITE_DATA = {
       "experience": [
         {
           "year": "April 2026-present",
-          "title": "Independent and Affiliated Researcher",
+          "title": "Research Assistant",
           "text": "Department of Aeronautical and Aviation Engineering, The Hong Kong Polytechnic University.",
           "href": "https://www.linkedin.com/in/brandon-chen-gnss/",
           "linkLabel": "View LinkedIn profile"
@@ -534,7 +534,7 @@ window.SITE_DATA = {
           "title": "Experience and education",
           "items": [
             {
-              "label": "Independent and Affiliated Researcher, Department of Aeronautical and Aviation Engineering, The Hong Kong Polytechnic University",
+              "label": "Research Assistant, Department of Aeronautical and Aviation Engineering, The Hong Kong Polytechnic University",
               "note": "April 2026-present",
               "href": "https://www.linkedin.com/in/brandon-chen-gnss/"
             },
