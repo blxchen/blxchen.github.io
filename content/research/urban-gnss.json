@@ -6,8 +6,8 @@
   "image": "assets/kaohsiung-backdrop.jpg",
   "tags": [
     "Urban GNSS",
-    "Multipath",
-    "NLOS"
+    "3DMA-GNSS",
+    "Smartphone Navigation"
   ],
   "body": [
     "Buildings can block or reflect satellite signals, producing non-line-of-sight measurements and multipath errors that degrade positioning.",
