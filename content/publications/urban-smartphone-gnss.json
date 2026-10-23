@@ -1,12 +1,12 @@
 {
   "slug": "urban-smartphone-gnss",
   "year": "2026",
-  "type": "Working paper",
-  "title": "Urban Smartphone GNSS (not publication title)",
-  "authors": "Brandon Ling-xuan Chen, Hoi-Wah Ng and Li-Ta Hsu",
-  "venue": "Working project associated with the PolyU Department of Aeronautical and Aviation Engineering",
-  "abstract": "An ongoing research project on urban smartphone GNSS, data analysis, and academic research. The current project name is not the final publication title.",
-  "status": "In progress since April 2026",
+  "type": "Conference peer review",
+  "title": "Lightweight-Learning Assisted Pseudorange Reweighting for Smartphone GNSS in Urban Canyons",
+  "authors": "Brandon Ling-xuan Chen, Derek Hoi Wah Ng, Li-Ta Hsu",
+  "venue": "Under conference peer review",
+  "abstract": "Manuscript on smartphone GNSS pseudorange reweighting for urban canyons, listed as under conference peer review in Brandon’s CV.",
+  "status": "Conference peer review",
   "keywords": [
     "Urban GNSS",
     "Smartphone positioning",

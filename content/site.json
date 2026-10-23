@@ -5,23 +5,17 @@
   },
   "profile": {
     "name": "Brandon Ling-xuan Chen",
-    "title": "Research Assistant",
+    "title": "Research Assistant, Hong Kong Polytechnic University",
     "brand": {
       "leftLogo": "assets/logo-left-placeholder.svg",
       "rightLogo": "assets/logo-right-placeholder.svg",
-      "wordmark": "Brandon Ling-xuan Chen",
-      "subtitle": "GNSS and Navigation Research"
+      "wordmark": "Brandon Chen",
+      "subtitle": "Navigation research"
     },
-    "shortBio": "Research Assistant in aerospace navigation, focused on GNSS, positioning, autonomous navigation, and intelligent transport.",
+    "shortBio": "Independent and affiliated researcher in aerospace navigation, focused on GNSS, positioning, autonomous navigation, and intelligent transport.",
     "headshot": "assets/headshot-placeholder.svg",
     "heroImage": "assets/kaohsiung-backdrop.jpg",
-    "heroCredit": {
-      "label": "Kaohsiung waterfront photo",
-      "author": "Charlie Chan",
-      "source": "https://unsplash.com/photos/city-skyline-across-a-bay-with-colorful-buildings-u0JlhFaQQrc",
-      "license": "Unsplash License",
-      "licenseUrl": "https://unsplash.com/license"
-    },
+    "heroCredit": null,
     "links": [
       {
         "label": "LinkedIn",
@@ -38,35 +32,35 @@
     ],
     "stats": [
       {
-        "value": "3",
-        "label": "Research areas"
+        "value": "06",
+        "label": "Manuscripts and papers"
       },
       {
-        "value": "2",
-        "label": "Open-source simulators"
+        "value": "03",
+        "label": "Research appointments"
       },
       {
-        "value": "3",
-        "label": "Working papers"
+        "value": "02",
+        "label": "Open source simulators"
       }
     ]
   },
   "homepage": {
     "status": [
       {
-        "label": "Now drafting",
-        "value": "3 working papers",
-        "note": "Project titles remain provisional until publication"
+        "label": "Current role",
+        "value": "Research Assistant",
+        "note": "IPNL · Hong Kong Polytechnic University"
       },
       {
-        "label": "Open-source labs",
-        "value": "2 public projects",
-        "note": "UAVLab and NavLab on GitHub"
+        "label": "Research record",
+        "value": "6 manuscripts & papers",
+        "note": "Working, in review, revision, and accepted"
       },
       {
-        "label": "Research focus",
+        "label": "Focus",
         "value": "GNSS + PNT",
-        "note": "Autonomous navigation, multipath, and NLOS"
+        "note": "Urban positioning and next generation navigation"
       }
     ],
     "tabs": [
@@ -270,10 +264,10 @@
       "template": "about",
       "title": "About Brandon Ling-xuan Chen",
       "kicker": "About",
-      "intro": "Brandon Ling-xuan Chen is a student at Island School and an Research Assistant in aerospace navigation.",
+      "intro": "Research Assistant at the Intelligent Positioning and Navigation Laboratory and IB student at Island School.",
       "paragraphs": [
-        "My research focuses on Global Navigation Satellite Systems (GNSS) for autonomous navigation and intelligent transport, including unmanned aerial vehicles and autonomous vehicles.",
-        "I am particularly interested in urban positioning, multipath and non-line-of-sight reception, 3D mapping-aided GNSS, multi-sensor navigation, and ionospheric effects. UAVLab and NavLab are open-source simulators. My three separate working-paper projects cover Arctic GNSS reflectometry, urban smartphone GNSS, and GNSS radio occultation for typhoons."
+        "I study positioning, navigation and timing at the Intelligent Positioning and Navigation Laboratory, Hong Kong Polytechnic University, where I work as a Research Assistant under Professor Li-Ta Hsu.",
+        "My interests include urban GNSS, 3D mapping aided positioning, smartphone and wearable GNSS, and low Earth orbit navigation. I am also completing the International Baccalaureate Diploma Programme at Island School in Hong Kong."
       ]
     },
     "research": {
@@ -286,11 +280,11 @@
       "template": "timeline",
       "title": "Experience",
       "kicker": "Experience",
-      "intro": "Current research affiliations and membership, cross-checked against my LinkedIn-linked ORCID record.",
+      "intro": "Research appointments, engineering work, teaching and service from the attached CV.",
       "entries": [
         {
           "year": "April 2026-present",
-          "title": "Research Assistant",
+          "title": "Independent and Affiliated Researcher",
           "text": "Department of Aeronautical and Aviation Engineering, The Hong Kong Polytechnic University.",
           "href": "https://www.linkedin.com/in/brandon-chen-gnss/",
           "linkLabel": "Open LinkedIn profile"
@@ -319,7 +313,7 @@
       "template": "publications",
       "title": "Working Papers",
       "kicker": "Work in progress",
-      "intro": "Three working-paper projects are in progress. Their titles remain provisional, and none is presented as published or peer reviewed. UAVLab and NavLab remain separate simulator projects."
+      "intro": "Selected manuscripts, papers in review, and an accepted conference contribution. Statuses reflect the attached CV."
     },
     "media": {
       "template": "collection",
@@ -346,7 +340,7 @@
       "template": "cv",
       "title": "CV",
       "kicker": "Curriculum Vitae",
-      "intro": "A concise web CV covering GNSS and navigation research, current affiliations, open-source simulators, and working-paper projects maintained on LinkedIn."
+      "intro": "Education, research appointments, publications, honors and service from Brandon’s curriculum vitae."
     },
     "get-involved": {
       "template": "getInvolved",

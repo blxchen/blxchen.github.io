@@ -5,23 +5,17 @@ window.SITE_DATA = {
   },
   "profile": {
     "name": "Brandon Ling-xuan Chen",
-    "title": "Research Assistant",
+    "title": "Research Assistant, Hong Kong Polytechnic University",
     "brand": {
       "leftLogo": "assets/logo-left-placeholder.svg",
       "rightLogo": "assets/logo-right-placeholder.svg",
-      "wordmark": "Brandon Ling-xuan Chen",
-      "subtitle": "GNSS and Navigation Research"
+      "wordmark": "Brandon Chen",
+      "subtitle": "Navigation research"
     },
-    "shortBio": "Brandon is a student at Island School and an Research Assistant in aerospace navigation. His work focuses on GNSS for autonomous navigation and intelligent transport, including urban positioning, multipath and non-line-of-sight reception, and multi-sensor simulation.",
+    "shortBio": "Brandon Ling-xuan Chen is a Research Assistant at the Intelligent Positioning and Navigation Laboratory, Hong Kong Polytechnic University, and an International Baccalaureate student at Island School. His research spans positioning, navigation and timing, urban GNSS, 3D mapping aided GNSS, smartphone and wearable positioning, and low Earth orbit navigation.",
     "headshot": "assets/headshot-placeholder.svg",
     "heroImage": "assets/kaohsiung-backdrop.jpg",
-    "heroCredit": {
-      "label": "Kaohsiung waterfront photo",
-      "author": "Charlie Chan",
-      "source": "https://unsplash.com/photos/city-skyline-across-a-bay-with-colorful-buildings-u0JlhFaQQrc",
-      "license": "Unsplash License",
-      "licenseUrl": "https://unsplash.com/license"
-    },
+    "heroCredit": null,
     "links": [
       {
         "label": "LinkedIn",
@@ -38,35 +32,35 @@ window.SITE_DATA = {
     ],
     "stats": [
       {
-        "value": "3",
-        "label": "Research areas"
+        "value": "06",
+        "label": "Manuscripts and papers"
       },
       {
-        "value": "2",
-        "label": "Open-source simulators"
+        "value": "03",
+        "label": "Research appointments"
       },
       {
-        "value": "3",
-        "label": "Working papers"
+        "value": "02",
+        "label": "Open source simulators"
       }
     ]
   },
   "homepage": {
     "status": [
       {
-        "label": "Now drafting",
-        "value": "3 working papers",
-        "note": "Project titles remain provisional until publication"
+        "label": "Current role",
+        "value": "Research Assistant",
+        "note": "IPNL · Hong Kong Polytechnic University"
       },
       {
-        "label": "Open-source labs",
-        "value": "2 public projects",
-        "note": "UAVLab and NavLab on GitHub"
+        "label": "Research record",
+        "value": "6 manuscripts & papers",
+        "note": "Working, in review, revision, and accepted"
       },
       {
-        "label": "Research focus",
+        "label": "Focus",
         "value": "GNSS + PNT",
-        "note": "Autonomous navigation, multipath, and NLOS"
+        "note": "Urban positioning and next generation navigation"
       }
     ],
     "tabs": [
@@ -270,10 +264,10 @@ window.SITE_DATA = {
       "template": "about",
       "title": "About Brandon Ling-xuan Chen",
       "kicker": "About",
-      "intro": "Brandon Ling-xuan Chen is a student at Island School and an Research Assistant in aerospace navigation.",
+      "intro": "Research Assistant at the Intelligent Positioning and Navigation Laboratory and IB student at Island School.",
       "paragraphs": [
-        "My research focuses on Global Navigation Satellite Systems (GNSS) for autonomous navigation and intelligent transport, including unmanned aerial vehicles and autonomous vehicles.",
-        "I am particularly interested in urban positioning, multipath and non-line-of-sight reception, 3D mapping-aided GNSS, multi-sensor navigation, and ionospheric effects. UAVLab and NavLab are open-source simulators. My three separate working-paper projects cover Arctic GNSS reflectometry, urban smartphone GNSS, and GNSS radio occultation for typhoons."
+        "I study positioning, navigation and timing at the Intelligent Positioning and Navigation Laboratory, Hong Kong Polytechnic University, where I work as a Research Assistant under Professor Li-Ta Hsu.",
+        "My interests include urban GNSS, 3D mapping aided positioning, smartphone and wearable GNSS, and low Earth orbit navigation. I am also completing the International Baccalaureate Diploma Programme at Island School in Hong Kong."
       ]
     },
     "research": {
@@ -286,21 +280,42 @@ window.SITE_DATA = {
       "template": "timeline",
       "title": "Experience",
       "kicker": "Experience",
-      "intro": "Current research affiliations and membership, cross-checked against my LinkedIn-linked ORCID record.",
+      "intro": "Research appointments, engineering work, teaching and service from the attached CV.",
       "entries": [
         {
-          "year": "April 2026-present",
+          "year": "September 2026–present",
           "title": "Research Assistant",
-          "text": "Department of Aeronautical and Aviation Engineering, The Hong Kong Polytechnic University.",
-          "href": "https://www.linkedin.com/in/brandon-chen-gnss/",
-          "linkLabel": "View LinkedIn profile"
+          "text": "Intelligent Positioning and Navigation Laboratory, Department of Aeronautical and Aviation Engineering, Hong Kong Polytechnic University. Supervised by Professor Li-Ta Hsu."
         },
         {
-          "year": "April 2026-present",
-          "title": "Student Member",
-          "text": "Institute of Navigation.",
-          "href": "https://orcid.org/0009-0007-6761-0259",
-          "linkLabel": "View ORCID record"
+          "year": "April–September 2026",
+          "title": "Independent Researcher",
+          "text": "Department of Aeronautical and Aviation Engineering, Hong Kong Polytechnic University."
+        },
+        {
+          "year": "April–September 2026",
+          "title": "Hardware and Software Engineer",
+          "text": "Industrial Centre, Hong Kong Polytechnic University. Mechanical and electronic engineering and CAD for the Stairio R&D project."
+        },
+        {
+          "year": "2025–2026",
+          "title": "Team Lead, Island School Typhoon Engineers",
+          "text": "MIT EWB competition; second place in Hong Kong for team and individual result."
+        },
+        {
+          "year": "2024–present",
+          "title": "STEM Tutor",
+          "text": "Self employed; tutored more than 15 students in science and mathematics."
+        },
+        {
+          "year": "2023–present",
+          "title": "Assistant Tennis Coach",
+          "text": "Ortega Tennis Ltd."
+        },
+        {
+          "year": "2023–present",
+          "title": "Musician",
+          "text": "Freelance work with bands and as a solo musician."
         }
       ]
     },
@@ -326,7 +341,7 @@ window.SITE_DATA = {
       "template": "publications",
       "title": "Working Papers",
       "kicker": "Work in progress",
-      "intro": "Three working-paper projects are in progress. Their titles remain provisional, and none is presented as published or peer reviewed. UAVLab and NavLab remain separate simulator projects."
+      "intro": "Selected manuscripts, papers in review, and an accepted conference contribution. Statuses reflect the attached CV."
     },
     "media": {
       "template": "collection",
@@ -353,7 +368,7 @@ window.SITE_DATA = {
       "template": "cv",
       "title": "CV",
       "kicker": "Curriculum Vitae",
-      "intro": "A concise web CV covering GNSS and navigation research, current affiliations, open-source simulators, and working-paper projects maintained on LinkedIn."
+      "intro": "Education, research appointments, publications, honors and service from Brandon’s curriculum vitae."
     },
     "get-involved": {
       "template": "getInvolved",
@@ -407,8 +422,8 @@ window.SITE_DATA = {
       "image": "assets/kaohsiung-backdrop.jpg",
       "tags": [
         "Urban GNSS",
-        "Multipath",
-        "NLOS"
+        "3DMA-GNSS",
+        "Smartphone Navigation"
       ],
       "body": [
         "Buildings can block or reflect satellite signals, producing non-line-of-sight measurements and multipath errors that degrade positioning.",
@@ -440,9 +455,9 @@ window.SITE_DATA = {
     {
       "slug": "brandon-chen",
       "name": "Brandon Ling-xuan Chen",
-      "role": "Research Assistant",
+      "role": "Research Assistant, Hong Kong Polytechnic University",
       "photo": "assets/headshot-placeholder.svg",
-      "bio": "Brandon is a student at Island School and an Research Assistant in aerospace navigation. His work focuses on GNSS for autonomous navigation and intelligent transport, including urban positioning, multipath and non-line-of-sight reception, and multi-sensor simulation.",
+      "bio": "Brandon Ling-xuan Chen is a Research Assistant at the Intelligent Positioning and Navigation Laboratory, Hong Kong Polytechnic University, and an International Baccalaureate student at Island School. His research spans positioning, navigation and timing, urban GNSS, 3D mapping aided GNSS, smartphone and wearable positioning, and low Earth orbit navigation.",
       "email": "chen.brandon1213@gmail.com",
       "orcid": "https://orcid.org/0009-0007-6761-0259",
       "linkedin": "https://www.linkedin.com/in/brandon-chen-gnss/",
@@ -452,15 +467,15 @@ window.SITE_DATA = {
         "Brandon Chen"
       ],
       "affiliations": [
-        "Research Assistant, Department of Aeronautical and Aviation Engineering, The Hong Kong Polytechnic University",
-        "Student, Island School",
-        "Student Member, Institute of Navigation"
+        "Research Assistant, Intelligent Positioning and Navigation Laboratory, Hong Kong Polytechnic University",
+        "Student, Island School, Hong Kong",
+        "Member, Institute of Navigation"
       ],
       "education": [
         {
-          "year": "Expected 2028",
-          "qualification": "Secondary education",
-          "institution": "Island School"
+          "year": "Expected June 2028",
+          "qualification": "International Baccalaureate Diploma Programme",
+          "institution": "Island School, Hong Kong"
         }
       ],
       "interests": [
@@ -480,18 +495,39 @@ window.SITE_DATA = {
       ],
       "experience": [
         {
-          "year": "April 2026-present",
+          "year": "September 2026–present",
           "title": "Research Assistant",
-          "text": "Department of Aeronautical and Aviation Engineering, The Hong Kong Polytechnic University.",
-          "href": "https://www.linkedin.com/in/brandon-chen-gnss/",
-          "linkLabel": "View LinkedIn profile"
+          "text": "Intelligent Positioning and Navigation Laboratory, Department of Aeronautical and Aviation Engineering, Hong Kong Polytechnic University. Supervised by Professor Li-Ta Hsu."
         },
         {
-          "year": "April 2026-present",
-          "title": "Student Member",
-          "text": "Institute of Navigation.",
-          "href": "https://orcid.org/0009-0007-6761-0259",
-          "linkLabel": "View ORCID record"
+          "year": "April–September 2026",
+          "title": "Independent Researcher",
+          "text": "Department of Aeronautical and Aviation Engineering, Hong Kong Polytechnic University."
+        },
+        {
+          "year": "April–September 2026",
+          "title": "Hardware and Software Engineer",
+          "text": "Industrial Centre, Hong Kong Polytechnic University. Mechanical and electronic engineering and CAD for the Stairio R&D project."
+        },
+        {
+          "year": "2025–2026",
+          "title": "Team Lead, Island School Typhoon Engineers",
+          "text": "MIT EWB competition; second place in Hong Kong for team and individual result."
+        },
+        {
+          "year": "2024–present",
+          "title": "STEM Tutor",
+          "text": "Self employed; tutored more than 15 students in science and mathematics."
+        },
+        {
+          "year": "2023–present",
+          "title": "Assistant Tennis Coach",
+          "text": "Ortega Tennis Ltd."
+        },
+        {
+          "year": "2023–present",
+          "title": "Musician",
+          "text": "Freelance work with bands and as a solo musician."
         }
       ],
       "activities": [
@@ -517,66 +553,131 @@ window.SITE_DATA = {
       ],
       "cv": [
         {
-          "title": "Research focus",
+          "title": "Education",
           "items": [
             {
-              "label": "GNSS for autonomous navigation, unmanned aerial vehicles, autonomous vehicles, and intelligent transport"
+              "label": "International Baccalaureate Diploma Programme, Island School",
+              "note": "Expected June 2028"
             },
             {
-              "label": "Urban positioning, multipath and NLOS mitigation, 3D mapping-aided GNSS, and multi-sensor navigation"
+              "label": "Higher Level: Mathematics Analysis and Approaches, Physics, Economics"
             },
             {
-              "label": "Ionospheric and tropospheric effects in GNSS simulation"
+              "label": "Standard Level: Chemistry, Chinese B, English Language and Literature"
             }
           ]
         },
         {
-          "title": "Experience and education",
+          "title": "Research appointments",
           "items": [
             {
-              "label": "Research Assistant, Department of Aeronautical and Aviation Engineering, The Hong Kong Polytechnic University",
-              "note": "April 2026-present",
-              "href": "https://www.linkedin.com/in/brandon-chen-gnss/"
+              "label": "Research Assistant — Intelligent Positioning and Navigation Laboratory, Department of Aeronautical and Aviation Engineering, Hong Kong Polytechnic University. Supervised by Professor Li-Ta Hsu.",
+              "note": "September 2026–present"
             },
             {
-              "label": "Student Member, Institute of Navigation",
-              "note": "April 2026-present",
-              "href": "https://orcid.org/0009-0007-6761-0259"
+              "label": "Independent Researcher — Department of Aeronautical and Aviation Engineering, Hong Kong Polytechnic University.",
+              "note": "April–September 2026"
             },
             {
-              "label": "Student, Island School",
-              "note": "Expected 2028"
+              "label": "Hardware and Software Engineer — Industrial Centre, Hong Kong Polytechnic University. Mechanical and electronic engineering and CAD for the Stairio R&D project.",
+              "note": "April–September 2026"
             }
           ]
         },
         {
-          "title": "Technical skills",
+          "title": "Publications and manuscripts",
           "items": [
             {
-              "label": "Python, SQL, SolidWorks CAD, and Autodesk Fusion 360"
+              "label": "Shadow-Edge Timing for Urban Positioning with Low-Earth-Orbit Satellites",
+              "note": "Working paper"
             },
             {
-              "label": "Browser-based GNSS and UAV simulation through UAVLab and NavLab",
-              "href": "https://github.com/blxchen"
+              "label": "Lightweight-Learning Assisted Pseudorange Reweighting for Smartphone GNSS in Urban Canyons",
+              "note": "Conference peer review · with Derek Hoi Wah Ng and Li-Ta Hsu"
+            },
+            {
+              "label": "Altitude-Dependent Geolocation Effects on Typhoon-Relative FORMOSAT-7/COSMIC-2 Radio Occultation Sampling and Refractivity Compositing",
+              "note": "Journal revision process"
+            },
+            {
+              "label": "Altitude-Dependent Geolocation Effects on Typhoon-Relative FORMOSAT-7/COSMIC-2 Radio Occultation Sampling",
+              "note": "Accepted, TASTI 2026"
+            },
+            {
+              "label": "Uncertainty-Aware 3D-Mapping-Aided GNSS with Probabilistic Building Models",
+              "note": "Journal peer review"
+            },
+            {
+              "label": "The Value of Information in Smartphone 3D-Mapping-Aided GNSS",
+              "note": "Journal peer review"
             }
           ]
         },
         {
-          "title": "Working papers",
+          "title": "Other experience",
           "items": [
             {
-              "label": "Three working-paper projects",
-              "note": "UAVLab and NavLab are separate simulator projects",
-              "href": "https://www.linkedin.com/in/brandon-chen-gnss/details/projects/"
+              "label": "Team Lead, Island School Typhoon Engineers — MIT EWB competition; second place in Hong Kong for team and individual result.",
+              "note": "2025–2026"
+            },
+            {
+              "label": "STEM Tutor — Self employed; tutored more than 15 students in science and mathematics.",
+              "note": "2024–present"
+            },
+            {
+              "label": "Assistant Tennis Coach — Ortega Tennis Ltd.",
+              "note": "2023–present"
+            },
+            {
+              "label": "Musician — Freelance work with bands and as a solo musician.",
+              "note": "2023–present"
             }
           ]
         },
         {
-          "title": "Profiles",
-          "source": "profiles"
+          "title": "Honors",
+          "items": [
+            {
+              "label": "Second place in Hong Kong, individual (90.32%) — MIT EWB"
+            },
+            {
+              "label": "Second place in Hong Kong, team — MIT EWB"
+            },
+            {
+              "label": "Certificate of Science Commendation — Island School"
+            },
+            {
+              "label": "Spirit Award for Dedication to Extracurricular Activities — Island School"
+            }
+          ]
+        },
+        {
+          "title": "Academic and professional service",
+          "items": [
+            {
+              "label": "Member, Institute of Navigation",
+              "note": "2026–present"
+            },
+            {
+              "label": "Student Assistant, ICASSE 2026"
+            },
+            {
+              "label": "Editor in Chief, Island School Science Journal"
+            },
+            {
+              "label": "STEM Committee Member and Head of Charity, Island School"
+            },
+            {
+              "label": "Founder and President, Physics and Astrophysics Society, Island School"
+            },
+            {
+              "label": "Teaching Assistant, Space Science; syllabus support, Mathematics MYP and IGCSE"
+            }
+          ]
         }
       ],
       "order": 1,
+      "phone": "(+852) 9452 4503",
       "url": "research/team/brandon-chen/"
     },
     {
@@ -1213,12 +1314,12 @@ window.SITE_DATA = {
     {
       "slug": "urban-smartphone-gnss",
       "year": "2026",
-      "type": "Working paper",
-      "title": "Urban Smartphone GNSS (not publication title)",
-      "authors": "Brandon Ling-xuan Chen, Hoi-Wah Ng and Li-Ta Hsu",
-      "venue": "Working project associated with the PolyU Department of Aeronautical and Aviation Engineering",
-      "abstract": "An ongoing research project on urban smartphone GNSS, data analysis, and academic research. The current project name is not the final publication title.",
-      "status": "In progress since April 2026",
+      "type": "Conference peer review",
+      "title": "Lightweight-Learning Assisted Pseudorange Reweighting for Smartphone GNSS in Urban Canyons",
+      "authors": "Brandon Ling-xuan Chen, Derek Hoi Wah Ng, Li-Ta Hsu",
+      "venue": "Under conference peer review",
+      "abstract": "Manuscript on smartphone GNSS pseudorange reweighting for urban canyons, listed as under conference peer review in Brandon’s CV.",
+      "status": "Conference peer review",
       "keywords": [
         "Urban GNSS",
         "Smartphone positioning",
@@ -1237,12 +1338,12 @@ window.SITE_DATA = {
     {
       "slug": "gnss-radio-occultation-typhoons-formosat-7-cosmic-2",
       "year": "2026",
-      "type": "Working paper",
-      "title": "GNSS Radio Occultation on Typhoons FORMOSAT-7/COSMIC-2",
+      "type": "Journal revision",
+      "title": "Altitude-Dependent Geolocation Effects on Typhoon-Relative FORMOSAT-7/COSMIC-2 Radio Occultation Sampling and Refractivity Compositing",
       "authors": "Brandon Ling-xuan Chen",
-      "venue": "Working project — not published or peer reviewed",
-      "abstract": "An ongoing project examining GNSS radio occultation in relation to typhoons using FORMOSAT-7/COSMIC-2.",
-      "status": "In progress",
+      "venue": "In journal revision process",
+      "abstract": "Manuscript on altitude-dependent geolocation effects in typhoon-relative FORMOSAT-7/COSMIC-2 radio occultation sampling and refractivity compositing, listed as in journal revision in Brandon’s CV.",
+      "status": "Journal revision process",
       "keywords": [
         "GNSS radio occultation",
         "Typhoons",
@@ -1255,6 +1356,82 @@ window.SITE_DATA = {
       ],
       "order": 3,
       "url": "research/publications/gnss-radio-occultation-typhoons-formosat-7-cosmic-2/"
+    },
+    {
+      "slug": "shadow-edge-leo-positioning",
+      "year": "2026",
+      "type": "Working paper",
+      "title": "Shadow-Edge Timing for Urban Positioning with Low-Earth-Orbit Satellites",
+      "authors": "Brandon Ling-xuan Chen",
+      "venue": "Working paper",
+      "abstract": "Shadow-Edge Timing for Urban Positioning with Low-Earth-Orbit Satellites. Status listed in Brandon’s attached CV: Working paper.",
+      "status": "Working paper",
+      "keywords": [
+        "Low-Earth-orbit positioning",
+        "Urban positioning"
+      ],
+      "profileSlugs": [
+        "brandon-chen"
+      ],
+      "order": 4,
+      "url": "research/publications/shadow-edge-leo-positioning/"
+    },
+    {
+      "slug": "typhoon-radio-occultation-tasti",
+      "year": "2026",
+      "type": "Accepted conference paper",
+      "title": "Altitude-Dependent Geolocation Effects on Typhoon-Relative FORMOSAT-7/COSMIC-2 Radio Occultation Sampling",
+      "authors": "Brandon Ling-xuan Chen",
+      "venue": "Accepted, TASTI 2026",
+      "abstract": "Altitude-Dependent Geolocation Effects on Typhoon-Relative FORMOSAT-7/COSMIC-2 Radio Occultation Sampling. Status listed in Brandon’s attached CV: Accepted, TASTI 2026.",
+      "status": "Accepted, TASTI 2026",
+      "keywords": [
+        "Radio occultation",
+        "Typhoons"
+      ],
+      "profileSlugs": [
+        "brandon-chen"
+      ],
+      "order": 5,
+      "url": "research/publications/typhoon-radio-occultation-tasti/"
+    },
+    {
+      "slug": "uncertainty-aware-3dma-gnss",
+      "year": "2026",
+      "type": "Journal peer review",
+      "title": "Uncertainty-Aware 3D-Mapping-Aided GNSS with Probabilistic Building Models",
+      "authors": "Brandon Ling-xuan Chen",
+      "venue": "Under journal peer review",
+      "abstract": "Uncertainty-Aware 3D-Mapping-Aided GNSS with Probabilistic Building Models. Status listed in Brandon’s attached CV: Under journal peer review.",
+      "status": "Under journal peer review",
+      "keywords": [
+        "3D mapping-aided GNSS",
+        "Probabilistic building models"
+      ],
+      "profileSlugs": [
+        "brandon-chen"
+      ],
+      "order": 6,
+      "url": "research/publications/uncertainty-aware-3dma-gnss/"
+    },
+    {
+      "slug": "value-of-information-smartphone-3dma",
+      "year": "2026",
+      "type": "Journal peer review",
+      "title": "The Value of Information in Smartphone 3D-Mapping-Aided GNSS",
+      "authors": "Brandon Ling-xuan Chen",
+      "venue": "Under journal peer review",
+      "abstract": "The Value of Information in Smartphone 3D-Mapping-Aided GNSS. Status listed in Brandon’s attached CV: Under journal peer review.",
+      "status": "Under journal peer review",
+      "keywords": [
+        "Smartphone GNSS",
+        "3D mapping-aided GNSS"
+      ],
+      "profileSlugs": [
+        "brandon-chen"
+      ],
+      "order": 7,
+      "url": "research/publications/value-of-information-smartphone-3dma/"
     }
   ],
   "media": [],

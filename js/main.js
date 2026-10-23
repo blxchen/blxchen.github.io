@@ -170,7 +170,8 @@
   function hero() {
     return `
       <section class="hero">
-        <img class="hero-image" src="${asset(data.profile.heroImage)}" alt="">
+        <div class="hero-grid" aria-hidden="true"></div>
+        <div class="hero-earth" aria-hidden="true"><div class="hero-earth-glow"></div></div>
         <div class="hero-overlay"></div>
         <div class="hero-satellite-field" aria-hidden="true">
           <span class="orbit-ring"></span>
@@ -190,13 +191,13 @@
           </span>
         </div>
         <div class="hero-content reveal">
-          <p class="eyebrow">${text(data.contact.location)}</p>
-          <h1>${data.profile.name}</h1>
+          <p class="eyebrow">Independent research / Hong Kong + Taiwan</p>
+          <h1>Positioning the<br><em>future of navigation.</em></h1>
           <p class="hero-title">${text(data.profile.title)}</p>
-          <p class="hero-copy">${text(data.profile.shortBio)}</p>
+          <p class="hero-copy">Brandon Ling-xuan Chen studies GNSS, urban positioning, and next generation navigation systems.</p>
           <div class="hero-actions">
             <a class="button primary" href="${url("research/")}">View research</a>
-            <a class="button" href="${url("get-involved/contact/")}">Start a conversation</a>
+            <a class="button" href="${url("cv/")}">Explore CV</a>
           </div>
         </div>
         <aside class="status-panel reveal">
@@ -206,6 +207,51 @@
         </aside>
       </section>
     `;
+  }
+
+  function playHomeIntro() {
+    if (pageKey !== "home" || new URLSearchParams(window.location.search).has("q") || $(".landing-intro")) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || window.sessionStorage.getItem("brandon-intro-seen")) return;
+    const overlay = document.createElement("div");
+    overlay.className = "landing-intro";
+    overlay.setAttribute("role", "dialog");
+    overlay.setAttribute("aria-label", "Brandon Chen site introduction");
+    overlay.innerHTML = `<div class="intro-noise"></div><div class="intro-orbit"></div><div class="intro-center"><span class="intro-overline">INITIALIZING / NAVIGATION SYSTEM</span><div class="intro-letters" aria-label="Brandon Chen"></div><span class="intro-progress"><i></i></span><span class="intro-caption">GNSS · PNT · AUTONOMY</span></div><button class="intro-skip" type="button">Skip intro <span>↗</span></button>`;
+    document.body.appendChild(overlay);
+    document.body.classList.add("intro-active");
+    const word = "BRANDON CHEN";
+    const glyphs = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    const letters = $(".intro-letters", overlay);
+    [...word].forEach((char, index) => {
+      const span = document.createElement("span");
+      span.textContent = char === " " ? "\u00a0" : glyphs[(index * 7 + 11) % glyphs.length];
+      span.style.setProperty("--i", index);
+      span.style.setProperty("--dx", `${(index % 2 ? 1 : -1) * (30 + index * 8)}px`);
+      span.style.setProperty("--dy", `${(index % 3 - 1) * 90}px`);
+      letters.appendChild(span);
+    });
+    const scramble = window.setInterval(() => {
+      [...letters.children].forEach((span, index) => {
+        if (word[index] !== " ") span.textContent = glyphs[Math.floor(Math.random() * glyphs.length)];
+      });
+    }, 75);
+    let finished = false;
+    const finish = () => {
+      if (finished) return;
+      finished = true;
+      window.clearInterval(scramble);
+      window.sessionStorage.setItem("brandon-intro-seen", "1");
+      overlay.classList.add("departing");
+      document.body.classList.remove("intro-active");
+      window.setTimeout(() => overlay.remove(), 900);
+    };
+    $(".intro-skip", overlay).addEventListener("click", finish);
+    window.setTimeout(() => {
+      window.clearInterval(scramble);
+      [...letters.children].forEach((span, index) => { span.textContent = word[index] === " " ? "\u00a0" : word[index]; });
+      overlay.classList.add("assembled");
+    }, 620);
+    window.setTimeout(finish, 2350);
   }
 
   function sectionHeader(kicker, title, intro) {
@@ -378,7 +424,7 @@
 
     return `
       <section class="band home-team-preview">
-        ${sectionHeader("Team", "People behind the work", "The first two team files appear here as homepage slots.")}
+        ${sectionHeader("People", "Research connections", "Researchers connected through positioning and navigation work.")}
         <div class="home-team-grid">
           ${members.map((person) => `
             <a class="person-card home-team-card reveal" href="${url(person.url)}">
@@ -417,19 +463,19 @@
           </div>
         </div>
         <div class="notice-panel reveal">
-          <p class="eyebrow">Current focus</p>
-          <h2>2026 drafts and collaborations</h2>
-          <p>Working papers, research notes, and collaboration pages are being organized here.</p>
+          <p class="eyebrow">Current appointment</p>
+          <h2>Intelligent Positioning and Navigation Laboratory</h2>
+          <p>Research Assistant at Hong Kong Polytechnic University, working across urban GNSS, PNT, and emerging navigation systems.</p>
         </div>
       </section>
       <section class="band">
-        ${sectionHeader("Research", "Research directions", "Three editable themes with their own detail pages.")}
+        ${sectionHeader("Research", "Research directions", "Selected areas in satellite positioning, autonomous navigation, and simulation.")}
         <div class="card-grid">${data.research.map((item) => researchCard(item, true)).join("")}</div>
       </section>
       ${homeTeamPreview()}
       <section class="band split-band">
         <div>
-          ${sectionHeader("Recent record", "News and writing", "Latest placeholder updates from the research program.")}
+          ${sectionHeader("Recent record", "News and writing", "Updates and notes from the research program.")}
         </div>
         <div class="stacked-list">
           ${data.news.slice(0, 2).map((item) => collectionCard(item, "news")).join("")}
@@ -1299,7 +1345,7 @@
       { title: "Working papers", items: workingPapers.map((item) => ({ label: item.title, href: url(item.url), note: "In progress — not published" })) }
     ];
     return `
-      <section class="page-hero">${sectionHeader(page.kicker, page.title, page.intro)}</section>
+      <section class="page-hero">${sectionHeader(page.kicker, page.title, page.intro)}<a class="button primary" href="${asset("assets/brandon-chen-cv.pdf")}" download>Download full CV ↗</a></section>
       <section class="cv-grid">
         ${groups.map((group) => `
           <article class="cv-card reveal">
@@ -2425,6 +2471,7 @@
   async function bootstrap() {
     const backend = window.RESEARCH_BACKEND;
     render();
+    playHomeIntro();
     if (backend && backend.isConfigured()) {
       try {
         const [remotePublications, remoteProfiles] = await Promise.all([backend.listPublications(), backend.listProfiles()]);

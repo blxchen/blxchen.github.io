@@ -1,9 +1,9 @@
 {
   "slug": "brandon-chen",
   "name": "Brandon Ling-xuan Chen",
-  "role": "Research Assistant",
+  "role": "Research Assistant, Hong Kong Polytechnic University",
   "photo": "assets/headshot-placeholder.svg",
-  "bio": "Brandon is a student at Island School and an Research Assistant in aerospace navigation. His work focuses on GNSS for autonomous navigation and intelligent transport, including urban positioning, multipath and non-line-of-sight reception, and multi-sensor simulation.",
+  "bio": "Brandon Ling-xuan Chen is a Research Assistant at the Intelligent Positioning and Navigation Laboratory, Hong Kong Polytechnic University, and an International Baccalaureate student at Island School. His research spans positioning, navigation and timing, urban GNSS, 3D mapping aided GNSS, smartphone and wearable positioning, and low Earth orbit navigation.",
   "email": "chen.brandon1213@gmail.com",
   "orcid": "https://orcid.org/0009-0007-6761-0259",
   "linkedin": "https://www.linkedin.com/in/brandon-chen-gnss/",
@@ -13,15 +13,15 @@
     "Brandon Chen"
   ],
   "affiliations": [
-    "Research Assistant, Department of Aeronautical and Aviation Engineering, The Hong Kong Polytechnic University",
-    "Student, Island School",
-    "Student Member, Institute of Navigation"
+    "Research Assistant, Intelligent Positioning and Navigation Laboratory, Hong Kong Polytechnic University",
+    "Student, Island School, Hong Kong",
+    "Member, Institute of Navigation"
   ],
   "education": [
     {
-      "year": "Expected 2028",
-      "qualification": "Secondary education",
-      "institution": "Island School"
+      "year": "Expected June 2028",
+      "qualification": "International Baccalaureate Diploma Programme",
+      "institution": "Island School, Hong Kong"
     }
   ],
   "interests": [
@@ -41,18 +41,39 @@
   ],
   "experience": [
     {
-      "year": "April 2026-present",
+      "year": "September 2026–present",
       "title": "Research Assistant",
-      "text": "Department of Aeronautical and Aviation Engineering, The Hong Kong Polytechnic University.",
-      "href": "https://www.linkedin.com/in/brandon-chen-gnss/",
-      "linkLabel": "View LinkedIn profile"
+      "text": "Intelligent Positioning and Navigation Laboratory, Department of Aeronautical and Aviation Engineering, Hong Kong Polytechnic University. Supervised by Professor Li-Ta Hsu."
     },
     {
-      "year": "April 2026-present",
-      "title": "Student Member",
-      "text": "Institute of Navigation.",
-      "href": "https://orcid.org/0009-0007-6761-0259",
-      "linkLabel": "View ORCID record"
+      "year": "April–September 2026",
+      "title": "Independent Researcher",
+      "text": "Department of Aeronautical and Aviation Engineering, Hong Kong Polytechnic University."
+    },
+    {
+      "year": "April–September 2026",
+      "title": "Hardware and Software Engineer",
+      "text": "Industrial Centre, Hong Kong Polytechnic University. Mechanical and electronic engineering and CAD for the Stairio R&D project."
+    },
+    {
+      "year": "2025–2026",
+      "title": "Team Lead, Island School Typhoon Engineers",
+      "text": "MIT EWB competition; second place in Hong Kong for team and individual result."
+    },
+    {
+      "year": "2024–present",
+      "title": "STEM Tutor",
+      "text": "Self employed; tutored more than 15 students in science and mathematics."
+    },
+    {
+      "year": "2023–present",
+      "title": "Assistant Tennis Coach",
+      "text": "Ortega Tennis Ltd."
+    },
+    {
+      "year": "2023–present",
+      "title": "Musician",
+      "text": "Freelance work with bands and as a solo musician."
     }
   ],
   "activities": [
@@ -78,64 +99,129 @@
   ],
   "cv": [
     {
-      "title": "Research focus",
+      "title": "Education",
       "items": [
         {
-          "label": "GNSS for autonomous navigation, unmanned aerial vehicles, autonomous vehicles, and intelligent transport"
+          "label": "International Baccalaureate Diploma Programme, Island School",
+          "note": "Expected June 2028"
         },
         {
-          "label": "Urban positioning, multipath and NLOS mitigation, 3D mapping-aided GNSS, and multi-sensor navigation"
+          "label": "Higher Level: Mathematics Analysis and Approaches, Physics, Economics"
         },
         {
-          "label": "Ionospheric and tropospheric effects in GNSS simulation"
+          "label": "Standard Level: Chemistry, Chinese B, English Language and Literature"
         }
       ]
     },
     {
-      "title": "Experience and education",
+      "title": "Research appointments",
       "items": [
         {
-          "label": "Research Assistant, Department of Aeronautical and Aviation Engineering, The Hong Kong Polytechnic University",
-          "note": "April 2026-present",
-          "href": "https://www.linkedin.com/in/brandon-chen-gnss/"
+          "label": "Research Assistant — Intelligent Positioning and Navigation Laboratory, Department of Aeronautical and Aviation Engineering, Hong Kong Polytechnic University. Supervised by Professor Li-Ta Hsu.",
+          "note": "September 2026–present"
         },
         {
-          "label": "Student Member, Institute of Navigation",
-          "note": "April 2026-present",
-          "href": "https://orcid.org/0009-0007-6761-0259"
+          "label": "Independent Researcher — Department of Aeronautical and Aviation Engineering, Hong Kong Polytechnic University.",
+          "note": "April–September 2026"
         },
         {
-          "label": "Student, Island School",
-          "note": "Expected 2028"
+          "label": "Hardware and Software Engineer — Industrial Centre, Hong Kong Polytechnic University. Mechanical and electronic engineering and CAD for the Stairio R&D project.",
+          "note": "April–September 2026"
         }
       ]
     },
     {
-      "title": "Technical skills",
+      "title": "Publications and manuscripts",
       "items": [
         {
-          "label": "Python, SQL, SolidWorks CAD, and Autodesk Fusion 360"
+          "label": "Shadow-Edge Timing for Urban Positioning with Low-Earth-Orbit Satellites",
+          "note": "Working paper"
         },
         {
-          "label": "Browser-based GNSS and UAV simulation through UAVLab and NavLab",
-          "href": "https://github.com/blxchen"
+          "label": "Lightweight-Learning Assisted Pseudorange Reweighting for Smartphone GNSS in Urban Canyons",
+          "note": "Conference peer review · with Derek Hoi Wah Ng and Li-Ta Hsu"
+        },
+        {
+          "label": "Altitude-Dependent Geolocation Effects on Typhoon-Relative FORMOSAT-7/COSMIC-2 Radio Occultation Sampling and Refractivity Compositing",
+          "note": "Journal revision process"
+        },
+        {
+          "label": "Altitude-Dependent Geolocation Effects on Typhoon-Relative FORMOSAT-7/COSMIC-2 Radio Occultation Sampling",
+          "note": "Accepted, TASTI 2026"
+        },
+        {
+          "label": "Uncertainty-Aware 3D-Mapping-Aided GNSS with Probabilistic Building Models",
+          "note": "Journal peer review"
+        },
+        {
+          "label": "The Value of Information in Smartphone 3D-Mapping-Aided GNSS",
+          "note": "Journal peer review"
         }
       ]
     },
     {
-      "title": "Working papers",
+      "title": "Other experience",
       "items": [
         {
-          "label": "Three working-paper projects",
-          "note": "UAVLab and NavLab are separate simulator projects",
-          "href": "https://www.linkedin.com/in/brandon-chen-gnss/details/projects/"
+          "label": "Team Lead, Island School Typhoon Engineers — MIT EWB competition; second place in Hong Kong for team and individual result.",
+          "note": "2025–2026"
+        },
+        {
+          "label": "STEM Tutor — Self employed; tutored more than 15 students in science and mathematics.",
+          "note": "2024–present"
+        },
+        {
+          "label": "Assistant Tennis Coach — Ortega Tennis Ltd.",
+          "note": "2023–present"
+        },
+        {
+          "label": "Musician — Freelance work with bands and as a solo musician.",
+          "note": "2023–present"
         }
       ]
     },
     {
-      "title": "Profiles",
-      "source": "profiles"
+      "title": "Honors",
+      "items": [
+        {
+          "label": "Second place in Hong Kong, individual (90.32%) — MIT EWB"
+        },
+        {
+          "label": "Second place in Hong Kong, team — MIT EWB"
+        },
+        {
+          "label": "Certificate of Science Commendation — Island School"
+        },
+        {
+          "label": "Spirit Award for Dedication to Extracurricular Activities — Island School"
+        }
+      ]
+    },
+    {
+      "title": "Academic and professional service",
+      "items": [
+        {
+          "label": "Member, Institute of Navigation",
+          "note": "2026–present"
+        },
+        {
+          "label": "Student Assistant, ICASSE 2026"
+        },
+        {
+          "label": "Editor in Chief, Island School Science Journal"
+        },
+        {
+          "label": "STEM Committee Member and Head of Charity, Island School"
+        },
+        {
+          "label": "Founder and President, Physics and Astrophysics Society, Island School"
+        },
+        {
+          "label": "Teaching Assistant, Space Science; syllabus support, Mathematics MYP and IGCSE"
+        }
+      ]
     }
   ],
-  "order": 1
+  "order": 1,
+  "phone": "(+852) 9452 4503"
 }
