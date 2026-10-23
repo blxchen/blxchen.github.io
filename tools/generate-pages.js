@@ -89,6 +89,7 @@ function htmlFor(pageKey, title, base, data) {
   <title>${title} | ${data.profile.name}</title>
   <link rel="stylesheet" href="${base}css/styles.css">
   <link rel="stylesheet" href="${base}css/xona.css">
+  <link rel="stylesheet" href="${base}css/xona-motion.css">
 </head>
 <body data-page="${pageKey}" data-base="${base}">
   <div id="site-shell"></div>

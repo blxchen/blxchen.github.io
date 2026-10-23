@@ -146,20 +146,37 @@
   function hero() {
     return `
       <section class="hero">
-        <img class="hero-cinematic" src="${asset("assets/orbital-horizon.png")}" alt="Earth's horizon viewed from orbit at night">
+        <div class="hero-slides" aria-hidden="true">
+          <img class="hero-cinematic is-active" src="${asset("assets/orbital-horizon.png")}" alt="">
+          <img class="hero-cinematic" src="${asset("assets/kaohsiung-backdrop.jpg")}" alt="">
+          <img class="hero-cinematic" src="${asset("assets/research-hero.png")}" alt="">
+        </div>
         <div class="hero-shade" aria-hidden="true"></div>
+        <div class="hero-telemetry" aria-hidden="true"><small>RESEARCH SIGNAL</small><strong>GNSS / PNT</strong><div class="telemetry-lines"><i></i><i></i><i></i><i></i></div><dl><div><dt>FOCUS</dt><dd>URBAN + SPACE</dd></div><div><dt>STATUS</dt><dd>ACTIVE ↗</dd></div><div><dt>LOCATION</dt><dd>HK / TW</dd></div></dl></div>
         <div class="hero-content">
-          <div class="hero-topline"><span>BRANDON CHEN / ACADEMIC PORTFOLIO</span><span>HONG KONG · TAIWAN</span></div>
-          <div class="hero-main reveal"><p class="eyebrow">Research at the edge of positioning</p><h1>Navigation<br>for what’s <em>next.</em></h1><div class="hero-bottom"><p>Research in GNSS, urban positioning, and next generation navigation systems.</p><a class="round-arrow" href="${url("research/")}" aria-label="Explore research">↗</a></div></div>
-          <div class="hero-foot"><span>01 / 05 — EXPLORE THE WORK</span><a href="#research-intro">Scroll to discover ↓</a></div>
+          <div class="hero-main"><p class="eyebrow">BRANDON CHEN / NAVIGATION RESEARCH</p><h1>Navigation for<br>what comes next.</h1><div class="hero-bottom"><p>Research in satellite positioning, urban GNSS, and next-generation navigation systems.</p><a class="round-arrow" href="${url("research/")}" aria-label="Explore research">↗</a></div></div>
+          <div class="hero-foot"><a href="#orbit-story">SCROLL TO EXPLORE ↓</a><div class="hero-progress" aria-label="Hero scenes"><button class="active" type="button" aria-label="View orbital scene" data-hero-slide="0"></button><button type="button" aria-label="View city scene" data-hero-slide="1"></button><button type="button" aria-label="View research scene" data-hero-slide="2"></button></div></div>
         </div>
       </section>
     `;
   }
 
+  function orbitStory() {
+    return `<section class="orbit-story" id="orbit-story" aria-label="Navigation research overview"><div class="orbit-sticky"><div class="orbit-ruler" aria-hidden="true"></div><img class="orbit-earth" src="${asset("assets/earth-globe.png")}" alt="Planet Earth"><div class="orbit-copy"><span>THE RESEARCH QUESTION</span><h2>Our world needs<br>better positioning.</h2><p>Reliable navigation should work beyond clear skies and ideal conditions.</p></div><div class="orbit-label orbit-label-a" aria-hidden="true">LEGACY GNSS<br><small>SPACE / SIGNAL</small></div><div class="orbit-label orbit-label-b" aria-hidden="true">BRANDON CHEN<br><small>URBAN / AUTONOMY</small></div></div></section>`;
+  }
+
+  function applicationsScene() {
+    const labels = ["Urban GNSS", "Autonomous navigation", "Navigation simulation", "Satellite signals", "Resilient positioning", "Smartphone PNT"];
+    const track = labels.map((label) => `<span>${label} <b aria-hidden="true">↗</b></span>`).join("");
+    return `<section class="applications-scene"><img src="${asset("assets/kaohsiung-backdrop.jpg")}" alt="City landscape"><div class="applications-shade"></div><div class="applications-heading"><p>APPLICATIONS / RESEARCH</p><h2>One pursuit.<br>Many environments.</h2><span>Research that carries positioning beyond the ideal test case and into the places where people move.</span></div><div class="applications-marquees" aria-label="Research themes"><div class="marquee-track">${track}${track}</div><div class="marquee-track reverse">${track}${track}</div></div></section>`;
+  }
+
   function playHomeIntro() {
     if (pageKey !== "home" || new URLSearchParams(window.location.search).has("q") || $(".landing-intro")) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || window.sessionStorage.getItem("brandon-intro-seen")) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      document.body.classList.add("hero-ready");
+      return;
+    }
     const overlay = document.createElement("div");
     overlay.className = "landing-intro";
     overlay.setAttribute("role", "dialog");
@@ -188,9 +205,9 @@
       if (finished) return;
       finished = true;
       window.clearInterval(scramble);
-      window.sessionStorage.setItem("brandon-intro-seen", "1");
       overlay.classList.add("departing");
       document.body.classList.remove("intro-active");
+      document.body.classList.add("hero-ready");
       window.setTimeout(() => overlay.remove(), 900);
     };
     $(".intro-skip", overlay).addEventListener("click", finish);
@@ -395,10 +412,12 @@
   function renderHome() {
     return `
       ${hero()}
+      ${orbitStory()}
       <section class="home-manifesto" id="research-intro">
         <div class="manifesto-grid"><p class="eyebrow">01 / The mission</p><div><h2>Precision for a world<br>that never <em>stands still.</em></h2><p>Positioning is invisible infrastructure. My work explores how satellite signals, maps, and sensors can make navigation more resilient in the environments where it matters most.</p><a class="text-link" href="${url("about/")}">Meet Brandon <span>↗</span></a></div></div>
         <div class="manifesto-stats">${data.profile.stats.map((stat) => `<div class="metric reveal"><strong>${stat.value}</strong><span>${text(stat.label)}</span></div>`).join("")}</div>
       </section>
+      ${applicationsScene()}
       <section class="home-research" id="research-directions">
         <div class="home-section-head"><p class="eyebrow">02 / Research directions</p><h2>Making sense<br>of <em>where we are.</em></h2><p>From urban canyons to autonomous systems, these research areas share a common pursuit: robust, useful positioning.</p></div>
         <div class="research-rows">${data.research.map((item, index) => `<a class="research-row motion-card reveal" href="${url(item.url)}"><span class="research-row-index">0${index + 1}</span><div><h3>${text(item.title)}</h3><p>${text(item.dek)}</p></div><span class="research-row-arrow" aria-hidden="true">↗</span></a>`).join("")}</div>
@@ -1700,6 +1719,60 @@
     }, { passive: true });
   }
 
+  function bindXonaMotion() {
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const header = $(".site-header");
+    const orbit = $(".orbit-story");
+    let frame = 0;
+    const updateScroll = () => {
+      frame = 0;
+      header?.classList.toggle("is-scrolled", window.scrollY > 55);
+      if (!orbit) return;
+      const rect = orbit.getBoundingClientRect();
+      const distance = Math.max(1, orbit.offsetHeight - window.innerHeight);
+      const progress = Math.max(0, Math.min(1, -rect.top / distance));
+      orbit.style.setProperty("--orbit-progress", progress.toFixed(3));
+      orbit.classList.toggle("orbit-light", progress > .52);
+    };
+    const requestScroll = () => { if (!frame) frame = requestAnimationFrame(updateScroll); };
+    window.addEventListener("scroll", requestScroll, { passive: true });
+    window.addEventListener("resize", requestScroll);
+    updateScroll();
+
+    const scene = $(".hero");
+    if (scene) {
+      const slides = [...scene.querySelectorAll(".hero-cinematic")];
+      const controls = [...scene.querySelectorAll("[data-hero-slide]")];
+      let current = 0;
+      const show = (index) => {
+        current = index;
+        slides.forEach((slide, i) => slide.classList.toggle("is-active", i === index));
+        controls.forEach((button, i) => {
+          button.classList.toggle("active", i === index);
+          button.setAttribute("aria-pressed", String(i === index));
+        });
+      };
+      controls.forEach((button, index) => button.addEventListener("click", () => show(index)));
+      show(0);
+      if (!reduced) window.setInterval(() => { if (!document.hidden) show((current + 1) % slides.length); }, 5600);
+    }
+
+    const sections = document.querySelectorAll(".home-manifesto,.applications-scene,.home-research,.home-console,.home-appointment,.home-record,.home-updates,.footer-statement");
+    sections.forEach((section) => section.classList.add("motion-stage"));
+    if (reduced || !("IntersectionObserver" in window)) {
+      sections.forEach((section) => section.classList.add("in-view"));
+      return;
+    }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("in-view");
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: .08, rootMargin: "0px 0px -80px 0px" });
+    sections.forEach((section) => observer.observe(section));
+  }
+
   function bindNewTabLinks() {
     const selectors = [
       ".site-footer a:not(.back-to-top)",
@@ -2389,6 +2462,7 @@
     bindHomeTabs();
     bindSatelliteReadout();
     bindParallax();
+    bindXonaMotion();
     bindNewTabLinks();
     bindBackToTop();
   }
