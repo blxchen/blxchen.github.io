@@ -84,30 +84,18 @@
 
   function renderShell() {
     const shell = $("#site-shell");
-    const searchValue = new URLSearchParams(window.location.search).get("q") || "";
     shell.innerHTML = `
       <header class="site-header" id="top">
         <a class="skip-link" href="#main">Skip to content</a>
-        <div class="su-global-brand">${data.profile.name}</div>
-        <div class="su-lockup-row">
-          <a href="${url("index.html")}" class="su-lockup" aria-label="Brandon Chen home">
-            <span class="su-wordmark-name">${text(data.profile.brand.wordmark || data.profile.name)}</span>
-            <span class="su-lockup-divider" aria-hidden="true"></span>
-            <span class="su-site-title">${text(data.profile.brand.subtitle || data.profile.title)}</span>
-          </a>
-          <form class="su-site-search" role="search" action="${url("index.html")}" method="get">
-            <label for="site-search-input">Search this site</label>
-            <input id="site-search-input" name="q" placeholder="Search this site" value="${attr(searchValue)}">
-            <button type="submit" aria-label="Search"></button>
-          </form>
+        <div class="site-header-inner">
+          <a href="${url("index.html")}" class="site-brand" aria-label="Brandon Chen home"><span class="site-brand-symbol" aria-hidden="true">B<span>／</span>C</span><span class="site-brand-name">Brandon Chen<small>Navigation research</small></span></a>
           <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
             <span></span><span></span><span></span>
           </button>
-        </div>
-        <div class="su-nav-row">
           <nav id="primary-nav" class="primary-nav" aria-label="Primary">
             <ul>${data.nav.map(navItem).join("")}</ul>
           </nav>
+          <a class="header-contact" href="${url("get-involved/contact/")}">Get in touch <span aria-hidden="true">↗</span></a>
         </div>
       </header>
       <main id="main" tabindex="-1"></main>
@@ -123,45 +111,33 @@
   }
 
   function footer() {
-    const credit = data.profile.heroCredit;
     return `
       <footer class="site-footer">
+        <div class="footer-statement"><span class="eyebrow">Connect / Research / Navigate</span><h2>Let’s make positioning<br><em>more certain.</em></h2><a href="mailto:${data.contact.email}">Start a conversation <span aria-hidden="true">↗</span></a></div>
         <div class="footer-upper">
           <div class="footer-brand-block">
-            <strong>${data.profile.name}</strong>
-            <p>${text(data.profile.title)}</p>
+            <strong>BRANDON<br>CHEN<span class="footer-period">.</span></strong>
+            <p>Research in GNSS, positioning, navigation and timing.</p>
             <p>${text(data.contact.location)}</p>
-            <a href="mailto:${data.contact.email}">${data.contact.email}</a>
-            ${credit ? `<p class="image-credit"><a href="${credit.source}">${text(credit.label)}</a> by ${text(credit.author)}. <a href="${credit.licenseUrl}">${text(credit.license)}</a>.</p>` : ""}
           </div>
           <div class="footer-column">
-            <h2>Explore</h2>
+            <h2>Explore / 01</h2>
             <a href="${url("about/")}">About</a>
             <a href="${url("research/")}">Research</a>
-            <a href="${url("research/publications/")}">Working Papers</a>
+            <a href="${url("research/publications/")}">Publications</a>
             <a href="${url("blog/")}">Blog</a>
           </div>
           <div class="footer-column">
-            <h2>Resources</h2>
+            <h2>Explore / 02</h2>
             <a href="${url("cv/")}">CV</a>
             <a href="${url("media/")}">Media</a>
             <a href="${url("news/")}">News</a>
             <a href="${url("contact/")}">Contact</a>
-            <a href="${url("admin/")}">Content Control Room</a>
           </div>
-          <div class="footer-column footer-action">
-            <a class="footer-button" href="${url("contact/")}">Contact</a>
-          </div>
+          <div class="footer-column"><h2>Elsewhere</h2>${data.profile.links.map((link) => `<a href="${link.href}">${link.label} ↗</a>`).join("")}</div>
         </div>
         <div class="footer-lower">
-          <strong>${data.profile.name}</strong>
-          <nav aria-label="Footer">
-            <a href="${url("index.html")}">Home</a>
-            <a href="${url("research/")}">Research</a>
-            <a href="${url("contact/")}">Contact</a>
-            ${data.profile.links.map((link) => `<a href="${link.href}">${link.label}</a>`).join("")}
-          </nav>
-          <a class="back-to-top" href="#top">Back to Top</a>
+          <span>© ${new Date().getFullYear()} Brandon Ling-xuan Chen</span><a href="mailto:${data.contact.email}">${data.contact.email}</a><a class="back-to-top" href="#top">Back to top ↑</a>
         </div>
       </footer>
     `;
@@ -170,41 +146,13 @@
   function hero() {
     return `
       <section class="hero">
-        <div class="hero-grid" aria-hidden="true"></div>
-        <div class="hero-earth" aria-hidden="true"><div class="hero-earth-glow"></div></div>
-        <div class="hero-overlay"></div>
-        <div class="hero-satellite-field" aria-hidden="true">
-          <span class="orbit-ring"></span>
-          <span class="orbit-ring second"></span>
-          <span class="orbit-line a"></span>
-          <span class="orbit-line b"></span>
-          <span class="satellite sat-a"><i></i></span>
-          <span class="satellite sat-b"><i></i></span>
-          <span class="signal-dot d1"></span>
-          <span class="signal-dot d2"></span>
-          <span class="signal-dot d3"></span>
-          <span class="signal-dot d4"></span>
-          <span class="sat-readout">
-            <em>SAT</em>
-            <strong data-sat-count>16 / 24</strong>
-            <small>HDOP <b data-hdop>0.8</b></small>
-          </span>
+        <img class="hero-cinematic" src="${asset("assets/orbital-horizon.png")}" alt="Earth's horizon viewed from orbit at night">
+        <div class="hero-shade" aria-hidden="true"></div>
+        <div class="hero-content">
+          <div class="hero-topline"><span>BRANDON CHEN / ACADEMIC PORTFOLIO</span><span>HONG KONG · TAIWAN</span></div>
+          <div class="hero-main reveal"><p class="eyebrow">Research at the edge of positioning</p><h1>Navigation<br>for what’s <em>next.</em></h1><div class="hero-bottom"><p>Research in GNSS, urban positioning, and next generation navigation systems.</p><a class="round-arrow" href="${url("research/")}" aria-label="Explore research">↗</a></div></div>
+          <div class="hero-foot"><span>01 / 05 — EXPLORE THE WORK</span><a href="#research-intro">Scroll to discover ↓</a></div>
         </div>
-        <div class="hero-content reveal">
-          <p class="eyebrow">Independent research / Hong Kong + Taiwan</p>
-          <h1>Positioning the<br><em>future of navigation.</em></h1>
-          <p class="hero-title">${text(data.profile.title)}</p>
-          <p class="hero-copy">Brandon Ling-xuan Chen studies GNSS, urban positioning, and next generation navigation systems.</p>
-          <div class="hero-actions">
-            <a class="button primary" href="${url("research/")}">View research</a>
-            <a class="button" href="${url("cv/")}">Explore CV</a>
-          </div>
-        </div>
-        <aside class="status-panel reveal">
-          <span>Research status</span>
-          <strong>Open to collaborate</strong>
-          <div class="signal-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-        </aside>
       </section>
     `;
   }
@@ -339,7 +287,7 @@
 
     return `
       <section class="band home-console">
-        ${sectionHeader("Research console", "A live map of the work", "Tabbed panels for scanning active research areas.")}
+        ${sectionHeader("03 / Research systems", "One pursuit. Multiple frontiers.", "Explore the questions guiding the work across autonomous navigation, urban GNSS, and simulation.")}
         <div class="home-tabs reveal" data-home-tabs>
           <div class="home-tab-list reveal" role="tablist" aria-label="Homepage research panels">
             ${tabs.map((tab, index) => `
@@ -447,42 +395,19 @@
   function renderHome() {
     return `
       ${hero()}
-      <section class="band stats-band">
-        ${data.profile.stats.map((stat) => `<div class="metric reveal"><strong>${stat.value}</strong><span>${text(stat.label)}</span></div>`).join("")}
+      <section class="home-manifesto" id="research-intro">
+        <div class="manifesto-grid"><p class="eyebrow">01 / The mission</p><div><h2>Precision for a world<br>that never <em>stands still.</em></h2><p>Positioning is invisible infrastructure. My work explores how satellite signals, maps, and sensors can make navigation more resilient in the environments where it matters most.</p><a class="text-link" href="${url("about/")}">Meet Brandon <span>↗</span></a></div></div>
+        <div class="manifesto-stats">${data.profile.stats.map((stat) => `<div class="metric reveal"><strong>${stat.value}</strong><span>${text(stat.label)}</span></div>`).join("")}</div>
       </section>
-      ${homeStatusBoard()}
+      <section class="home-research" id="research-directions">
+        <div class="home-section-head"><p class="eyebrow">02 / Research directions</p><h2>Making sense<br>of <em>where we are.</em></h2><p>From urban canyons to autonomous systems, these research areas share a common pursuit: robust, useful positioning.</p></div>
+        <div class="research-rows">${data.research.map((item, index) => `<a class="research-row motion-card reveal" href="${url(item.url)}"><span class="research-row-index">0${index + 1}</span><div><h3>${text(item.title)}</h3><p>${text(item.dek)}</p></div><span class="research-row-arrow" aria-hidden="true">↗</span></a>`).join("")}</div>
+        <a class="text-link" href="${url("research/")}">Explore all research <span>↗</span></a>
+      </section>
       ${homeTabConsole()}
-      <section class="content-grid">
-        <div class="intro-panel reveal">
-          <img src="${asset(data.profile.headshot)}" alt="${data.profile.name}" class="headshot">
-          <div>
-            <p class="eyebrow">Research profile</p>
-            <h2>Clear, auditable, deployable intelligent systems.</h2>
-            <p>${text(data.profile.shortBio)}</p>
-            <div class="link-row">${data.profile.links.map((link) => `<a href="${link.href}">${link.label}</a>`).join("")}</div>
-          </div>
-        </div>
-        <div class="notice-panel reveal">
-          <p class="eyebrow">Current appointment</p>
-          <h2>Intelligent Positioning and Navigation Laboratory</h2>
-          <p>Research Assistant at Hong Kong Polytechnic University, working across urban GNSS, PNT, and emerging navigation systems.</p>
-        </div>
-      </section>
-      <section class="band">
-        ${sectionHeader("Research", "Research directions", "Selected areas in satellite positioning, autonomous navigation, and simulation.")}
-        <div class="card-grid">${data.research.map((item) => researchCard(item, true)).join("")}</div>
-      </section>
-      ${homeTeamPreview()}
-      <section class="band split-band">
-        <div>
-          ${sectionHeader("Recent record", "News and writing", "Updates and notes from the research program.")}
-        </div>
-        <div class="stacked-list">
-          ${data.news.slice(0, 2).map((item) => collectionCard(item, "news")).join("")}
-          ${data.blog.slice(0, 1).map((item) => collectionCard(item, "blog")).join("")}
-        </div>
-      </section>
-      ${homeCapabilityGrid()}
+      <section class="home-appointment"><div class="appointment-art" aria-hidden="true"><span class="appointment-orbit a"></span><span class="appointment-orbit b"></span><span class="appointment-core"></span></div><div class="appointment-copy"><p class="eyebrow">04 / Current appointment</p><h2>Research with<br><em>real-world reach.</em></h2><p>${text(data.profile.shortBio)}</p><div class="appointment-fact"><span>INTELLIGENT POSITIONING AND NAVIGATION LABORATORY</span><strong>Hong Kong Polytechnic University</strong></div><a class="text-link" href="${url("cv/")}">Explore my CV <span>↗</span></a></div></section>
+      <section class="home-record"><div class="home-section-head"><p class="eyebrow">05 / Research record</p><h2>Work in<br><em>motion.</em></h2><p>Selected manuscripts and conference contributions. Each record states its current status.</p></div><div class="record-list">${data.publications.slice(0, 4).map((item) => `<a href="${url(item.url)}" class="record-row reveal"><span>${text(item.year)} / ${text(item.type)}</span><h3>${text(item.title)}</h3><b aria-hidden="true">↗</b></a>`).join("")}</div><a class="text-link" href="${url("research/publications/")}">View the full record <span>↗</span></a></section>
+      <section class="home-updates"><div class="home-section-head"><p class="eyebrow">From the desk</p><h2>Notes &amp; updates.</h2></div><div class="updates-list">${[...data.news.slice(0, 2), ...data.blog.slice(0, 1)].map((item) => `<a class="update-row reveal" href="${url(item.url)}"><span>${text(item.date || "Research note")}</span><h3>${text(item.title)}</h3><b aria-hidden="true">↗</b></a>`).join("")}</div></section>
     `;
   }
 
@@ -1616,7 +1541,7 @@
   }
 
   function bindInteractiveCards() {
-    const cards = document.querySelectorAll(".research-card, .collection-card, .publication-card, .person-card, .cv-card, .notice-panel, .intro-panel, .portrait-card, .contact-card, .home-tab-panel, .cap-card, .status-panel, .status-card, .involved-card, .recruitment-card, .application-panel");
+    const cards = document.querySelectorAll(".research-card, .research-row, .collection-card, .publication-card, .person-card, .cv-card, .notice-panel, .intro-panel, .portrait-card, .contact-card, .home-tab-panel, .cap-card, .status-panel, .status-card, .involved-card, .recruitment-card, .application-panel");
     cards.forEach((card) => card.classList.add("motion-card", "effect-card"));
 
     if (window.matchMedia("(pointer: coarse), (prefers-reduced-motion: reduce)").matches) return;

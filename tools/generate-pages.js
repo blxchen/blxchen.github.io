@@ -88,6 +88,7 @@ function htmlFor(pageKey, title, base, data) {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${title} | ${data.profile.name}</title>
   <link rel="stylesheet" href="${base}css/styles.css">
+  <link rel="stylesheet" href="${base}css/xona.css">
 </head>
 <body data-page="${pageKey}" data-base="${base}">
   <div id="site-shell"></div>
