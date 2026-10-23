@@ -14,7 +14,7 @@ window.SITE_DATA = {
     },
     "shortBio": "Brandon Ling-xuan Chen is a Research Assistant at the Intelligent Positioning and Navigation Laboratory, Hong Kong Polytechnic University, and an International Baccalaureate student at Island School. His research spans positioning, navigation and timing, urban GNSS, 3D mapping aided GNSS, smartphone and wearable positioning, and low Earth orbit navigation.",
     "headshot": "assets/headshot-placeholder.svg",
-    "heroImage": "assets/kaohsiung-backdrop.jpg",
+    "heroImage": "assets/kaohsiung-backdrop.webp",
     "heroCredit": null,
     "links": [
       {
@@ -401,7 +401,7 @@ window.SITE_DATA = {
       "number": "01",
       "title": "GNSS for Autonomous Navigation",
       "dek": "Positioning and multi-sensor navigation for unmanned aerial vehicles, autonomous vehicles, and intelligent transport systems.",
-      "image": "assets/kaohsiung-backdrop.jpg",
+      "image": "assets/kaohsiung-backdrop.webp",
       "tags": [
         "GNSS",
         "Autonomous navigation",
@@ -419,7 +419,7 @@ window.SITE_DATA = {
       "number": "02",
       "title": "Urban GNSS, Multipath and NLOS",
       "dek": "Robust positioning in dense environments affected by signal blockage, multipath, and non-line-of-sight reception.",
-      "image": "assets/kaohsiung-backdrop.jpg",
+      "image": "assets/kaohsiung-backdrop.webp",
       "tags": [
         "Urban GNSS",
         "3DMA-GNSS",
@@ -437,7 +437,7 @@ window.SITE_DATA = {
       "number": "03",
       "title": "Multi-Sensor Navigation Simulation",
       "dek": "Interactive browser laboratories for GNSS, UAV dynamics, sensor fusion, atmospheric delay, and navigation algorithms.",
-      "image": "assets/kaohsiung-backdrop.jpg",
+      "image": "assets/kaohsiung-backdrop.webp",
       "tags": [
         "Simulation",
         "Sensor fusion",

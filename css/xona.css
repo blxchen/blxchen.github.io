@@ -159,7 +159,7 @@ body[data-page="home"] #main { background: var(--night); }
 /* Shared interior page composition: immersive title panel + editorial content. */
 body:not([data-page="home"]) #main { background: var(--mist); min-height: 55vh; }
 .page-hero { position: relative; isolation: isolate; width: 100%; max-width: none; min-height: 480px; margin: 0; padding: clamp(7rem,11vw,11rem) max(2.25rem,calc((100vw - 1600px)/2)) clamp(4rem,7vw,7rem); overflow: hidden; border: 0; background: #061424; color: #f4f9f8; }
-.page-hero::before { content: ""; position: absolute; z-index: -2; inset: 0; background: url("../assets/orbital-horizon.png") center 53% / cover no-repeat; opacity: .3; }
+.page-hero::before { content: ""; position: absolute; z-index: -2; inset: 0; background: url("../assets/orbital-horizon.webp") center 53% / cover no-repeat; opacity: .3; }
 .page-hero::after { content: ""; position: absolute; z-index: -1; inset: 0; background: linear-gradient(90deg,rgba(4,13,26,.95),rgba(4,13,26,.65) 76%),linear-gradient(0deg,#061424,transparent 55%); }
 .page-hero .section-header { max-width: 1500px; margin: 0; }
 .page-hero .section-header .eyebrow { margin-bottom: 2rem; color: #a2d1dc; }
