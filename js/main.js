@@ -171,54 +171,6 @@
     return `<section class="applications-scene"><img src="${asset("assets/kaohsiung-backdrop.jpg")}" alt="City landscape"><div class="applications-shade"></div><div class="applications-heading"><p>APPLICATIONS / RESEARCH</p><h2>One pursuit.<br>Many environments.</h2><span>Research that carries positioning beyond the ideal test case and into the places where people move.</span></div><div class="applications-marquees" aria-label="Research themes"><div class="marquee-track">${track}${track}</div><div class="marquee-track reverse">${track}${track}</div></div></section>`;
   }
 
-  function playHomeIntro() {
-    if (pageKey !== "home" || new URLSearchParams(window.location.search).has("q") || $(".landing-intro")) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      document.body.classList.add("hero-ready");
-      return;
-    }
-    const overlay = document.createElement("div");
-    overlay.className = "landing-intro";
-    overlay.setAttribute("role", "dialog");
-    overlay.setAttribute("aria-label", "Brandon Chen site introduction");
-    overlay.innerHTML = `<div class="intro-noise"></div><div class="intro-orbit"></div><div class="intro-center"><span class="intro-overline">INITIALIZING / NAVIGATION SYSTEM</span><div class="intro-letters" aria-label="Brandon Chen"></div><span class="intro-progress"><i></i></span><span class="intro-caption">GNSS · PNT · AUTONOMY</span></div><button class="intro-skip" type="button">Skip intro <span>↗</span></button>`;
-    document.body.appendChild(overlay);
-    document.body.classList.add("intro-active");
-    const word = "BRANDON CHEN";
-    const glyphs = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-    const letters = $(".intro-letters", overlay);
-    [...word].forEach((char, index) => {
-      const span = document.createElement("span");
-      span.textContent = char === " " ? "\u00a0" : glyphs[(index * 7 + 11) % glyphs.length];
-      span.style.setProperty("--i", index);
-      span.style.setProperty("--dx", `${(index % 2 ? 1 : -1) * (30 + index * 8)}px`);
-      span.style.setProperty("--dy", `${(index % 3 - 1) * 90}px`);
-      letters.appendChild(span);
-    });
-    const scramble = window.setInterval(() => {
-      [...letters.children].forEach((span, index) => {
-        if (word[index] !== " ") span.textContent = glyphs[Math.floor(Math.random() * glyphs.length)];
-      });
-    }, 75);
-    let finished = false;
-    const finish = () => {
-      if (finished) return;
-      finished = true;
-      window.clearInterval(scramble);
-      overlay.classList.add("departing");
-      document.body.classList.remove("intro-active");
-      document.body.classList.add("hero-ready");
-      window.setTimeout(() => overlay.remove(), 900);
-    };
-    $(".intro-skip", overlay).addEventListener("click", finish);
-    window.setTimeout(() => {
-      window.clearInterval(scramble);
-      [...letters.children].forEach((span, index) => { span.textContent = word[index] === " " ? "\u00a0" : word[index]; });
-      overlay.classList.add("assembled");
-    }, 620);
-    window.setTimeout(finish, 2350);
-  }
-
   function sectionHeader(kicker, title, intro) {
     return `
       <header class="section-header reveal">
@@ -418,10 +370,10 @@
         <div class="manifesto-stats">${data.profile.stats.map((stat) => `<div class="metric reveal"><strong>${stat.value}</strong><span>${text(stat.label)}</span></div>`).join("")}</div>
       </section>
       ${applicationsScene()}
-      <section class="home-research" id="research-directions">
-        <div class="home-section-head"><p class="eyebrow">02 / Research directions</p><h2>Making sense<br>of <em>where we are.</em></h2><p>From urban canyons to autonomous systems, these research areas share a common pursuit: robust, useful positioning.</p></div>
-        <div class="research-rows">${data.research.map((item, index) => `<a class="research-row motion-card reveal" href="${url(item.url)}"><span class="research-row-index">0${index + 1}</span><div><h3>${text(item.title)}</h3><p>${text(item.dek)}</p></div><span class="research-row-arrow" aria-hidden="true">↗</span></a>`).join("")}</div>
-        <a class="text-link" href="${url("research/")}">Explore all research <span>↗</span></a>
+      <section class="home-ecosystem" id="research-directions">
+        <div class="ecosystem-intro"><p class="eyebrow">Research ecosystem</p><h2>Building the <span class="ecosystem-inline-orbit" aria-hidden="true">◉</span> tools<br>for better navigation.</h2><p>Satellite signals, simulations, and sensor fusion connect across each research direction.</p></div>
+        <div class="ecosystem-grid">${data.research.slice(0, 2).map((item, index) => `<a class="ecosystem-card reveal" href="${url(item.url)}"><img src="${asset(index ? "assets/kaohsiung-backdrop.jpg" : "assets/research-hero.png")}" alt=""><span>0${index + 1} / RESEARCH</span><div><h3>${text(item.title)}</h3><p>${text(item.dek)}</p><b aria-hidden="true">↗</b></div></a>`).join("")}</div>
+        <a class="ecosystem-link" href="${url("research/")}">Explore all research <span aria-hidden="true">↗</span></a>
       </section>
       ${homeTabConsole()}
       <section class="home-appointment"><div class="appointment-art" aria-hidden="true"><span class="appointment-orbit a"></span><span class="appointment-orbit b"></span><span class="appointment-core"></span></div><div class="appointment-copy"><p class="eyebrow">04 / Current appointment</p><h2>Research with<br><em>real-world reach.</em></h2><p>${text(data.profile.shortBio)}</p><div class="appointment-fact"><span>INTELLIGENT POSITIONING AND NAVIGATION LABORATORY</span><strong>Hong Kong Polytechnic University</strong></div><a class="text-link" href="${url("cv/")}">Explore my CV <span>↗</span></a></div></section>
@@ -1560,7 +1512,7 @@
   }
 
   function bindInteractiveCards() {
-    const cards = document.querySelectorAll(".research-card, .research-row, .collection-card, .publication-card, .person-card, .cv-card, .notice-panel, .intro-panel, .portrait-card, .contact-card, .home-tab-panel, .cap-card, .status-panel, .status-card, .involved-card, .recruitment-card, .application-panel");
+    const cards = document.querySelectorAll(".research-card, .research-row, .ecosystem-card, .collection-card, .publication-card, .person-card, .cv-card, .notice-panel, .intro-panel, .portrait-card, .contact-card, .home-tab-panel, .cap-card, .status-panel, .status-card, .involved-card, .recruitment-card, .application-panel");
     cards.forEach((card) => card.classList.add("motion-card", "effect-card"));
 
     if (window.matchMedia("(pointer: coarse), (prefers-reduced-motion: reduce)").matches) return;
@@ -1727,12 +1679,19 @@
     const updateScroll = () => {
       frame = 0;
       header?.classList.toggle("is-scrolled", window.scrollY > 55);
+      const lightSections = document.querySelectorAll(".home-manifesto,.home-ecosystem,.home-record,.home-updates,.page-hero + .band,.page-hero + .content-grid,.page-hero + .two-column,.page-hero + .cv-grid");
+      const light = [...lightSections].some((section) => {
+        const bounds = section.getBoundingClientRect();
+        return bounds.top < 80 && bounds.bottom > 40;
+      });
+      header?.classList.toggle("is-light", light);
       if (!orbit) return;
       const rect = orbit.getBoundingClientRect();
       const distance = Math.max(1, orbit.offsetHeight - window.innerHeight);
       const progress = Math.max(0, Math.min(1, -rect.top / distance));
       orbit.style.setProperty("--orbit-progress", progress.toFixed(3));
       orbit.classList.toggle("orbit-light", progress > .52);
+      header?.classList.toggle("is-light", light || (rect.top < 80 && rect.bottom > 40 && progress > .62));
     };
     const requestScroll = () => { if (!frame) frame = requestAnimationFrame(updateScroll); };
     window.addEventListener("scroll", requestScroll, { passive: true });
@@ -1757,7 +1716,7 @@
       if (!reduced) window.setInterval(() => { if (!document.hidden) show((current + 1) % slides.length); }, 5600);
     }
 
-    const sections = document.querySelectorAll(".home-manifesto,.applications-scene,.home-research,.home-console,.home-appointment,.home-record,.home-updates,.footer-statement");
+    const sections = document.querySelectorAll(".home-manifesto,.applications-scene,.home-ecosystem,.home-console,.home-appointment,.home-record,.home-updates,.footer-statement");
     sections.forEach((section) => section.classList.add("motion-stage"));
     if (reduced || !("IntersectionObserver" in window)) {
       sections.forEach((section) => section.classList.add("in-view"));
@@ -2465,12 +2424,12 @@
     bindXonaMotion();
     bindNewTabLinks();
     bindBackToTop();
+    if (pageKey === "home") requestAnimationFrame(() => document.body.classList.add("hero-ready"));
   }
 
   async function bootstrap() {
     const backend = window.RESEARCH_BACKEND;
     render();
-    playHomeIntro();
     if (backend && backend.isConfigured()) {
       try {
         const [remotePublications, remoteProfiles] = await Promise.all([backend.listPublications(), backend.listProfiles()]);
