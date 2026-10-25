@@ -284,7 +284,7 @@ window.SITE_DATA = {
       "template": "researchAreas",
       "title": "Research Areas",
       "kicker": "Research pillars",
-      "intro": "Six connected areas across urban positioning, satellite navigation, atmospheric sensing, and autonomous systems."
+      "intro": "Seven connected areas across urban positioning, satellite navigation, and remote sensing."
     },
     "research/experience": {
       "template": "timeline",
@@ -465,8 +465,8 @@ window.SITE_DATA = {
     {
       "slug": "urban-gnss",
       "number": "01",
-      "title": "Urban GNSS reliability",
-      "dek": "Understanding and reducing multipath, signal blockage, and non-line-of-sight error in dense cities.",
+      "title": "Urban GNSS",
+      "dek": "Positioning in dense cities where satellite signals are blocked, reflected, or unreliable.",
       "image": "assets/kaohsiung-backdrop.webp",
       "tags": [
         "Urban canyons",
@@ -491,19 +491,19 @@ window.SITE_DATA = {
       "url": "research/areas/urban-gnss/"
     },
     {
-      "slug": "3d-mapping-ai",
+      "slug": "multipath-nlos-urban-canyons",
       "number": "02",
-      "title": "3D mapping and AI-aided GNSS",
-      "dek": "Using city geometry, uncertainty models, and lightweight learning to improve satellite positioning.",
-      "image": "assets/research-hero.webp",
+      "title": "Multipath/NLOS in Urban Canyons",
+      "dek": "Recognizing reflected and blocked satellite signals before they distort a position fix.",
+      "image": "assets/kaohsiung-backdrop.webp",
       "tags": [
-        "3DMA-GNSS",
-        "Probabilistic maps",
-        "AI/ML"
+        "Multipath",
+        "NLOS",
+        "Urban canyons"
       ],
       "body": [
-        "Three-dimensional building models can inform satellite visibility and help distinguish direct signals from reflections. The work also asks when additional map information is worth its cost.",
-        "The papers listed here cover probabilistic building models, the value of information, and learning-assisted pseudorange weighting. Their individual review statuses are shown on each publication page."
+        "Tall buildings can obstruct line of sight and create reflected paths that bias GNSS measurements.",
+        "The selected work considers learning assisted pseudorange reweighting and probabilistic building models as ways to improve measurement reliability."
       ],
       "memberSlugs": [
         "brandon-chen",
@@ -511,27 +511,77 @@ window.SITE_DATA = {
         "li-ta-hsu"
       ],
       "publicationSlugs": [
-        "uncertainty-aware-3dma-gnss",
-        "value-of-information-smartphone-3dma",
-        "urban-smartphone-gnss"
+        "urban-smartphone-gnss",
+        "uncertainty-aware-3dma-gnss"
       ],
       "order": 2,
-      "url": "research/areas/3d-mapping-ai/"
+      "url": "research/areas/multipath-nlos-urban-canyons/"
     },
     {
-      "slug": "smartphone-wearable-pnt",
+      "slug": "3d-mapping-aided-gnss",
       "number": "03",
-      "title": "Smartphone and wearable PNT",
-      "dek": "Reliable positioning with small, everyday receivers and the measurements they can provide.",
+      "title": "3D Mapping Aided GNSS",
+      "dek": "Using building geometry and map uncertainty to inform satellite positioning.",
+      "image": "assets/research-hero.webp",
+      "tags": [
+        "3DMA-GNSS",
+        "Building models",
+        "Map uncertainty"
+      ],
+      "body": [
+        "Three dimensional building models can predict satellite visibility and provide evidence about direct and reflected signals.",
+        "These manuscripts study probabilistic building models and the value of additional map information for smartphone GNSS."
+      ],
+      "memberSlugs": [
+        "brandon-chen"
+      ],
+      "publicationSlugs": [
+        "uncertainty-aware-3dma-gnss",
+        "value-of-information-smartphone-3dma"
+      ],
+      "order": 3,
+      "url": "research/areas/3d-mapping-aided-gnss/"
+    },
+    {
+      "slug": "ai-ml-gnss",
+      "number": "04",
+      "title": "AI/ML GNSS",
+      "dek": "Lightweight learning and uncertainty aware models for difficult GNSS measurements.",
+      "image": "assets/research-hero.webp",
+      "tags": [
+        "Machine learning",
+        "Pseudorange",
+        "Uncertainty"
+      ],
+      "body": [
+        "Learning based methods can help judge noisy measurements while keeping computation suitable for practical receivers.",
+        "The current conference review manuscript investigates lightweight learning assisted pseudorange reweighting for smartphone GNSS in urban canyons."
+      ],
+      "memberSlugs": [
+        "brandon-chen",
+        "ng-derek-hoi-wah",
+        "li-ta-hsu"
+      ],
+      "publicationSlugs": [
+        "urban-smartphone-gnss"
+      ],
+      "order": 4,
+      "url": "research/areas/ai-ml-gnss/"
+    },
+    {
+      "slug": "smartphone-wearables-gnss",
+      "number": "05",
+      "title": "Smartphone and Wearables GNSS",
+      "dek": "Reliable positioning using the compact antennas and measurements of everyday devices.",
       "image": "assets/terraced-fields.webp",
       "tags": [
         "Smartphones",
         "Wearables",
-        "Pseudorange"
+        "Consumer GNSS"
       ],
       "body": [
-        "Consumer devices face antenna, power, and environmental constraints that differ from survey-grade instruments.",
-        "Current work addresses smartphone GNSS in urban canyons. Wearable positioning is a stated research interest in Brandon's CV; publications will appear here when records are added."
+        "Consumer devices face antenna, power, and environmental constraints that differ from survey grade instruments.",
+        "The linked manuscripts concern smartphone GNSS. Wearable GNSS is a stated research interest in the CV; no wearable specific paper is claimed here."
       ],
       "memberSlugs": [
         "brandon-chen",
@@ -542,23 +592,23 @@ window.SITE_DATA = {
         "urban-smartphone-gnss",
         "value-of-information-smartphone-3dma"
       ],
-      "order": 3,
-      "url": "research/areas/smartphone-wearable-pnt/"
+      "order": 5,
+      "url": "research/areas/smartphone-wearables-gnss/"
     },
     {
-      "slug": "leo-navigation",
-      "number": "04",
-      "title": "Low Earth orbit navigation",
-      "dek": "Exploring LEO signals and shadow-edge timing as complements to conventional GNSS.",
+      "slug": "leo-pnt",
+      "number": "06",
+      "title": "Low Earth Orbit Positioning, Navigation and Timing",
+      "dek": "Exploring low Earth orbit signals and shadow edge timing for positioning.",
       "image": "assets/orbital-horizon.webp",
       "tags": [
         "LEO",
-        "Shadow-edge timing",
-        "Satellite navigation"
+        "PNT",
+        "Shadow edge timing"
       ],
       "body": [
-        "Low Earth orbit constellations create different geometry, signal dynamics, and timing opportunities for positioning.",
-        "The linked working paper examines shadow-edge timing for urban positioning. It remains a working paper unless its record is updated."
+        "Low Earth orbit constellations create different geometry and timing opportunities for positioning.",
+        "The linked working paper examines shadow edge timing for urban positioning with LEO satellites; its status remains a working paper."
       ],
       "memberSlugs": [
         "brandon-chen"
@@ -566,14 +616,14 @@ window.SITE_DATA = {
       "publicationSlugs": [
         "shadow-edge-leo-positioning"
       ],
-      "order": 4,
-      "url": "research/areas/leo-navigation/"
+      "order": 6,
+      "url": "research/areas/leo-pnt/"
     },
     {
-      "slug": "atmospheric-gnss",
-      "number": "05",
-      "title": "Atmospheric GNSS sensing",
-      "dek": "Radio occultation and GNSS reflectometry for studying typhoons and high-latitude environments.",
+      "slug": "remote-sensing",
+      "number": "07",
+      "title": "Remote Sensing",
+      "dek": "Using GNSS radio occultation and reflectometry to observe the atmosphere and Earth.",
       "image": "assets/earth-globe.webp",
       "tags": [
         "Radio occultation",
@@ -581,40 +631,19 @@ window.SITE_DATA = {
         "GNSS-R"
       ],
       "body": [
-        "GNSS signals can serve as atmospheric and environmental observations as well as navigation measurements.",
-        "The selected records examine altitude-dependent geolocation in typhoon-relative radio occultation sampling. Publication and review status is specified for each record."
+        "GNSS signals can serve as environmental observations as well as navigation measurements.",
+        "The selected records examine typhoon relative radio occultation sampling and a GNSS reflectometry project in Arctic environments. Their individual statuses are shown on each record."
       ],
       "memberSlugs": [
         "brandon-chen"
       ],
       "publicationSlugs": [
         "gnss-radio-occultation-typhoons-formosat-7-cosmic-2",
-        "typhoon-radio-occultation-tasti"
+        "typhoon-radio-occultation-tasti",
+        "gnss-r-within-arctic-environments"
       ],
-      "order": 5,
-      "url": "research/areas/atmospheric-gnss/"
-    },
-    {
-      "slug": "autonomous-navigation",
-      "number": "06",
-      "title": "Autonomous navigation and simulation",
-      "dek": "Testing positioning and sensor-fusion ideas in reproducible UAV and urban navigation scenarios.",
-      "image": "assets/research-hero.webp",
-      "tags": [
-        "Autonomy",
-        "Sensor fusion",
-        "Simulation"
-      ],
-      "body": [
-        "Autonomous systems need navigation methods that can be tested across changing geometry, sensor quality, and signal conditions.",
-        "UAVLab and NavLab are public browser-based simulation projects for exploring GNSS, sensor fusion, and urban navigation. This area will list associated publications as they are added."
-      ],
-      "memberSlugs": [
-        "brandon-chen"
-      ],
-      "publicationSlugs": [],
-      "order": 6,
-      "url": "research/areas/autonomous-navigation/"
+      "order": 7,
+      "url": "research/areas/remote-sensing/"
     }
   ],
   "team": [
@@ -843,7 +872,7 @@ window.SITE_DATA = {
         }
       ],
       "order": 1,
-      "phone": "(+852) 9452 4503",
+      "phone": "",
       "url": "research/team/brandon-chen/"
     },
     {

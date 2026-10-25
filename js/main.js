@@ -146,6 +146,7 @@
 
   function hero() {
     return `
+      <div class="mobile-hero-intro"><h1>Navigation for<br>what comes next.</h1><p>Research in satellite positioning, urban GNSS, and next-generation navigation systems.</p><a href="${url("research/")}">Explore research</a></div>
       <section class="hero">
         <div class="hero-slides" aria-hidden="true">
           <img class="hero-cinematic is-active" src="${asset("assets/terraced-fields.webp")}" fetchpriority="high" alt="">
@@ -164,7 +165,7 @@
   }
 
   function orbitStory() {
-    return `<section class="orbit-story" id="orbit-story" aria-label="Navigation research overview"><div class="orbit-sticky"><div class="orbit-ruler" aria-hidden="true"></div><img class="orbit-earth" src="${asset("assets/earth-globe.webp")}" loading="lazy" decoding="async" alt="Planet Earth"><div class="orbit-copy"><span>THE RESEARCH QUESTION</span><h2>Our world needs<br>better positioning.</h2><p>Reliable navigation should work beyond clear skies and ideal conditions.</p></div><div class="orbit-label orbit-label-a" aria-hidden="true">LEGACY GNSS<br><small>SPACE / SIGNAL</small></div><div class="orbit-label orbit-label-b" aria-hidden="true">BRANDON CHEN<br><small>URBAN / AUTONOMY</small></div></div></section>`;
+    return `<section class="orbit-story" id="orbit-story" aria-label="Navigation research overview"><div class="orbit-sticky"><div class="orbit-backdrop-type" aria-hidden="true">Navigation beyond clear skies</div><div class="orbit-ruler" aria-hidden="true"></div><img class="orbit-earth" src="${asset("assets/earth-globe.webp")}" loading="lazy" decoding="async" alt="Planet Earth"><div class="orbit-copy"><span>THE RESEARCH QUESTION</span><h2>Our world needs<br>better positioning.</h2><p>Reliable navigation should work beyond clear skies and ideal conditions.</p></div><div class="orbit-label orbit-label-a" aria-hidden="true">LEGACY GNSS<br><small>SPACE / SIGNAL</small></div><div class="orbit-label orbit-label-b" aria-hidden="true">BRANDON CHEN<br><small>URBAN / AUTONOMY</small></div></div></section>`;
   }
 
   function applicationsScene() {
@@ -212,14 +213,26 @@
 
   function publicationCard(item) {
     return `
-      <a class="publication-card reveal" href="${url(item.url)}">
+      <article class="publication-card reveal">
         <span>${item.year} &middot; ${text(item.type)}</span>
-        <h2>${text(item.title)}</h2>
-        <p>${text(item.authors)}</p>
+        <h2><a href="${url(item.url)}">${text(item.title)}</a></h2>
+        <p class="publication-authors">${publicationAuthorLinks(item)}</p>
         <small>${text(item.venue)}</small>
         <em class="publication-status">${text(item.status || item.type)}</em>
-      </a>
+      </article>
     `;
+  }
+
+  function publicationAuthorLinks(item) {
+    const names = String(item.authors || "").split(/,\s*|\s+and\s+/).map((name) => name.trim()).filter(Boolean);
+    const key = (value) => String(value || "").toLowerCase().replace(/\bprofessor\b/g, "").replace(/[^a-z0-9]+/g, " ").trim().split(/\s+/).sort().join(" ");
+    const eligible = (item.profileSlugs || []).map((slug) => data.team.find((entry) => entry.slug === slug)).filter(Boolean);
+    return names.map((name, index) => {
+      const person = eligible.find((entry) => [entry.name, ...(entry.publicationNames || [])].some((alias) => key(alias) === key(name))) || (eligible.length === names.length ? eligible[index] : null);
+      return person
+        ? `<a href="${url(`research/profile/?person=${encodeURIComponent(person.slug)}`)}" aria-label="View ${attr(name)}'s research profile">${text(name)}</a>`
+        : `<span>${text(name)}</span>`;
+    }).join('<span class="author-separator" aria-hidden="true">, </span>');
   }
 
   function collectionCard(item, type) {
@@ -383,7 +396,7 @@
       ${homeTabConsole()}
       <section class="home-updates"><div class="home-section-head"><p class="eyebrow">Blog</p><h2>Updates from<br>the research.</h2><a class="text-link" href="${url("blog/")}">View all notes <span>↗</span></a></div><div class="updates-list">${[...data.news.slice(0, 1), ...data.blog.slice(0, 2)].map((item) => `<a class="update-row reveal" href="${url(item.url)}"><span>${text(item.date || "Research note")}</span><h3>${text(item.title)}</h3><b aria-hidden="true">↗</b></a>`).join("")}</div></section>
       <section class="home-appointment"><div class="appointment-art" aria-hidden="true"></div><div class="appointment-copy"><p class="eyebrow">Collaboration</p><h2>Work with me<br>on what comes next.</h2><p>Open to focused research collaboration in GNSS, positioning, navigation, and simulation.</p><a class="text-link" href="${url("get-involved/")}">Explore opportunities <span>↗</span></a></div></section>
-      <section class="home-record"><div class="home-section-head"><p class="eyebrow">Research record</p><h2>Selected<br>publications.</h2><a class="text-link" href="${url("research/publications/")}">View all publications <span>↗</span></a></div><div class="record-list">${data.publications.slice(0, 4).map((item) => `<a href="${url(item.url)}" class="record-row reveal"><span>${text(item.year)} / ${text(item.type)}</span><h3>${text(item.title)}</h3><b aria-hidden="true">↗</b></a>`).join("")}</div></section>
+      <section class="home-record"><div class="home-section-head"><p class="eyebrow">Research record</p><h2>Selected<br>publications.</h2><a class="text-link" href="${url("research/publications/")}">View all publications <span>↗</span></a></div><div class="record-list">${data.publications.slice(0, 4).map((item) => `<article class="record-row reveal"><span>${text(item.year)} / ${text(item.type)}</span><h3><a href="${url(item.url)}">${text(item.title)}</a></h3><p class="record-authors">${publicationAuthorLinks(item)}</p><b aria-hidden="true">↗</b></article>`).join("")}</div></section>
     `;
   }
   function renderAbout() {
@@ -418,7 +431,7 @@
 
   function homeResearchAreas() {
     return `<section class="home-research-areas" id="research-areas">
-      <div class="research-areas-heading"><p class="eyebrow">Research areas</p><h2>Choose a direction.<br>Explore the work.</h2><p>Six connected areas drawn from my current research and CV.</p></div>
+      <div class="research-areas-heading"><p class="eyebrow">Research areas</p><h2>Choose a direction.<br>Explore the work.</h2><p>Seven connected areas drawn from my current research and CV.</p></div>
       <div class="research-area-grid">${data.researchAreas.map(researchAreaCard).join("")}</div>
       <a class="ecosystem-link" href="${url("research/areas/")}">View all research areas <span aria-hidden="true">↗</span></a>
     </section>`;
@@ -448,7 +461,7 @@
             <div class="area-member-grid">${members.map((member) => `<a class="area-member" href="${url(member.url)}"><img src="${researcherPhoto(member)}" loading="lazy" alt=""><div><h3>${text(member.name)}</h3><p>${text(member.role)}</p></div><b aria-hidden="true">↗</b></a>`).join("")}</div>
           </section>
           <section><header><p class="eyebrow">Research record</p><h2>Related publications</h2><span>${publications.length}</span></header>
-            <div class="area-publication-list">${publications.length ? publications.map((publication) => `<a class="area-publication" href="${url(publication.url)}"><span>${text(publication.year)} / ${text(publication.status || publication.type)}</span><h3>${text(publication.title)}</h3><b aria-hidden="true">↗</b></a>`).join("") : `<p class="area-empty">No publication is assigned to this area yet. New records can be linked in its research-area JSON file.</p>`}</div>
+            <div class="area-publication-list">${publications.length ? publications.map((publication) => `<article class="area-publication"><span>${text(publication.year)} / ${text(publication.status || publication.type)}</span><h3><a href="${url(publication.url)}">${text(publication.title)}</a></h3><p class="area-publication-authors">${publicationAuthorLinks(publication)}</p><b aria-hidden="true">↗</b></article>`).join("") : `<p class="area-empty">No publication is assigned to this area yet. New records can be linked in its research-area JSON file.</p>`}</div>
           </section>
         </div>
       </section>`;
@@ -1100,11 +1113,11 @@
           ? "Published record; bibliographic details are shown above."
           : "Working manuscript or project record; no peer-reviewed publication is claimed.";
     return `
-      <section class="page-hero">${backLink("research/publications/", "Back to publications")}${sectionHeader(item.type, item.title, item.abstract)}</section>
+      <section class="page-hero">${backLink("research/publications/", "Back to publications")}${sectionHeader(item.type, item.title, item.abstract)}<div class="paper-author-links" aria-label="Authors">${publicationAuthorLinks(item)}</div></section>
       <section class="article-layout">
         <aside class="side-index reveal">
           <span>${item.year}</span>
-          <span>${item.authors}</span>
+          <span class="paper-aside-authors">${publicationAuthorLinks(item)}</span>
           <span>${text(item.venue)}</span>
           ${item.status ? `<span>Status: ${text(item.status)}</span>` : ""}
         </aside>

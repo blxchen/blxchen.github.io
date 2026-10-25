@@ -1,6 +1,6 @@
 {
   "slug": "new-research-area",
-  "number": "07",
+  "number": "08",
   "title": "New research area",
   "dek": "One sentence describing the research direction.",
   "image": "assets/orbital-horizon.webp",
@@ -11,5 +11,5 @@
   ],
   "memberSlugs": ["brandon-chen"],
   "publicationSlugs": [],
-  "order": 7
+  "order": 8
 }

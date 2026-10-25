@@ -139,4 +139,18 @@ collectionConfigs.forEach((group) => {
   data[group.key].forEach((item) => writePage(`${group.prefix}/${item.slug}`, text(item.title || item.name), data));
 });
 
+const formerAreaRoutes = {
+  "3d-mapping-ai": "3d-mapping-aided-gnss",
+  "atmospheric-gnss": "remote-sensing",
+  "autonomous-navigation": "",
+  "leo-navigation": "leo-pnt",
+  "smartphone-wearable-pnt": "smartphone-wearables-gnss"
+};
+for (const [oldSlug, newSlug] of Object.entries(formerAreaRoutes)) {
+  const target = newSlug ? `../${newSlug}/` : "../";
+  const dir = path.join(root, "research", "areas", oldSlug);
+  fs.mkdirSync(dir, { recursive: true });
+  fs.writeFileSync(path.join(dir, "index.html"), `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=${target}"><meta name="robots" content="noindex"><title>Research area moved</title></head><body><p>This research area has moved. <a href="${target}">View the current research area</a>.</p><script>location.replace(${JSON.stringify(target)})</script></body></html>\n`, "utf8");
+}
+
 console.log("Generated js/site-data.js and pages from content/");

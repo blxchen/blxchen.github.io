@@ -1,8 +1,8 @@
 {
   "slug": "urban-gnss",
   "number": "01",
-  "title": "Urban GNSS reliability",
-  "dek": "Understanding and reducing multipath, signal blockage, and non-line-of-sight error in dense cities.",
+  "title": "Urban GNSS",
+  "dek": "Positioning in dense cities where satellite signals are blocked, reflected, or unreliable.",
   "image": "assets/kaohsiung-backdrop.webp",
   "tags": ["Urban canyons", "Multipath", "NLOS"],
   "body": [
