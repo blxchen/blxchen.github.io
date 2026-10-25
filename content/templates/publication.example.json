@@ -1,19 +1,14 @@
 {
-  "slug": "paper-title",
+  "slug": "new-publication",
   "year": "2026",
-  "type": "Working paper",
-  "title": "Working Paper Title",
-  "authors": "Researcher Name",
-  "venue": "Working manuscript — not published or peer reviewed",
-  "abstract": "Draft abstract. State clearly that the manuscript is in progress and unpublished.",
-  "status": "In progress",
-  "paperUrl": "assets/papers/paper-title.pdf",
-  "keywords": [
-    "Research topic one",
-    "Research topic two"
-  ],
-  "profileSlugs": [
-    "researcher-name"
-  ],
-  "order": 10
+  "type": "Journal manuscript",
+  "title": "Full title of the research output",
+  "authors": "Brandon Ling-xuan Chen",
+  "venue": "Journal, conference, or manuscript in preparation",
+  "abstract": "Brief factual summary of the work.",
+  "status": "In preparation",
+  "keywords": ["GNSS", "Positioning"],
+  "profileSlugs": ["brandon-chen"],
+  "areaSlugs": ["urban-gnss"],
+  "order": 0
 }

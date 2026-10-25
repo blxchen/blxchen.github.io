@@ -1,0 +1,15 @@
+{
+  "slug": "leo-navigation",
+  "number": "04",
+  "title": "Low Earth orbit navigation",
+  "dek": "Exploring LEO signals and shadow-edge timing as complements to conventional GNSS.",
+  "image": "assets/orbital-horizon.webp",
+  "tags": ["LEO", "Shadow-edge timing", "Satellite navigation"],
+  "body": [
+    "Low Earth orbit constellations create different geometry, signal dynamics, and timing opportunities for positioning.",
+    "The linked working paper examines shadow-edge timing for urban positioning. It remains a working paper unless its record is updated."
+  ],
+  "memberSlugs": ["brandon-chen"],
+  "publicationSlugs": ["shadow-edge-leo-positioning"],
+  "order": 4
+}

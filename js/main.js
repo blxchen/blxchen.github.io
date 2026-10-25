@@ -32,6 +32,7 @@
 
   function detailForPage() {
     const groups = [
+      { prefix: "research/areas/", items: data.researchAreas, description: "dek" },
       { prefix: "research/", items: data.research, description: "dek" },
       { prefix: "research/team/", items: data.team, description: "bio" },
       { prefix: "research/publications/", items: data.publications, description: "abstract" },
@@ -152,7 +153,8 @@
           <img class="hero-cinematic" src="${asset("assets/orbital-horizon.webp")}" decoding="async" alt="">
         </div>
         <div class="hero-shade" aria-hidden="true"></div>
-        <div class="hero-telemetry" aria-hidden="true"><small>RESEARCH SIGNAL</small><strong>GNSS / PNT</strong><div class="telemetry-lines"><i></i><i></i><i></i><i></i></div><dl><div><dt>FOCUS</dt><dd>URBAN + SPACE</dd></div><div><dt>STATUS</dt><dd>ACTIVE ↗</dd></div><div><dt>LOCATION</dt><dd>HK / TW</dd></div></dl></div>
+        <div class="hero-telemetry" aria-hidden="true"><small>PNT RESEARCH</small><strong>GNSS</strong><div class="telemetry-lines"><i></i><i></i><i></i><i></i></div><dl><div><dt>FOCUS</dt><dd>URBAN + SPACE</dd></div><div><dt>STATUS</dt><dd>ACTIVE ↗</dd></div><div><dt>LOCATION</dt><dd>HK / TW</dd></div></dl></div>
+        <div class="hero-marker" aria-hidden="true"><span>POSITIONING<br>IN MOTION</span><i></i></div>
         <div class="hero-content">
           <div class="hero-main"><p class="eyebrow">BRANDON CHEN / NAVIGATION RESEARCH</p><h1>Navigation for<br>what comes next.</h1><div class="hero-bottom"><p>Research in satellite positioning, urban GNSS, and next-generation navigation systems.</p><a class="round-arrow" href="${url("research/")}" aria-label="Explore research">↗</a></div></div>
           <div class="hero-foot"><a href="#orbit-story">SCROLL TO EXPLORE ↓</a><div class="hero-progress" aria-label="Hero scenes"><button class="active" type="button" aria-label="View agricultural scene" data-hero-slide="0"></button><button type="button" aria-label="View city scene" data-hero-slide="1"></button><button type="button" aria-label="View orbital scene" data-hero-slide="2"></button></div></div>
@@ -215,6 +217,7 @@
         <h2>${text(item.title)}</h2>
         <p>${text(item.authors)}</p>
         <small>${text(item.venue)}</small>
+        <em class="publication-status">${text(item.status || item.type)}</em>
       </a>
     `;
   }
@@ -375,6 +378,7 @@
         <div class="ecosystem-grid">${data.research.slice(0, 2).map((item, index) => `<a class="ecosystem-card reveal" href="${url(item.url)}"><img src="${asset(index ? "assets/kaohsiung-backdrop.webp" : "assets/research-hero.webp")}" loading="lazy" decoding="async" alt=""><span>0${index + 1} / RESEARCH</span><div><h3>${text(item.title)}</h3><p>${text(item.dek)}</p><b aria-hidden="true">↗</b></div></a>`).join("")}</div>
         <a class="ecosystem-link" href="${url("research/")}">Explore all research <span aria-hidden="true">↗</span></a>
       </section>
+      ${homeResearchAreas()}
       <section class="home-technology" id="technology"><img src="${asset("assets/orbital-horizon.webp")}" alt="" loading="lazy" decoding="async"><div class="technology-copy"><p class="eyebrow">Technology</p><h2>Research at the edge<br>of what is possible.</h2><p>From satellite signals to navigation in complex cities, each project tests how positioning can work in the real world.</p><a class="text-link" href="${url("research/")}">Explore the research <span>↗</span></a></div></section>
       ${homeTabConsole()}
       <section class="home-updates"><div class="home-section-head"><p class="eyebrow">Blog</p><h2>Updates from<br>the research.</h2><a class="text-link" href="${url("blog/")}">View all notes <span>↗</span></a></div><div class="updates-list">${[...data.news.slice(0, 1), ...data.blog.slice(0, 2)].map((item) => `<a class="update-row reveal" href="${url(item.url)}"><span>${text(item.date || "Research note")}</span><h3>${text(item.title)}</h3><b aria-hidden="true">↗</b></a>`).join("")}</div></section>
@@ -403,9 +407,56 @@
     `;
   }
 
+  function researchAreaCard(area) {
+    return `<a class="research-area-card reveal" href="${url(area.url)}">
+      <img src="${asset(area.image)}" loading="lazy" decoding="async" alt="">
+      <span class="research-area-card-number">${text(area.number)} / ${String(data.researchAreas.length).padStart(2, "0")}</span>
+      <div><h3>${text(area.title)}</h3><p>${text(area.dek)}</p></div>
+      <span class="research-area-card-arrow" aria-hidden="true">↗</span>
+    </a>`;
+  }
+
+  function homeResearchAreas() {
+    return `<section class="home-research-areas" id="research-areas">
+      <div class="research-areas-heading"><p class="eyebrow">Research areas</p><h2>Choose a direction.<br>Explore the work.</h2><p>Six connected areas drawn from my current research and CV.</p></div>
+      <div class="research-area-grid">${data.researchAreas.map(researchAreaCard).join("")}</div>
+      <a class="ecosystem-link" href="${url("research/areas/")}">View all research areas <span aria-hidden="true">↗</span></a>
+    </section>`;
+  }
+
+  function renderResearchAreas() {
+    return `<section class="page-hero">${sectionHeader(page.kicker, page.title, page.intro)}</section>
+      <section class="home-research-areas research-area-index">
+        <div class="research-areas-heading"><p class="eyebrow">Signal to application</p><h2>Research areas.</h2><p>Each page brings together the relevant questions, contributors, and publications.</p></div>
+        <div class="research-area-grid">${data.researchAreas.map(researchAreaCard).join("")}</div>
+      </section>`;
+  }
+
+  function renderResearchArea(area) {
+    const members = (area.memberSlugs || []).map((slug) => data.team.find((person) => person.slug === slug)).filter(Boolean).map(resolvedTeamMember);
+    const publications = (area.publicationSlugs || []).map((slug) => data.publications.find((item) => item.slug === slug)).filter(Boolean);
+    return `
+      <section class="page-hero research-area-hero"><img class="research-area-hero-image" src="${asset(area.image)}" alt="">
+        ${backLink("research/areas/", "All research areas")}
+        ${sectionHeader(`Research area ${text(area.number)} / ${String(data.researchAreas.length).padStart(2, "0")}`, area.title, area.dek)}
+        <div class="tag-row reveal">${(area.tags || []).map((tag) => `<em>${text(tag)}</em>`).join("")}</div>
+      </section>
+      <section class="research-area-detail">
+        <div class="area-narrative"><p class="eyebrow">The research</p><div>${(area.body || []).map((paragraph) => `<p>${text(paragraph)}</p>`).join("")}</div></div>
+        <div class="area-related">
+          <section><header><p class="eyebrow">People</p><h2>Contributors</h2><span>${members.length}</span></header>
+            <div class="area-member-grid">${members.map((member) => `<a class="area-member" href="${url(member.url)}"><img src="${researcherPhoto(member)}" loading="lazy" alt=""><div><h3>${text(member.name)}</h3><p>${text(member.role)}</p></div><b aria-hidden="true">↗</b></a>`).join("")}</div>
+          </section>
+          <section><header><p class="eyebrow">Research record</p><h2>Related publications</h2><span>${publications.length}</span></header>
+            <div class="area-publication-list">${publications.length ? publications.map((publication) => `<a class="area-publication" href="${url(publication.url)}"><span>${text(publication.year)} / ${text(publication.status || publication.type)}</span><h3>${text(publication.title)}</h3><b aria-hidden="true">↗</b></a>`).join("") : `<p class="area-empty">No publication is assigned to this area yet. New records can be linked in its research-area JSON file.</p>`}</div>
+          </section>
+        </div>
+      </section>`;
+  }
   function renderResearchIndex() {
     return `
       <section class="page-hero">${sectionHeader(page.kicker, page.title, page.intro)}</section>
+      ${homeResearchAreas()}
       <section class="band">
         <div class="card-grid">${data.research.map(researchCard).join("")}</div>
       </section>
@@ -413,7 +464,7 @@
         <a href="${url("research/experience/")}">Experience</a>
         <a href="${url("research/profile/")}">Research Profile</a>
         <a href="${url("research/team/")}">Team</a>
-        <a href="${url("research/publications/")}">Working Papers</a>
+        <a href="${url("research/publications/")}">Publications</a>
       </section>
     `;
   }
@@ -828,15 +879,15 @@
             ${contactLines ? `<div class="rp-contact-lines">${contactLines}</div>` : ""}
           </div>
           <aside class="rp-bibliometrics">
-            <strong class="rp-biblio-tab">${isOwnerProfile ? "working papers" : "h-index"}</strong>
+            <strong class="rp-biblio-tab">${isOwnerProfile ? "publications" : "h-index"}</strong>
             <div class="rp-biblio-values">
               ${isOwnerProfile
-                ? `<div><strong>${metrics.totalOutputs}</strong><span>Working drafts</span></div><div><strong>WIP</strong><span>Not published</span></div>`
+                ? `<div><strong>${metrics.totalOutputs}</strong><span>Research records</span></div><div><strong>CV</strong><span>Status per record</span></div>`
                 : `<div><strong>${metrics.citations.toLocaleString()}</strong><span>Citations</span></div><div><strong>${metrics.hIndex}</strong><span>h-index</span></div>`}
               <i title="${attr(metrics.metricSource)}">i</i>
             </div>
-            <div class="rp-biblio-chart ${metrics.firstYear && metrics.firstYear === metrics.latestYear ? "single-year" : ""}"><span>${metrics.firstYear || ""}</span>${renderActivityChart(metrics.activity, isOwnerProfile ? "working-paper drafts" : "research outputs")}<span>${metrics.latestYear && metrics.latestYear !== metrics.firstYear ? metrics.latestYear : ""}</span></div>
-            <small>${isOwnerProfile ? "Working-paper activity" : "Research activity per year"}</small>
+            <div class="rp-biblio-chart ${metrics.firstYear && metrics.firstYear === metrics.latestYear ? "single-year" : ""}"><span>${metrics.firstYear || ""}</span>${renderActivityChart(metrics.activity, isOwnerProfile ? "research records" : "research outputs")}<span>${metrics.latestYear && metrics.latestYear !== metrics.firstYear ? metrics.latestYear : ""}</span></div>
+            <small>${isOwnerProfile ? "Research activity per year" : "Research activity per year"}</small>
           </aside>
         </section>
 
@@ -844,7 +895,7 @@
           <button type="button" class="active" data-icon="person" data-profile-jump="rp-personal">Overview</button>
           <button type="button" data-icon="fingerprint" data-profile-jump="rp-fingerprint">Fingerprint</button>
           <button type="button" data-icon="network" data-profile-jump="rp-collaborations">Network</button>
-          <button type="button" data-icon="output" data-profile-jump="rp-outputs">${isOwnerProfile ? "Working papers" : "Research output"} (${metrics.totalOutputs})</button>
+          <button type="button" data-icon="output" data-profile-jump="rp-outputs">${isOwnerProfile ? "Publications" : "Research output"} (${metrics.totalOutputs})</button>
           ${(person.prizes || []).length ? `<button type="button" data-icon="prize" data-profile-jump="rp-prizes">Prizes (${metrics.prizeCount})</button>` : ""}
           ${(person.activities || []).length ? `<button type="button" data-icon="activity" data-profile-jump="rp-activities">Activities (${metrics.activityCount})</button>` : ""}
           ${(person.media || []).length ? `<button type="button" data-icon="media" data-profile-jump="rp-media">Press/Media (${person.media.length})</button>` : ""}
@@ -864,7 +915,7 @@
 
         <section id="rp-fingerprint" class="rp-pure-section rp-pure-fingerprint reveal" data-profile-search-section>
           <header class="rp-pure-section-head">
-            <div><h2><i class="rp-section-icon fingerprint" aria-hidden="true"></i>Fingerprint</h2><p>Dive into the research topics where ${text(person.name)} is active. These topic labels come from profile interests${isOwnerProfile ? (metrics.totalOutputs ? " and verified working-paper drafts" : "") : " and research records"}. Together they form a unique fingerprint.</p></div>
+            <div><h2><i class="rp-section-icon fingerprint" aria-hidden="true"></i>Fingerprint</h2><p>Dive into the research topics where ${text(person.name)} is active. These topic labels come from profile interests${isOwnerProfile ? (metrics.totalOutputs ? " and verified research records" : "") : " and research records"}. Together they form a unique fingerprint.</p></div>
             <div class="rp-similar-badge"><strong>${metrics.similarProfiles}</strong><span>Similar profiles</span></div>
           </header>
           ${metrics.fingerprint.length ? `<div class="rp-fingerprint-cloud" data-fingerprint-cloud>${metrics.fingerprint.map((topic, index) => `<button type="button" class="${index >= 8 ? "rp-fingerprint-extra" : ""}" data-fingerprint-topic="${attr(topic.label)}" data-label="${attr(topic.label)}" data-score="${topic.score}" style="--score:${topic.score};--delay:${index}" title="Open ${attr(topic.label)} details"><i class="rp-rank-donut" aria-hidden="true"></i><span><b>${text(topic.label)}</b><small>${text(topic.thesaurus || "Keyphrases")}</small></span></button>`).join("")}</div>` : `<div class="rp-empty">Add interests or research-record keywords to create a fingerprint.</div>`}
@@ -903,13 +954,13 @@
         </section>
 
         <section id="rp-outputs" class="rp-pure-section rp-pure-outputs reveal" data-profile-search-section>
-          <header class="rp-pure-section-head"><div><p class="eyebrow">${isOwnerProfile ? "Work in progress" : "Research record"}</p><h2>${isOwnerProfile ? "Working papers" : "Research output"}</h2></div><span class="rp-section-total">${metrics.totalOutputs} ${isOwnerProfile ? "unpublished drafts" : "total outputs"}</span></header>
+          <header class="rp-pure-section-head"><div><p class="eyebrow">Research record</p><h2>${isOwnerProfile ? "Publications" : "Research output"}</h2></div><span class="rp-section-total">${metrics.totalOutputs} ${isOwnerProfile ? "research records" : "total outputs"}</span></header>
           <div class="rp-output-overview">
             <div class="rp-output-types" data-output-types>
               ${metrics.outputTypes.map((item, index) => `<div class="${index > 3 ? "rp-output-more" : ""}"><strong>${item.count}</strong><span>${text(item.label)}</span></div>`).join("")}
               ${metrics.outputTypes.length > 4 ? `<button type="button" data-output-toggle aria-expanded="false">${metrics.outputTypes.length - 4} more output types</button>` : ""}
             </div>
-            <div class="rp-output-chart"><h3>${isOwnerProfile ? "Working papers by year" : "Research output per year"}</h3>${renderActivityChart(metrics.activity, isOwnerProfile ? "working-paper drafts" : "research outputs")}</div>
+            <div class="rp-output-chart"><h3>${isOwnerProfile ? "Research records by year" : "Research output per year"}</h3>${renderActivityChart(metrics.activity, isOwnerProfile ? "research records" : "research outputs")}</div>
           </div>
           <div class="rp-pure-output-list">
             ${metrics.outputs.length ? metrics.outputs.map((item) => {
@@ -917,7 +968,7 @@
               return `<a class="rp-pure-output-item" data-profile-search-item href="${attr(href)}"><span class="rp-output-year">${item.year}</span><div><small>${text(item.type)}</small><h3>${text(item.title)}</h3><p>${text(item.authors)} - ${text(item.venue)}</p><div>${item.openAccess ? `<em>Open access</em>` : ""}${Number(item.citationCount) ? `<em>${Number(item.citationCount)} citation${Number(item.citationCount) === 1 ? "" : "s"}</em>` : ""}</div></div><span aria-hidden="true">-&gt;</span></a>`;
             }).join("") : `<div class="rp-empty">No research records currently match this researcher's author names.</div>`}
           </div>
-          ${person.sourceUrl ? `<a class="rp-text-link" href="${attr(person.sourceUrl)}">View all ${metrics.totalOutputs} research outputs -&gt;</a>` : `<a class="rp-text-link" href="${url("research/publications/")}">View all working papers -&gt;</a>`}
+          ${person.sourceUrl ? `<a class="rp-text-link" href="${attr(person.sourceUrl)}">View all ${metrics.totalOutputs} research outputs -&gt;</a>` : `<a class="rp-text-link" href="${url("research/publications/")}">View all publications -&gt;</a>`}
         </section>
 
         ${renderProfileRecordSection("rp-prizes", "Recognition", "Prizes", person.prizes, `${metrics.prizeCount} total prizes`)}
@@ -937,7 +988,7 @@
           <div class="rp-dialog-topic"><i class="rp-rank-donut" data-dialog-donut aria-hidden="true"></i><div><small data-dialog-thesaurus></small><h2 data-dialog-title></h2></div></div>
           <div class="rp-dialog-score"><strong data-dialog-score></strong><span>Fingerprint strength</span></div>
           <p data-dialog-description></p>
-          <section><h3>${isOwnerProfile ? "Supporting working-paper drafts" : "Supporting research outputs"}</h3><div data-dialog-outputs></div></section>
+          <section><h3>${isOwnerProfile ? "Supporting research records" : "Supporting research outputs"}</h3><div data-dialog-outputs></div></section>
           <section><h3>Related topics</h3><div class="rp-dialog-related" data-dialog-related></div></section>
           ${person.sourceUrl ? `<a class="rp-dialog-source" href="${attr(person.sourceUrl)}">Open source fingerprint</a>` : ""}
         </dialog>
@@ -945,7 +996,7 @@
         ${researchProfileLoader()}
 
         <footer class="rp-source-note">
-          <p>${isOwnerProfile ? `This profile currently lists ${metrics.totalOutputs} local working-paper record${metrics.totalOutputs === 1 ? "" : "s"} and does not claim peer-reviewed publications. Topics recalculate from profile interests and any verified working-paper JSON.` : "Profile metrics with an external source are a saved snapshot and may change at the provider. Local profiles recalculate automatically from this site's research-record JSON."}</p>
+          <p>${isOwnerProfile ? `This profile lists ${metrics.totalOutputs} local research record${metrics.totalOutputs === 1 ? "" : "s"}. Publication and review status is shown on each record. Topics recalculate from profile interests and publication metadata.` : "Profile metrics with an external source are a saved snapshot and may change at the provider. Local profiles recalculate automatically from this site's research-record JSON."}</p>
           ${person.sourceUrl ? `<a href="${attr(person.sourceUrl)}">Open source profile</a>` : ""}
         </footer>
 
@@ -963,7 +1014,7 @@
       <section class="article-layout">
         <aside class="side-index reveal">
           <a href="${url("research/")}">All research</a>
-          <a href="${url("research/publications/")}">Related working papers</a>
+          <a href="${url("research/publications/")}">Related publications</a>
           <a href="${url("get-involved/contact/")}">Collaborate</a>
         </aside>
         <article class="prose reveal">
@@ -1034,14 +1085,22 @@
 
   function renderPublications() {
     return `
-      <section class="page-hero">${sectionHeader(page.kicker, page.title, page.intro)}</section>
+      <section class="page-hero">${sectionHeader(page.kicker, page.title, page.intro)}<a class="button primary" href="${url("admin/#new-publication")}">Add a publication ↗</a></section>
       <section class="publication-list">${data.publications.map(publicationCard).join("")}</section>
     `;
   }
 
   function renderPublication(item) {
+    const status = String(item.status || item.type || "").toLowerCase();
+    const disclosure = status.includes("accepted")
+      ? "Accepted contribution. Check the venue record for final publication details."
+      : status.includes("review") || status.includes("revision")
+        ? "Manuscript under review or revision; no final publication is claimed."
+        : status.includes("published")
+          ? "Published record; bibliographic details are shown above."
+          : "Working manuscript or project record; no peer-reviewed publication is claimed.";
     return `
-      <section class="page-hero">${backLink("research/publications/", "Back to working papers")}${sectionHeader(item.type, item.title, item.abstract)}</section>
+      <section class="page-hero">${backLink("research/publications/", "Back to publications")}${sectionHeader(item.type, item.title, item.abstract)}</section>
       <section class="article-layout">
         <aside class="side-index reveal">
           <span>${item.year}</span>
@@ -1050,11 +1109,11 @@
           ${item.status ? `<span>Status: ${text(item.status)}</span>` : ""}
         </aside>
         <article class="prose reveal">
-          <h2>Draft abstract</h2>
+          <h2>Abstract and summary</h2>
           <p>${text(item.abstract)}</p>
-          <p><strong>Disclosure:</strong> This is a working paper in progress, not a peer-reviewed or formally published article.</p>
+          <p><strong>Status note:</strong> ${disclosure}</p>
           <h2>Resources</h2>
-          ${item.paperUrl ? `<p><a class="button primary" href="${attr(item.paperUrl)}">Download working draft</a></p>` : `<p>No public working draft has been attached.</p>`}
+          ${item.paperUrl ? `<p><a class="button primary" href="${attr(item.paperUrl)}">Open attached paper</a></p>` : `<p>No public paper file has been attached.</p>`}
           ${item.doi ? `<p><a href="https://doi.org/${attr(String(item.doi).replace(/^https?:\/\/(?:dx\.)?doi\.org\//, ""))}">View DOI record</a></p>` : ""}
         </article>
       </section>
@@ -1163,6 +1222,23 @@
           <div><p class="eyebrow">GitHub Pages content system</p><h2>No database, subscription, or cloud storage required</h2><p>Every public change is version-controlled, reviewable, and recoverable through Git.</p></div>
         </header>
 
+        <form class="publication-builder reveal" data-publication-builder id="new-publication">
+          <header><p class="eyebrow">Publications / New record</p><h2>Add a publication</h2><p>Enter the exact status you want shown publicly. Download the JSON file, then upload it to <code>content/publications/</code> on GitHub. The site rebuilds automatically.</p></header>
+          <div class="publication-builder-grid">
+            <label class="wide">Title<input name="title" required placeholder="Full paper or manuscript title"></label>
+            <label>Year<input name="year" required inputmode="numeric" pattern="[0-9]{4}" value="${new Date().getFullYear()}"></label>
+            <label>Type<input name="type" required placeholder="Journal manuscript, conference paper, working paper"></label>
+            <label>Status<input name="status" required placeholder="Under review, accepted, published, in preparation"></label>
+            <label>Venue<input name="venue" placeholder="Journal, conference, or manuscript status"></label>
+            <label class="wide">Authors<input name="authors" required placeholder="Names in publication order"></label>
+            <label class="wide">Abstract or summary<textarea name="abstract" rows="5" required></textarea></label>
+            <label class="wide">Keywords<input name="keywords" placeholder="Comma-separated topics"></label>
+            <label>DOI (optional)<input name="doi" placeholder="10.xxxx/xxxxx"></label>
+            <label>Paper URL (optional)<input name="paperUrl" placeholder="https://..."></label>
+          </div>
+          <div class="publication-builder-options"><fieldset><legend>Research areas</legend>${data.researchAreas.map((area) => `<label><input type="checkbox" name="areaSlugs" value="${attr(area.slug)}"> ${text(area.title)}</label>`).join("")}</fieldset><fieldset><legend>Contributor profiles</legend>${data.team.map((member) => `<label><input type="checkbox" name="profileSlugs" value="${attr(member.slug)}" ${member.slug === "brandon-chen" ? "checked" : ""}> ${text(member.name)}</label>`).join("")}</fieldset></div>
+          <div class="publication-builder-actions"><button class="button primary" type="submit">Download publication JSON</button><a href="${repository}/tree/main/content/publications" target="_blank" rel="noopener noreferrer">Upload it to GitHub ↗</a><span data-publication-builder-status aria-live="polite"></span></div>
+        </form>
         <div class="static-admin-grid">
           <article class="static-admin-card reveal">
             <strong>01</strong><span>Researcher profiles</span>
@@ -1171,21 +1247,27 @@
             <div><a href="${repository}/blob/main/content/team/brandon-chen.json" target="_blank" rel="noopener noreferrer">Edit Brandon's central profile</a><a href="${repository}/tree/main/content/team" target="_blank" rel="noopener noreferrer">Open all profiles</a><a href="${repository}/blob/main/content/templates/research-profile.example.json" target="_blank" rel="noopener noreferrer">View profile template</a></div>
           </article>
           <article class="static-admin-card reveal">
-            <strong>02</strong><span>Working papers</span>
+            <strong>02</strong><span>Publications</span>
             <h2>Maintain drafts without overclaiming</h2>
-            <p>Create one JSON file per working paper. Keep its unpublished status explicit; add keywords, profile slugs, and an optional draft PDF under <code>assets/papers/</code>.</p>
+            <p>Use the form above or edit one JSON file per record. Specify its exact status, keywords, research areas, contributor profiles, and any public paper URL.</p>
             <div><a href="${repository}/tree/main/content/publications" target="_blank" rel="noopener noreferrer">Open papers on GitHub</a><a href="${repository}/blob/main/content/templates/publication.example.json" target="_blank" rel="noopener noreferrer">View paper template</a></div>
           </article>
           <article class="static-admin-card reveal">
-            <strong>03</strong><span>Recruitment</span>
+            <strong>03</strong><span>Research areas</span>
+            <h2>Assign contributors and papers</h2>
+            <p>Each area has one JSON file. Add contributor IDs to <code>memberSlugs</code> and publication IDs to <code>publicationSlugs</code>. New publication files can also select areas through <code>areaSlugs</code>.</p>
+            <div><a href="${repository}/tree/main/content/research-areas" target="_blank" rel="noopener noreferrer">Edit research areas on GitHub</a><a href="${repository}/blob/main/content/templates/research-area.example.json" target="_blank" rel="noopener noreferrer">New area template</a><a href="${url("research/areas/")}">View research areas</a></div>
+          </article>
+          <article class="static-admin-card reveal">
+            <strong>04</strong><span>Recruitment</span>
             <h2>Create recruitment opportunities</h2>
             <p>Copy the recruitment template to add opportunities with perks, requirements, fit indicators, preferences, and a clear engagement note.</p>
             <div><a href="${repository}/tree/main/content/recruitment" target="_blank" rel="noopener noreferrer">Open recruitment content</a><a href="${repository}/blob/main/content/templates/recruitment.example.json" target="_blank" rel="noopener noreferrer">View recruitment template</a></div>
           </article>
           <article class="static-admin-card reveal">
-            <strong>04</strong><span>Build and publish</span>
+            <strong>05</strong><span>Build and publish</span>
             <h2>Regenerate the website</h2>
-            <p>Run the generator after editing JSON. It rebuilds the public data bundle and creates each matching profile and working-paper page.</p>
+            <p>Uploading content JSON to GitHub now triggers generation automatically. For a local preview, run the generator yourself.</p>
             <div class="static-command"><code>node tools/generate-pages.js</code><button type="button" data-copy-command="node tools/generate-pages.js">Copy</button></div>
           </article>
         </div>
@@ -1225,10 +1307,10 @@
 
   function renderCv() {
     const owner = data.team.find((person) => person.slug === "brandon-chen") || {};
-    const workingPapers = publicationsFor(owner).filter((item) => item.type === "Working paper");
+    const ownerPublications = publicationsFor(owner);
     const configuredGroups = owner.cv || [];
     const groups = configuredGroups.length ? configuredGroups.map((group) => {
-      if (group.source === "workingPapers") return { ...group, items: workingPapers.map((item) => ({ label: item.title, href: url(item.url), note: "In progress — not published" })) };
+      if (group.source === "workingPapers") return { ...group, title: "Publications", items: ownerPublications.map((item) => ({ label: item.title, href: url(item.url), note: text(item.status || item.type) })) };
       if (group.source === "profiles") return { ...group, items: [
         owner.linkedin ? { label: "LinkedIn", href: owner.linkedin, note: "Current professional profile" } : null,
         owner.orcid ? { label: "ORCID", href: owner.orcid } : null,
@@ -1238,7 +1320,7 @@
     }) : [
       { title: "Research interests", items: (owner.interests || []).map((label) => ({ label })) },
       { title: "Experience", items: [{ label: "Professional experience and project history", href: owner.linkedin, note: "Maintained on LinkedIn" }] },
-      { title: "Working papers", items: workingPapers.map((item) => ({ label: item.title, href: url(item.url), note: "In progress — not published" })) }
+      { title: "Publications", items: ownerPublications.map((item) => ({ label: item.title, href: url(item.url), note: text(item.status || item.type) })) }
     ];
     return `
       <section class="page-hero">${sectionHeader(page.kicker, page.title, page.intro)}<a class="button primary" href="${asset("assets/brandon-chen-cv.pdf")}" download>Download full CV ↗</a></section>
@@ -1512,7 +1594,7 @@
   }
 
   function bindInteractiveCards() {
-    const cards = document.querySelectorAll(".research-card, .research-row, .ecosystem-card, .collection-card, .publication-card, .person-card, .cv-card, .notice-panel, .intro-panel, .portrait-card, .contact-card, .home-tab-panel, .cap-card, .status-panel, .status-card, .involved-card, .recruitment-card, .application-panel");
+    const cards = document.querySelectorAll(".research-card, .research-row, .research-area-card, .ecosystem-card, .collection-card, .publication-card, .person-card, .cv-card, .notice-panel, .intro-panel, .portrait-card, .contact-card, .home-tab-panel, .cap-card, .status-panel, .status-card, .involved-card, .recruitment-card, .application-panel");
     cards.forEach((card) => card.classList.add("motion-card", "effect-card"));
 
     if (window.matchMedia("(pointer: coarse), (prefers-reduced-motion: reduce)").matches) return;
@@ -1846,7 +1928,7 @@
           $("[data-dialog-donut]", fingerprintDialog).style.setProperty("--score", topic.score);
           const ownerDraft = activePerson.slug === "brandon-chen";
           const evidenceCopy = evidence.length
-            ? `${topic.label} appears across ${evidence.length} ${ownerDraft ? "working-paper draft" : "research output"}${evidence.length === 1 ? "" : "s"} connected to ${activePerson.name}. The score is recalculated from profile topics and research-record metadata.`
+            ? `${topic.label} appears across ${evidence.length} ${ownerDraft ? "research record" : "research output"}${evidence.length === 1 ? "" : "s"} connected to ${activePerson.name}. The score is recalculated from profile topics and research-record metadata.`
             : `${topic.label} is part of ${activePerson.name}'s source or curated research fingerprint. Add matching research records to provide supporting evidence and recalculate its weight.`;
           $("[data-dialog-description]", fingerprintDialog).textContent = `${evidenceCopy} Raw weight ${topic.rawWeight}: ${topic.interestWeight} from profile interests plus ${topic.paperWeight} from paper evidence across ${topic.paperCount} matched record${topic.paperCount === 1 ? "" : "s"}. The displayed ${topic.score}% is normalized to the strongest topic.`;
           $("[data-dialog-outputs]", fingerprintDialog).innerHTML = evidence.length ? evidence.slice(0, 8).map((item) => {
@@ -2038,6 +2120,38 @@
     if (pageKey !== "admin") return;
     const staticAdmin = $("[data-static-admin]");
     if (staticAdmin) {
+      const builder = $("[data-publication-builder]", staticAdmin);
+      builder?.addEventListener("submit", (event) => {
+        event.preventDefault();
+        if (!builder.reportValidity()) return;
+        const values = new FormData(builder);
+        const title = String(values.get("title") || "").trim();
+        const slug = title.toLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+        if (!slug) return;
+        const record = {
+          slug,
+          year: String(values.get("year") || "").trim(),
+          type: String(values.get("type") || "").trim(),
+          title,
+          authors: String(values.get("authors") || "").trim(),
+          venue: String(values.get("venue") || "").trim(),
+          abstract: String(values.get("abstract") || "").trim(),
+          status: String(values.get("status") || "").trim(),
+          keywords: String(values.get("keywords") || "").split(",").map((word) => word.trim()).filter(Boolean),
+          profileSlugs: values.getAll("profileSlugs"),
+          areaSlugs: values.getAll("areaSlugs"),
+          order: 0
+        };
+        if (String(values.get("doi") || "").trim()) record.doi = String(values.get("doi")).trim();
+        if (String(values.get("paperUrl") || "").trim()) record.paperUrl = String(values.get("paperUrl")).trim();
+        const objectUrl = URL.createObjectURL(new Blob([JSON.stringify(record, null, 2) + "\n"], { type: "application/json" }));
+        const download = document.createElement("a");
+        download.href = objectUrl;
+        download.download = slug + ".json";
+        download.click();
+        window.setTimeout(() => URL.revokeObjectURL(objectUrl), 1000);
+        $("[data-publication-builder-status]", builder).textContent = `Downloaded ${slug}.json. Upload it to content/publications/ on GitHub.`;
+      });
       staticAdmin.querySelectorAll("[data-copy-command]").forEach((button) => {
         button.addEventListener("click", async () => {
           const command = button.dataset.copyCommand;
@@ -2382,6 +2496,7 @@
       if (requestedPublication) return renderPublication(requestedPublication);
     }
 
+    const researchArea = data.researchAreas.find((item) => `research/areas/${item.slug}` === pageKey);
     const researchItem = data.research.find((item) => `research/${item.slug}` === pageKey);
     const person = data.team.find((item) => `research/team/${item.slug}` === pageKey);
     const publication = data.publications.find((item) => `research/publications/${item.slug}` === pageKey);
@@ -2390,6 +2505,7 @@
     const blog = data.blog.find((item) => `blog/${item.slug}` === pageKey);
     const position = data.recruitment.find((item) => `get-involved/recruitment/${item.slug}` === pageKey);
 
+    if (researchArea) return renderResearchArea(researchArea);
     if (researchItem) return renderResearchDetail(researchItem);
     if (person) return renderPerson(person);
     if (publication) return renderPublication(publication);
@@ -2402,6 +2518,7 @@
       case "home": return renderHome();
       case "about": return renderAbout();
       case "research": return renderResearchIndex();
+      case "researchAreas": return renderResearchAreas();
       case "researchProfile": return renderResearchProfile();
       case "admin": return renderAdmin();
       case "timeline": return renderTimeline();
@@ -2434,6 +2551,9 @@
     bindNewTabLinks();
     bindBackToTop();
     if (pageKey === "home") requestAnimationFrame(() => document.body.classList.add("hero-ready"));
+    if (window.location.hash.length > 1) {
+      requestAnimationFrame(() => document.getElementById(decodeURIComponent(window.location.hash.slice(1)))?.scrollIntoView({ block: "start" }));
+    }
   }
 
   async function bootstrap() {

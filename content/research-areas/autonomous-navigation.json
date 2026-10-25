@@ -1,0 +1,15 @@
+{
+  "slug": "autonomous-navigation",
+  "number": "06",
+  "title": "Autonomous navigation and simulation",
+  "dek": "Testing positioning and sensor-fusion ideas in reproducible UAV and urban navigation scenarios.",
+  "image": "assets/research-hero.webp",
+  "tags": ["Autonomy", "Sensor fusion", "Simulation"],
+  "body": [
+    "Autonomous systems need navigation methods that can be tested across changing geometry, sensor quality, and signal conditions.",
+    "UAVLab and NavLab are public browser-based simulation projects for exploring GNSS, sensor fusion, and urban navigation. This area will list associated publications as they are added."
+  ],
+  "memberSlugs": ["brandon-chen"],
+  "publicationSlugs": [],
+  "order": 6
+}

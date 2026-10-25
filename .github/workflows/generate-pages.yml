@@ -1,0 +1,35 @@
+name: Generate content pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "content/**"
+      - "tools/generate-pages.js"
+      - ".github/workflows/generate-pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Generate pages and data
+        run: node tools/generate-pages.js
+      - name: Commit generated pages
+        run: |
+          git add -A
+          if ! git diff --cached --quiet; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "Generate pages from content"
+            git push
+          fi

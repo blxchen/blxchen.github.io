@@ -1,0 +1,15 @@
+{
+  "slug": "urban-gnss",
+  "number": "01",
+  "title": "Urban GNSS reliability",
+  "dek": "Understanding and reducing multipath, signal blockage, and non-line-of-sight error in dense cities.",
+  "image": "assets/kaohsiung-backdrop.webp",
+  "tags": ["Urban canyons", "Multipath", "NLOS"],
+  "body": [
+    "Dense buildings change which satellites are visible and how their signals arrive. This area studies measurement reliability before a position solution is trusted.",
+    "The current portfolio includes smartphone pseudorange reweighting and work on uncertainty in complex urban environments."
+  ],
+  "memberSlugs": ["brandon-chen", "ng-derek-hoi-wah", "li-ta-hsu"],
+  "publicationSlugs": ["urban-smartphone-gnss", "uncertainty-aware-3dma-gnss", "value-of-information-smartphone-3dma"],
+  "order": 1
+}

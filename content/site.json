@@ -33,7 +33,7 @@
     "stats": [
       {
         "value": "06",
-        "label": "Manuscripts and papers"
+        "label": "Research records"
       },
       {
         "value": "03",
@@ -160,7 +160,7 @@
             "href": "research/navigation-simulation/"
           },
           {
-            "label": "Working papers",
+            "label": "Publications",
             "href": "research/publications/"
           }
         ]
@@ -207,6 +207,10 @@
           "url": "research/"
         },
         {
+          "label": "Research Areas",
+          "url": "research/areas/"
+        },
+        {
           "label": "Experience",
           "url": "research/experience/"
         },
@@ -219,7 +223,7 @@
           "url": "research/team/"
         },
         {
-          "label": "Working Papers",
+          "label": "Publications",
           "url": "research/publications/"
         }
       ]
@@ -276,6 +280,12 @@
       "kicker": "Research",
       "intro": "My research centres on GNSS, Positioning, Navigation and Timing, and simulation for autonomous and urban navigation."
     },
+    "research/areas": {
+      "template": "researchAreas",
+      "title": "Research Areas",
+      "kicker": "Research pillars",
+      "intro": "Six connected areas across urban positioning, satellite navigation, atmospheric sensing, and autonomous systems."
+    },
     "research/experience": {
       "template": "timeline",
       "title": "Experience",
@@ -301,7 +311,7 @@
       "template": "admin",
       "title": "Content Control Room",
       "kicker": "Free GitHub workflow",
-      "intro": "Manage researcher profiles, working papers, photos, and generated fingerprints directly from VS Code or GitHub without a paid backend."
+      "intro": "Manage researcher profiles, research areas, publications, photos, and generated fingerprints directly from VS Code or GitHub."
     },
     "research/team": {
       "template": "team",
@@ -311,9 +321,9 @@
     },
     "research/publications": {
       "template": "publications",
-      "title": "Working Papers",
-      "kicker": "Work in progress",
-      "intro": "Selected manuscripts, papers in review, and an accepted conference contribution. Statuses reflect the attached CV."
+      "title": "Publications",
+      "kicker": "Research record",
+      "intro": "Manuscripts, papers in review, and an accepted conference contribution. Each record shows its current status."
     },
     "media": {
       "template": "collection",

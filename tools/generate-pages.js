@@ -8,6 +8,7 @@ const sitePath = path.join(contentRoot, "site.json");
 
 const collectionConfigs = [
   { key: "research", dir: "research", prefix: "research" },
+  { key: "researchAreas", dir: "research-areas", prefix: "research/areas" },
   { key: "team", dir: "team", prefix: "research/team" },
   { key: "publications", dir: "publications", prefix: "research/publications" },
   { key: "media", dir: "media", prefix: "media" },
@@ -47,6 +48,14 @@ function loadSiteData() {
   collectionConfigs.forEach((config) => {
     data[config.key] = loadCollection(config);
   });
+  const areaBySlug = new Map(data.researchAreas.map((area) => [area.slug, area]));
+  for (const publication of data.publications) {
+    for (const slug of publication.areaSlugs || []) {
+      const area = areaBySlug.get(slug);
+      if (!area) throw new Error(`Publication ${publication.slug} references unknown research area ${slug}`);
+      area.publicationSlugs = [...new Set([...(area.publicationSlugs || []), publication.slug])];
+    }
+  }
   const owner = data.team.find((person) => person.slug === "brandon-chen");
   if (owner) {
     data.profile.name = owner.name || data.profile.name;
@@ -59,13 +68,19 @@ function loadSiteData() {
       owner.github ? { label: "GitHub", href: owner.github } : null
     ].filter(Boolean);
     if (owner.experience && owner.experience.length) data.pages["research/experience"].entries = owner.experience;
-    const workingPapers = data.publications.filter((item) => (item.profileSlugs || []).includes(owner.slug) && item.type === "Working paper");
-    const workingPaperStat = data.profile.stats.find((item) => item.label === "Working papers");
-    if (workingPaperStat) workingPaperStat.value = String(workingPapers.length);
-    const workingPaperStatus = data.homepage && data.homepage.status
-      ? data.homepage.status.find((item) => item.label === "Now drafting")
-      : null;
-    if (workingPaperStatus) workingPaperStatus.value = `${workingPapers.length} working papers`;
+    const ownerRecords = data.publications.filter((item) => (item.profileSlugs || []).includes(owner.slug));
+    const publicationStat = data.profile.stats.find((item) => item.label === "Research records");
+    if (publicationStat) publicationStat.value = String(ownerRecords.length).padStart(2, "0");
+  }
+  const members = new Set(data.team.map((item) => item.slug));
+  const publications = new Set(data.publications.map((item) => item.slug));
+  for (const area of data.researchAreas) {
+    for (const slug of area.memberSlugs || []) {
+      if (!members.has(slug)) throw new Error(`Research area ${area.slug} references unknown member ${slug}`);
+    }
+    for (const slug of area.publicationSlugs || []) {
+      if (!publications.has(slug)) throw new Error(`Research area ${area.slug} references unknown publication ${slug}`);
+    }
   }
   return data;
 }
@@ -90,6 +105,7 @@ function htmlFor(pageKey, title, base, data) {
   <link rel="stylesheet" href="${base}css/styles.css">
   <link rel="stylesheet" href="${base}css/xona.css">
   <link rel="stylesheet" href="${base}css/xona-motion.css">
+  <link rel="stylesheet" href="${base}css/research-areas.css">
 </head>
 <body data-page="${pageKey}" data-base="${base}">
   <div id="site-shell"></div>

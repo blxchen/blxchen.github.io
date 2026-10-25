@@ -37,7 +37,8 @@ http://localhost:8080/
 
 - Homepage, nav, page intros: `content/site.json`
 - Research interests: `content/research/`
-- Working papers: `content/publications/` (legacy folder name)
+- Research areas and contributor mappings: `content/research-areas/`
+- Publications: `content/publications/`
 - Static content control room: `admin/`
 - Team members: `content/team/`
 - Media items: `content/media/`
@@ -98,43 +99,25 @@ New page:
 blog/my-new-post/
 ```
 
-## Add A Working Paper
+## Add a publication
 
-Copy any file in:
+Open the site's **Content Control Room** at `/admin/`. Fill in **Add a publication** and choose its research areas and contributor profiles. The form downloads a JSON file. Upload that file to `content/publications/` in the GitHub repository and commit it. The GitHub workflow runs the generator and creates the public page.
 
-```text
-content/publications/
-```
+You can also copy `content/templates/publication.example.json` into `content/publications/` and edit it manually. Use `type` and `status` to state exactly whether a record is in preparation, under review, accepted, or published. The site shows this status on the publication and research-area pages. Add `doi` or `paperUrl` only when you have a real public link.
 
-Copy `content/templates/publication.example.json` or use this minimal example:
+`profileSlugs` links the record to researcher profiles. `areaSlugs` links it to research areas. Both are arrays of slugs. If an area should show a publication that has no `areaSlugs`, add its slug to that area's `publicationSlugs` list.
 
-```json
-{
-  "slug": "new-working-paper",
-  "year": "2026",
-  "type": "Working paper",
-  "title": "Title of the Working Paper",
-  "authors": "Brandon Chen",
-  "venue": "Manuscript in preparation",
-  "abstract": "Short abstract goes here.",
-  "keywords": ["Topic One", "Topic Two"],
-  "profileSlugs": ["brandon-chen"],
-  "order": 1
-}
-```
+The public page URL is `research/publications/<slug>/`.
 
-Run:
+## Add or edit a research area
 
-```powershell
-node tools/generate-pages.js
-```
+Each area is one file in `content/research-areas/`. Copy an existing file to add another, then edit its `slug`, `title`, `dek`, `image`, `tags`, `body`, and `order`.
 
-New working-paper page:
+- `memberSlugs` lists contributor profile slugs from `content/team/`.
+- `publicationSlugs` lists publication slugs from `content/publications/`.
+- A new publication can also select the area with its own `areaSlugs` field.
 
-```text
-research/publications/new-working-paper/
-```
-
+The generator checks these references and stops with an error if a slug is misspelled. Run `node tools/generate-pages.js` to preview locally; on GitHub, committing content JSON runs it automatically.
 ## Add A Research Interest
 
 Copy any file in:
@@ -214,7 +197,7 @@ New page:
 research/team/new-team-member/
 ```
 
-The same researcher also appears in the Research Profile card directory. Working papers and other research records connect to the profile through `profileSlugs`, `publicationNames`, or a matching author name. Those links automatically recalculate the profile fingerprint and activity.
+The same researcher also appears in the Research Profile card directory. Publications and other research records connect to the profile through `profileSlugs`, `publicationNames`, or a matching author name. Those links automatically recalculate the profile fingerprint and activity.
 
 For Brandon, update `content/team/brandon-chen.json` to change the photo path, LinkedIn URL, biography, research interests, CV text, similar profiles, and experience link in one place. To add a portrait later, place the image in `assets/` and change the `photo` value.
 

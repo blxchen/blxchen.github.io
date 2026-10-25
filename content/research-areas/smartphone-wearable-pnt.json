@@ -1,0 +1,15 @@
+{
+  "slug": "smartphone-wearable-pnt",
+  "number": "03",
+  "title": "Smartphone and wearable PNT",
+  "dek": "Reliable positioning with small, everyday receivers and the measurements they can provide.",
+  "image": "assets/terraced-fields.webp",
+  "tags": ["Smartphones", "Wearables", "Pseudorange"],
+  "body": [
+    "Consumer devices face antenna, power, and environmental constraints that differ from survey-grade instruments.",
+    "Current work addresses smartphone GNSS in urban canyons. Wearable positioning is a stated research interest in Brandon's CV; publications will appear here when records are added."
+  ],
+  "memberSlugs": ["brandon-chen", "ng-derek-hoi-wah", "li-ta-hsu"],
+  "publicationSlugs": ["urban-smartphone-gnss", "value-of-information-smartphone-3dma"],
+  "order": 3
+}

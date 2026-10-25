@@ -1,0 +1,15 @@
+{
+  "slug": "3d-mapping-ai",
+  "number": "02",
+  "title": "3D mapping and AI-aided GNSS",
+  "dek": "Using city geometry, uncertainty models, and lightweight learning to improve satellite positioning.",
+  "image": "assets/research-hero.webp",
+  "tags": ["3DMA-GNSS", "Probabilistic maps", "AI/ML"],
+  "body": [
+    "Three-dimensional building models can inform satellite visibility and help distinguish direct signals from reflections. The work also asks when additional map information is worth its cost.",
+    "The papers listed here cover probabilistic building models, the value of information, and learning-assisted pseudorange weighting. Their individual review statuses are shown on each publication page."
+  ],
+  "memberSlugs": ["brandon-chen", "ng-derek-hoi-wah", "li-ta-hsu"],
+  "publicationSlugs": ["uncertainty-aware-3dma-gnss", "value-of-information-smartphone-3dma", "urban-smartphone-gnss"],
+  "order": 2
+}

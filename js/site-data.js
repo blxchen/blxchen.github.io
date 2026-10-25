@@ -32,8 +32,8 @@ window.SITE_DATA = {
     ],
     "stats": [
       {
-        "value": "06",
-        "label": "Manuscripts and papers"
+        "value": "07",
+        "label": "Research records"
       },
       {
         "value": "03",
@@ -160,7 +160,7 @@ window.SITE_DATA = {
             "href": "research/navigation-simulation/"
           },
           {
-            "label": "Working papers",
+            "label": "Publications",
             "href": "research/publications/"
           }
         ]
@@ -207,6 +207,10 @@ window.SITE_DATA = {
           "url": "research/"
         },
         {
+          "label": "Research Areas",
+          "url": "research/areas/"
+        },
+        {
           "label": "Experience",
           "url": "research/experience/"
         },
@@ -219,7 +223,7 @@ window.SITE_DATA = {
           "url": "research/team/"
         },
         {
-          "label": "Working Papers",
+          "label": "Publications",
           "url": "research/publications/"
         }
       ]
@@ -276,6 +280,12 @@ window.SITE_DATA = {
       "kicker": "Research",
       "intro": "My research centres on GNSS, Positioning, Navigation and Timing, and simulation for autonomous and urban navigation."
     },
+    "research/areas": {
+      "template": "researchAreas",
+      "title": "Research Areas",
+      "kicker": "Research pillars",
+      "intro": "Six connected areas across urban positioning, satellite navigation, atmospheric sensing, and autonomous systems."
+    },
     "research/experience": {
       "template": "timeline",
       "title": "Experience",
@@ -329,7 +339,7 @@ window.SITE_DATA = {
       "template": "admin",
       "title": "Content Control Room",
       "kicker": "Free GitHub workflow",
-      "intro": "Manage researcher profiles, working papers, photos, and generated fingerprints directly from VS Code or GitHub without a paid backend."
+      "intro": "Manage researcher profiles, research areas, publications, photos, and generated fingerprints directly from VS Code or GitHub."
     },
     "research/team": {
       "template": "team",
@@ -339,9 +349,9 @@ window.SITE_DATA = {
     },
     "research/publications": {
       "template": "publications",
-      "title": "Working Papers",
-      "kicker": "Work in progress",
-      "intro": "Selected manuscripts, papers in review, and an accepted conference contribution. Statuses reflect the attached CV."
+      "title": "Publications",
+      "kicker": "Research record",
+      "intro": "Manuscripts, papers in review, and an accepted conference contribution. Each record shows its current status."
     },
     "media": {
       "template": "collection",
@@ -449,6 +459,162 @@ window.SITE_DATA = {
       ],
       "order": 3,
       "url": "research/navigation-simulation/"
+    }
+  ],
+  "researchAreas": [
+    {
+      "slug": "urban-gnss",
+      "number": "01",
+      "title": "Urban GNSS reliability",
+      "dek": "Understanding and reducing multipath, signal blockage, and non-line-of-sight error in dense cities.",
+      "image": "assets/kaohsiung-backdrop.webp",
+      "tags": [
+        "Urban canyons",
+        "Multipath",
+        "NLOS"
+      ],
+      "body": [
+        "Dense buildings change which satellites are visible and how their signals arrive. This area studies measurement reliability before a position solution is trusted.",
+        "The current portfolio includes smartphone pseudorange reweighting and work on uncertainty in complex urban environments."
+      ],
+      "memberSlugs": [
+        "brandon-chen",
+        "ng-derek-hoi-wah",
+        "li-ta-hsu"
+      ],
+      "publicationSlugs": [
+        "urban-smartphone-gnss",
+        "uncertainty-aware-3dma-gnss",
+        "value-of-information-smartphone-3dma"
+      ],
+      "order": 1,
+      "url": "research/areas/urban-gnss/"
+    },
+    {
+      "slug": "3d-mapping-ai",
+      "number": "02",
+      "title": "3D mapping and AI-aided GNSS",
+      "dek": "Using city geometry, uncertainty models, and lightweight learning to improve satellite positioning.",
+      "image": "assets/research-hero.webp",
+      "tags": [
+        "3DMA-GNSS",
+        "Probabilistic maps",
+        "AI/ML"
+      ],
+      "body": [
+        "Three-dimensional building models can inform satellite visibility and help distinguish direct signals from reflections. The work also asks when additional map information is worth its cost.",
+        "The papers listed here cover probabilistic building models, the value of information, and learning-assisted pseudorange weighting. Their individual review statuses are shown on each publication page."
+      ],
+      "memberSlugs": [
+        "brandon-chen",
+        "ng-derek-hoi-wah",
+        "li-ta-hsu"
+      ],
+      "publicationSlugs": [
+        "uncertainty-aware-3dma-gnss",
+        "value-of-information-smartphone-3dma",
+        "urban-smartphone-gnss"
+      ],
+      "order": 2,
+      "url": "research/areas/3d-mapping-ai/"
+    },
+    {
+      "slug": "smartphone-wearable-pnt",
+      "number": "03",
+      "title": "Smartphone and wearable PNT",
+      "dek": "Reliable positioning with small, everyday receivers and the measurements they can provide.",
+      "image": "assets/terraced-fields.webp",
+      "tags": [
+        "Smartphones",
+        "Wearables",
+        "Pseudorange"
+      ],
+      "body": [
+        "Consumer devices face antenna, power, and environmental constraints that differ from survey-grade instruments.",
+        "Current work addresses smartphone GNSS in urban canyons. Wearable positioning is a stated research interest in Brandon's CV; publications will appear here when records are added."
+      ],
+      "memberSlugs": [
+        "brandon-chen",
+        "ng-derek-hoi-wah",
+        "li-ta-hsu"
+      ],
+      "publicationSlugs": [
+        "urban-smartphone-gnss",
+        "value-of-information-smartphone-3dma"
+      ],
+      "order": 3,
+      "url": "research/areas/smartphone-wearable-pnt/"
+    },
+    {
+      "slug": "leo-navigation",
+      "number": "04",
+      "title": "Low Earth orbit navigation",
+      "dek": "Exploring LEO signals and shadow-edge timing as complements to conventional GNSS.",
+      "image": "assets/orbital-horizon.webp",
+      "tags": [
+        "LEO",
+        "Shadow-edge timing",
+        "Satellite navigation"
+      ],
+      "body": [
+        "Low Earth orbit constellations create different geometry, signal dynamics, and timing opportunities for positioning.",
+        "The linked working paper examines shadow-edge timing for urban positioning. It remains a working paper unless its record is updated."
+      ],
+      "memberSlugs": [
+        "brandon-chen"
+      ],
+      "publicationSlugs": [
+        "shadow-edge-leo-positioning"
+      ],
+      "order": 4,
+      "url": "research/areas/leo-navigation/"
+    },
+    {
+      "slug": "atmospheric-gnss",
+      "number": "05",
+      "title": "Atmospheric GNSS sensing",
+      "dek": "Radio occultation and GNSS reflectometry for studying typhoons and high-latitude environments.",
+      "image": "assets/earth-globe.webp",
+      "tags": [
+        "Radio occultation",
+        "Typhoons",
+        "GNSS-R"
+      ],
+      "body": [
+        "GNSS signals can serve as atmospheric and environmental observations as well as navigation measurements.",
+        "The selected records examine altitude-dependent geolocation in typhoon-relative radio occultation sampling. Publication and review status is specified for each record."
+      ],
+      "memberSlugs": [
+        "brandon-chen"
+      ],
+      "publicationSlugs": [
+        "gnss-radio-occultation-typhoons-formosat-7-cosmic-2",
+        "typhoon-radio-occultation-tasti"
+      ],
+      "order": 5,
+      "url": "research/areas/atmospheric-gnss/"
+    },
+    {
+      "slug": "autonomous-navigation",
+      "number": "06",
+      "title": "Autonomous navigation and simulation",
+      "dek": "Testing positioning and sensor-fusion ideas in reproducible UAV and urban navigation scenarios.",
+      "image": "assets/research-hero.webp",
+      "tags": [
+        "Autonomy",
+        "Sensor fusion",
+        "Simulation"
+      ],
+      "body": [
+        "Autonomous systems need navigation methods that can be tested across changing geometry, sensor quality, and signal conditions.",
+        "UAVLab and NavLab are public browser-based simulation projects for exploring GNSS, sensor fusion, and urban navigation. This area will list associated publications as they are added."
+      ],
+      "memberSlugs": [
+        "brandon-chen"
+      ],
+      "publicationSlugs": [],
+      "order": 6,
+      "url": "research/areas/autonomous-navigation/"
     }
   ],
   "team": [
