@@ -160,4 +160,3 @@ body:not([data-page="home"]) .research-area-hero::after { z-index: -1; backgroun
 @media (min-width: 1101px) {
   .orbit-ruler::before { content: ""; position: absolute; inset: -7px; border-radius: 50%; background: conic-gradient(#8c8c8c 0deg 1.5deg,transparent 1.5deg 89deg,#8c8c8c 89deg 91deg,transparent 91deg 179deg,#8c8c8c 179deg 181deg,transparent 181deg 269deg,#8c8c8c 269deg 271deg,transparent 271deg); -webkit-mask: radial-gradient(circle,transparent 0 48.5%,#000 48.7% 51.3%,transparent 51.5%); mask: radial-gradient(circle,transparent 0 48.5%,#000 48.7% 51.3%,transparent 51.5%); }
 }
-
