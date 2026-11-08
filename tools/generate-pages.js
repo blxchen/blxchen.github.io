@@ -106,6 +106,7 @@ function htmlFor(pageKey, title, base, data) {
   <link rel="stylesheet" href="${base}css/xona.css">
   <link rel="stylesheet" href="${base}css/xona-motion.css">
   <link rel="stylesheet" href="${base}css/research-areas.css">
+  <link rel="stylesheet" href="${base}css/texas-editorial.css">
 </head>
 <body data-page="${pageKey}" data-base="${base}">
   <div id="site-shell"></div>

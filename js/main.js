@@ -154,6 +154,8 @@
           <img class="hero-cinematic" src="${asset("assets/orbital-horizon.webp")}" decoding="async" alt="">
         </div>
         <div class="hero-shade" aria-hidden="true"></div>
+        <div class="hero-collage-orbit" aria-hidden="true"><img src="${asset("assets/earth-globe.webp")}" alt=""></div>
+        <div class="hero-edition" aria-hidden="true"><span>BC / 2026</span><span>POSITIONING · NAVIGATION · TIMING</span></div>
         <div class="hero-telemetry" aria-hidden="true"><small>PNT RESEARCH</small><strong>GNSS</strong><div class="telemetry-lines"><i></i><i></i><i></i><i></i></div><dl><div><dt>FOCUS</dt><dd>URBAN + SPACE</dd></div><div><dt>STATUS</dt><dd>ACTIVE ↗</dd></div><div><dt>LOCATION</dt><dd>HK / TW</dd></div></dl></div>
         <div class="hero-marker" aria-hidden="true"><span>POSITIONING<br>IN MOTION</span><i></i></div>
         <div class="hero-content">
