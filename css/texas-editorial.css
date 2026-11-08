@@ -1,28 +1,28 @@
-@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Charis+SIL:wght@400;700&family=Libre+Franklin:wght@400;500;600;700;800&display=swap");
 
 /* Independent editorial identity informed by UT Austin's color and type system.
    No university marks or lab identity are used. */
 :root {
   --texas-orange: #bf5700;
-  --texas-bright: #e87516;
-  --texas-cream: #f5f0e6;
-  --texas-paper: #fffaf0;
-  --texas-ink: #28221d;
-  --texas-gray: #6b6258;
-  --texas-line: #c9bba8;
+  --texas-bright: #f8971f;
+  --texas-cream: #fff;
+  --texas-paper: #fff;
+  --texas-ink: #333f48;
+  --texas-gray: #505b62;
+  --texas-line: #d6d2c4;
   --cardinal: #bf5700;
   --cardinal-dark: #8d3e00;
-  --night: #28221d;
-  --night-2: #382b22;
-  --mist: #f5f0e6;
-  --mist-2: #fffaf0;
-  --paper: #fffaf0;
-  --sandstone-light: #f5f0e6;
-  --deep-text: #28221d;
-  --soft-text: #6b6258;
-  --ink: #28221d;
-  --muted: #6b6258;
-  --line: #c9bba8;
+  --night: #333f48;
+  --night-2: #263039;
+  --mist: #fff;
+  --mist-2: #fff;
+  --paper: #fff;
+  --sandstone-light: #f5f3ef;
+  --deep-text: #333f48;
+  --soft-text: #505b62;
+  --ink: #333f48;
+  --muted: #505b62;
+  --line: #d6d2c4;
 }
 html { scroll-behavior: smooth; }
 body,body[data-page="home"] { background: var(--texas-cream); color: var(--texas-ink); font-family: "Libre Franklin",Arial,sans-serif; }
@@ -316,6 +316,83 @@ body[data-page="home"] .site-header.is-light .site-brand,body[data-page="home"] 
 body[data-page="home"] .site-header.is-light .site-brand-symbol span { color: var(--texas-orange) !important; }
 body[data-page="home"] .site-header.is-light .site-header-inner { background: transparent !important; }
 body .menu-toggle span,body .site-header.is-light .menu-toggle span,body[data-page="home"] .site-header.is-light .menu-toggle span { background: var(--texas-orange) !important; }
+
+/* The official template examples use white space, solid burnt orange panels,
+   charcoal copy, and a restrained serif/sans hierarchy. */
+body .site-header,body[data-page="home"] .site-header,body:not([data-page="home"]) .site-header,body[data-page="home"] .site-header.is-scrolled { background: #fff; }
+body .site-brand-name,body[data-page="home"] .site-brand-name { font-size: .88rem; }
+body .site-header .nav-item > a,body[data-page="home"] .site-header .nav-item > a,body:not([data-page="home"]) .site-header .nav-item > a { font-size: .7rem; }
+h1,h2,h3,.section-header h1,.section-header h2,.research-area-card h3,.ecosystem-card h3,.record-row h3,.update-row h3,.publication-card h2 { font-family: "Charis SIL",Georgia,serif !important; }
+.hero-slides { top: 0; right: 0; bottom: 0; width: 45%; height: 100%; box-shadow: none; }
+.hero-slides .hero-cinematic,.hero-slides .hero-cinematic.is-active { filter: none; }
+.hero-slides::after { background: linear-gradient(90deg,rgba(191,87,0,.2),transparent 35%); }
+body[data-page="home"] .hero { background: linear-gradient(90deg,#bf5700 0 55%,#fff 55%); border-bottom: 0; }
+body[data-page="home"] .hero::before { content: ""; display: none; }
+body[data-page="home"] .hero-content { width: 50%; margin-left: 5%; }
+body[data-page="home"] .hero-main .eyebrow { color: #fff; letter-spacing: .2em; }
+body[data-page="home"] .hero h1 { max-width: 720px; color: #fff; font: 800 clamp(4.25rem,5.8vw,6.45rem)/1.01 "Libre Franklin",Arial,sans-serif !important; letter-spacing: -.025em; }
+body[data-page="home"] .hero-bottom p { color: #fff; }
+body[data-page="home"] .hero-bottom .round-arrow { border-color: #fff; background: #fff; color: var(--texas-orange); }
+body[data-page="home"] .hero-bottom .round-arrow:hover { border-color: var(--texas-ink); background: var(--texas-ink); color: #fff; }
+body[data-page="home"] .hero-foot > a { color: #fff; }
+.hero-edition { top: 3%; color: #fff; text-shadow: 0 1px 6px rgba(0,0,0,.35); }
+.hero-collage-orbit { right: 40%; bottom: 5%; width: clamp(125px,14vw,190px); border: 9px solid #fff; background: #fff; box-shadow: 10px 10px 0 rgba(51,63,72,.22); }
+.hero-collage-orbit img { filter: none; }
+body[data-page="home"] .hero-telemetry { background: var(--texas-orange); box-shadow: 10px 10px 0 #fff; }
+.hero-progress button::before { background: rgba(255,255,255,.45); }
+.hero-progress button.active::before { background: #fff; }
+.orbit-sticky::before { background: linear-gradient(145deg,#fff 0%,#fff 35%,#d6d2c4 100%); }
+.orbit-sticky::after { background: linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.88)); }
+.orbit-backdrop-type { color: rgba(191,87,0,.14); }
+.orbit-earth { filter: none; }
+body[data-page="home"] .home-manifesto { border-top: 0; }
+body[data-page="home"] .manifesto-grid h2,body[data-page="home"] .home-updates .home-section-head h2,body[data-page="home"] .home-record .home-section-head h2,.research-areas-heading h2,.ecosystem-intro h2 { letter-spacing: -.045em; }
+.applications-scene > img,.ecosystem-card > img,.research-area-card > img,.home-technology > img { filter: none; }
+.applications-shade { background: linear-gradient(90deg,rgba(51,63,72,.82),rgba(51,63,72,.16)),linear-gradient(0deg,rgba(51,63,72,.4),transparent 70%); }
+.home-ecosystem,.home-research-areas,body[data-page="home"] .home-updates,body[data-page="home"] .home-record { background: #fff; }
+.research-area-card { background: #fff; }
+.research-area-card:nth-child(3n + 2) { background: var(--texas-orange); }
+.research-area-card::before { background: linear-gradient(0deg,rgba(51,63,72,.14),transparent); }
+.research-area-card:hover,.research-area-card:focus-visible { box-shadow: 9px 9px 0 #d6d2c4; }
+.home-technology::after { background: linear-gradient(90deg,#bf5700 0%,#bf5700 40%,rgba(191,87,0,.05) 78%); }
+body[data-page="home"] .home-console,.site-footer,.footer-lower { background: #333f48; }
+.home-tab-panel { background: #263039; border-color: #78858c; }
+.home-appointment { background: #d6d2c4; }
+body:not([data-page="home"]) .page-hero { background: var(--texas-orange); border-bottom: 0; color: #fff; }
+body:not([data-page="home"]) .page-hero .section-header h1 { color: #fff; font: 800 clamp(3.4rem,6.1vw,6.8rem)/1.04 "Libre Franklin",Arial,sans-serif !important; letter-spacing: -.025em; }
+body:not([data-page="home"]) .page-hero .section-header .eyebrow,body:not([data-page="home"]) .page-hero .section-header p:not(.eyebrow),body:not([data-page="home"]) .page-hero .back-link,body:not([data-page="home"]) .page-hero > a:not(.button) { color: #fff; }
+body:not([data-page="home"]) .page-hero > .button.primary { border-color: #fff; background: #fff; color: var(--texas-orange); }
+body:not([data-page="home"]) .page-hero > .button.primary:hover { border-color: var(--texas-ink); background: var(--texas-ink); color: #fff; }
+body:not([data-page="home"]) .research-area-hero { background: #fff; border-bottom: 6px solid var(--texas-orange); color: var(--texas-ink); }
+body:not([data-page="home"]) .research-area-hero .section-header h1 { color: var(--texas-ink); }
+body:not([data-page="home"]) .research-area-hero .section-header .eyebrow,body:not([data-page="home"]) .research-area-hero .back-link { color: var(--texas-orange); }
+body:not([data-page="home"]) .research-area-hero > a:not(.button) { color: var(--texas-orange); }
+body:not([data-page="home"]) .research-area-hero .section-header p:not(.eyebrow) { color: var(--texas-gray); }
+body:not([data-page="home"]) .research-area-hero::after { background: linear-gradient(90deg,#fff 0%,#fff 49%,transparent 75%); }
+.research-area-hero-image { filter: none; }
+.publication-card,.research-card,.collection-card,.involved-card,.recruitment-card,.person-card,.cv-card,.area-member { background: #fff; }
+.publication-card:hover,.research-card:hover,.collection-card:hover,.involved-card:hover,.recruitment-card:hover,.person-card:hover,.cv-card:hover,.area-member:hover { background: #f5f3ef; }
+body[data-page="research/profile"] .rp-pure-page { --pure-gray: #f5f3ef; background: #fff; }
+
+@media (max-width: 1100px) {
+  body[data-page="home"] .hero h1 { font-size: clamp(3.6rem,5.8vw,5.2rem) !important; }
+  body[data-page="home"] .hero-content { width: 53%; }
+  .hero-collage-orbit { right: 38%; }
+}
+@media (max-width: 760px) {
+  body[data-page="home"] .hero { background: #bf5700; }
+  body[data-page="home"] .hero-content { width: 100%; margin: 0; }
+  body[data-page="home"] .hero h1 { font-size: clamp(2.4rem,9.2vw,4.2rem) !important; line-height: 1.05; }
+  body[data-page="home"] .hero-main .eyebrow { letter-spacing: .12em; }
+  body[data-page="home"] .hero-bottom p { color: #fff; }
+  .hero-slides { top: 450px; right: 0; bottom: auto; width: 100%; height: 400px; }
+  .hero-edition { top: 460px; }
+  .hero-collage-orbit { right: 8%; bottom: 10%; width: 118px; border-width: 6px; }
+  body:not([data-page="home"]) .page-hero .section-header h1 { font-size: clamp(2.7rem,10vw,4.9rem) !important; }
+  body:not([data-page="home"]) .research-area-hero { background: #fff; }
+  body:not([data-page="home"]) .research-area-hero::after { background: linear-gradient(180deg,#fff 0%,#fff 63%,rgba(255,255,255,.5) 76%,transparent 90%); }
+  .home-technology::after { background: linear-gradient(180deg,#bf5700 0%,#bf5700 42%,rgba(191,87,0,.06) 80%); }
+}
 
 @media (prefers-reduced-motion: reduce) {
   .hero-slides .hero-cinematic,.hero-collage-orbit,body[data-page="home"] .hero h1 { animation: none; transition: none; }
