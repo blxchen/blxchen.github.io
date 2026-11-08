@@ -3,9 +3,9 @@
   <desc id="desc">Abstract profile placeholder with Brandon Chen initials.</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#8c1515"/>
-      <stop offset="0.55" stop-color="#2e2d29"/>
-      <stop offset="1" stop-color="#0f6b68"/>
+      <stop offset="0" stop-color="#bf5700"/>
+      <stop offset="0.55" stop-color="#8d3e00"/>
+      <stop offset="1" stop-color="#333f48"/>
     </linearGradient>
     <radialGradient id="halo" cx="50%" cy="30%" r="60%">
       <stop offset="0" stop-color="#ffffff" stop-opacity="0.7"/>
@@ -14,7 +14,7 @@
   </defs>
   <rect width="900" height="1100" fill="url(#bg)"/>
   <rect width="900" height="1100" fill="url(#halo)"/>
-  <path d="M145 830c58-136 164-211 305-211s247 75 305 211v109H145V830Z" fill="#f4f4f4" opacity="0.92"/>
-  <circle cx="450" cy="420" r="158" fill="#f4f4f4" opacity="0.95"/>
-  <text x="450" y="945" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="104" font-weight="700" fill="#8c1515">BC</text>
+  <path d="M145 830c58-136 164-211 305-211s247 75 305 211v109H145V830Z" fill="#ffffff" opacity="0.94"/>
+  <circle cx="450" cy="420" r="158" fill="#ffffff" opacity="0.96"/>
+  <text x="450" y="945" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="104" font-weight="700" fill="#bf5700">BC</text>
 </svg>
