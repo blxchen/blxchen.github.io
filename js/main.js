@@ -149,8 +149,8 @@
       <div class="mobile-hero-intro"><h1>Navigation for<br>what comes next.</h1><p>Research in satellite positioning, urban GNSS, and next-generation navigation systems.</p><a href="${url("research/")}">Explore research</a></div>
       <section class="hero">
         <div class="hero-slides" aria-hidden="true">
-          <img class="hero-cinematic is-active" src="${asset("assets/terraced-fields.webp")}" fetchpriority="high" alt="">
-          <img class="hero-cinematic" src="${asset("assets/kaohsiung-backdrop.webp")}" decoding="async" alt="">
+          <img class="hero-cinematic is-active" src="${asset("assets/kaohsiung-backdrop.webp")}" fetchpriority="high" alt="">
+          <img class="hero-cinematic" src="${asset("assets/terraced-fields.webp")}" decoding="async" alt="">
           <img class="hero-cinematic" src="${asset("assets/orbital-horizon.webp")}" decoding="async" alt="">
         </div>
         <div class="hero-shade" aria-hidden="true"></div>
@@ -160,7 +160,7 @@
         <div class="hero-marker" aria-hidden="true"><span>POSITIONING<br>IN MOTION</span><i></i></div>
         <div class="hero-content">
           <div class="hero-main"><p class="eyebrow">BRANDON CHEN / NAVIGATION RESEARCH</p><h1>Navigation for<br>what comes next.</h1><div class="hero-bottom"><p>Research in satellite positioning, urban GNSS, and next-generation navigation systems.</p><a class="round-arrow" href="${url("research/")}" aria-label="Explore research">↗</a></div></div>
-          <div class="hero-foot"><a href="#orbit-story">SCROLL TO EXPLORE ↓</a><div class="hero-progress" aria-label="Hero scenes"><button class="active" type="button" aria-label="View agricultural scene" data-hero-slide="0"></button><button type="button" aria-label="View city scene" data-hero-slide="1"></button><button type="button" aria-label="View orbital scene" data-hero-slide="2"></button></div></div>
+          <div class="hero-foot"><a href="#orbit-story">SCROLL TO EXPLORE ↓</a><div class="hero-progress" aria-label="Hero scenes"><button class="active" type="button" aria-label="View city scene" data-hero-slide="0"></button><button type="button" aria-label="View agricultural scene" data-hero-slide="1"></button><button type="button" aria-label="View orbital scene" data-hero-slide="2"></button></div></div>
         </div>
       </section>
     `;

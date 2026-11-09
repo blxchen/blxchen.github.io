@@ -418,6 +418,7 @@ body .site-header .nav-item > a,body .site-header.is-light .nav-item > a,body .s
 body .site-header .nav-item.current > a,body .site-header.is-light .nav-item.current > a,body .site-header .nav-item > a:hover,body .site-header .nav-item > a:focus-visible { color: var(--texas-orange); }
 body .site-header .nav-item > a::after,body .site-header.is-light .nav-item > a::after { background: var(--texas-orange); }
 body .site-header .header-contact,body .site-header.is-light .header-contact,body .site-header.is-scrolled .header-contact { flex: 0 0 auto; justify-content: center; min-width: 124px; white-space: nowrap; border: 1px solid var(--texas-orange); background: var(--texas-orange); color: #fff; }
+body[data-page="home"] .site-header.is-light .header-contact,body[data-page="home"] .site-header.is-light.is-scrolled .header-contact { border-color: var(--texas-orange); background: var(--texas-orange); color: #fff; }
 body .site-header .header-contact:hover,body .site-header.is-light .header-contact:hover { border-color: var(--texas-ink); background: var(--texas-ink); color: #fff; }
 body .site-header .subnav,body .site-header.is-light .subnav { border-color: var(--texas-line); border-radius: 0; background: #fff; box-shadow: 0 16px 28px rgba(51,63,72,.14); }
 body .site-header .subnav a,body .site-header.is-light .subnav a { color: var(--texas-ink); }
@@ -459,6 +460,85 @@ body:not([data-page="home"]) .contact-form input:focus,body:not([data-page="home
   body .site-header .site-brand-name small { display: none; }
   body .site-header .menu-toggle,body .site-header.is-light .menu-toggle { border-color: var(--texas-orange); background: transparent; }
   body .site-header .menu-toggle span,body .site-header.is-light .menu-toggle span { background: var(--texas-orange) !important; }
+}
+
+/* Academic direction: image-led research pages with measured orange accents. */
+body[data-page="home"] .hero { background: #202a30; border-bottom: 4px solid var(--texas-orange); }
+body[data-page="home"] .hero-slides { inset: 0; width: 100%; height: 100%; box-shadow: none; }
+body[data-page="home"] .hero-slides .hero-cinematic { filter: saturate(.8) contrast(1.05); }
+body[data-page="home"] .hero-slides::after { display: none; }
+body[data-page="home"] .hero-shade { position: absolute; z-index: 1; inset: 0; display: block; background: linear-gradient(90deg,rgba(17,25,30,.94),rgba(17,25,30,.78) 41%,rgba(17,25,30,.2) 100%); pointer-events: none; }
+body[data-page="home"] .hero-content { width: min(760px,58%); margin-left: max(4.5%,calc((100vw - 1320px)/2)); }
+body[data-page="home"] .hero-main .eyebrow { color: #f9b376; font-size: .7rem; letter-spacing: .13em; }
+body[data-page="home"] .hero h1 { max-width: 780px; color: #fff; font: 400 clamp(4.2rem,6.2vw,7rem)/1.01 "Charis SIL",Georgia,serif !important; letter-spacing: -.045em; }
+body[data-page="home"] .hero-bottom p { color: #f1f1ee; font-weight: 400; }
+body[data-page="home"] .hero-bottom .round-arrow { border-radius: 0; border-color: var(--texas-orange); background: var(--texas-orange); color: #fff; }
+body[data-page="home"] .hero-bottom .round-arrow:hover { background: #fff; color: var(--texas-ink); }
+body[data-page="home"] .hero-foot,body[data-page="home"] .hero-foot > a { color: #f4f1ec; }
+body[data-page="home"] .hero-progress button::before { background: rgba(255,255,255,.48); }
+body[data-page="home"] .hero-progress button.active::before { background: var(--texas-orange); }
+body[data-page="home"] .hero-collage-orbit,body[data-page="home"] .hero-telemetry,body[data-page="home"] .hero-marker,body[data-page="home"] .hero-edition { display: none; }
+
+body[data-page="home"] .home-manifesto,body[data-page="home"] .home-updates,body[data-page="home"] .home-record,.home-ecosystem,.home-research-areas { background: #fff; }
+body[data-page="home"] .manifesto-grid h2,.ecosystem-intro h2,.research-areas-heading h2,body[data-page="home"] .home-updates .home-section-head h2,body[data-page="home"] .home-record .home-section-head h2 { font-size: clamp(3rem,4.6vw,5.3rem); line-height: 1.08; letter-spacing: -.035em; }
+body[data-page="home"] .home-manifesto,body[data-page="home"] .home-updates,body[data-page="home"] .home-record,.home-ecosystem,.home-research-areas { padding-top: clamp(5rem,7vw,7rem); padding-bottom: clamp(5rem,7vw,7rem); }
+.orbit-sticky::before { background: linear-gradient(140deg,#f7f7f5,#e8ebec 65%,#d6d2c4); }
+.orbit-ruler { border: 1px solid rgba(191,87,0,.56); }
+.orbit-label,.orbit-label-b { background: #fff; }
+.applications-scene { min-height: 700px; background: var(--texas-ink); }
+.applications-shade { background: linear-gradient(90deg,rgba(20,29,34,.82),rgba(20,29,34,.2) 75%); }
+.home-ecosystem .ecosystem-intro,.home-research-areas .research-areas-heading { text-align: left; }
+.ecosystem-card { min-height: 430px; }
+.ecosystem-card h3 { font-size: clamp(2rem,2.4vw,3rem); }
+.research-area-grid { gap: 16px; }
+.research-area-card,.research-area-card:nth-child(3n + 2) { min-height: 425px; border: 1px solid var(--texas-line); background: #fff; color: var(--texas-ink); box-shadow: none; }
+.research-area-card > img { height: 48%; filter: saturate(.8); }
+.research-area-card::before { height: 48%; background: linear-gradient(0deg,rgba(51,63,72,.1),transparent); }
+.research-area-card > div { padding-top: 13rem; }
+.research-area-card h3 { color: var(--texas-ink); font-size: clamp(1.7rem,2.2vw,2.5rem); line-height: 1.12; }
+.research-area-card p,.research-area-card:nth-child(3n + 2) p { color: var(--texas-gray); }
+.research-area-card:hover,.research-area-card:focus-visible { border-color: var(--texas-orange); transform: translateY(-3px); box-shadow: 0 10px 28px rgba(51,63,72,.1); }
+.home-technology { min-height: 680px; background: #273238; }
+.home-technology::after { background: linear-gradient(90deg,#273238 0%,rgba(39,50,56,.94) 39%,rgba(39,50,56,.12) 80%); }
+.home-technology .technology-copy h2 { font-size: clamp(3.2rem,5vw,5.5rem); }
+.home-appointment { background: #f3f3f0; }
+
+body:not([data-page="home"]) .page-hero { min-height: 480px; padding-top: 8rem; padding-bottom: 4rem; border-bottom: 1px solid var(--texas-line); background: #f6f6f3; color: var(--texas-ink); }
+body:not([data-page="home"]) .page-hero .section-header h1 { max-width: 1060px; color: var(--texas-ink); font: 400 clamp(3.4rem,5.5vw,6.2rem)/1.04 "Charis SIL",Georgia,serif !important; letter-spacing: -.045em; }
+body:not([data-page="home"]) .page-hero .section-header .eyebrow { color: var(--texas-orange); }
+body:not([data-page="home"]) .page-hero .section-header p:not(.eyebrow) { max-width: 750px; color: var(--texas-gray); }
+body:not([data-page="home"]) .page-hero .back-link,body:not([data-page="home"]) .page-hero > a:not(.button) { color: var(--texas-orange); }
+body:not([data-page="home"]) .page-hero > .button.primary { border-color: var(--texas-orange); background: var(--texas-orange); color: #fff; }
+body:not([data-page="home"]) .page-hero > .button.primary:hover { border-color: var(--texas-ink); background: var(--texas-ink); }
+body:not([data-page="home"]) .research-area-hero { min-height: 610px; background: #f6f6f3; }
+body:not([data-page="home"]) .research-area-hero::after { background: linear-gradient(90deg,#f6f6f3 0%,#f6f6f3 52%,transparent 78%); }
+.research-area-hero-image { filter: saturate(.85); }
+.research-area-detail { background: #fff; }
+.publication-card,.research-card,.collection-card,.involved-card,.recruitment-card,.person-card,.cv-card,.area-member { background: #fff; }
+.site-footer,.footer-lower { background: #273238; }
+.footer-statement h2 { font-size: clamp(3.2rem,6vw,6.8rem); }
+
+@media (max-width: 1100px) {
+  body[data-page="home"] .hero-content { width: min(730px,69%); }
+  body[data-page="home"] .hero h1 { font-size: clamp(3.6rem,6vw,5.8rem) !important; }
+}
+@media (max-width: 760px) {
+  body[data-page="home"] .hero { min-height: 690px; height: 690px; }
+  body[data-page="home"] .hero-slides { inset: 0; width: 100%; height: 100%; }
+  body[data-page="home"] .hero-shade { background: linear-gradient(90deg,rgba(17,25,30,.9),rgba(17,25,30,.5)),linear-gradient(0deg,rgba(17,25,30,.6),transparent 50%); }
+  body[data-page="home"] .hero-content { width: 100%; min-height: 690px; height: 690px; margin: 0; padding: 5rem 1.5rem 2rem; }
+  body[data-page="home"] .hero h1 { font-size: clamp(3rem,11vw,4.7rem) !important; line-height: 1.02; }
+  body[data-page="home"] .hero-bottom p { font-size: .92rem; }
+  body[data-page="home"] .hero-foot { bottom: 22px; }
+  body[data-page="home"] .home-manifesto,body[data-page="home"] .home-updates,body[data-page="home"] .home-record,.home-ecosystem,.home-research-areas { padding-top: 4.5rem; padding-bottom: 4.5rem; }
+  body[data-page="home"] .manifesto-grid h2,.ecosystem-intro h2,.research-areas-heading h2,body[data-page="home"] .home-updates .home-section-head h2,body[data-page="home"] .home-record .home-section-head h2 { font-size: clamp(2.5rem,9vw,4rem); }
+  .research-area-card { min-height: 390px; }
+  .research-area-card > div { padding-top: 11.5rem; }
+  .home-technology::after { background: linear-gradient(180deg,#273238 0%,#273238 43%,rgba(39,50,56,.1) 85%); }
+  body:not([data-page="home"]) .page-hero { min-height: 405px; padding: 4rem 1.25rem 3rem; }
+  body:not([data-page="home"]) .page-hero .section-header h1 { font-size: clamp(2.8rem,10vw,4.7rem) !important; }
+  body:not([data-page="home"]) .research-area-hero { min-height: 740px; padding-top: 4rem; }
+  body:not([data-page="home"]) .research-area-hero::after { background: linear-gradient(180deg,#f6f6f3 0%,#f6f6f3 65%,rgba(246,246,243,.55) 77%,transparent 92%); }
 }
 
 @media (prefers-reduced-motion: reduce) {
