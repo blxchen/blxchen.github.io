@@ -1,0 +1,16 @@
+{
+  "slug": "autonomous-navigation",
+  "number": "04",
+  "title": "Autonomous Navigation",
+  "dek": "GNSS and multi sensor navigation questions for autonomous platforms.",
+  "image": "assets/kaohsiung-backdrop.webp",
+  "tags": ["UAVs", "Sensor fusion", "Simulation"],
+  "body": ["Autonomous platforms need navigation estimates that remain interpretable when sensors disagree or signals are limited.", "The current portfolio includes browser based simulation and research interests in UAVs, intelligent transport, and multi sensor navigation. No field validated autonomy result is claimed here."],
+  "questions": ["How can synthetic navigation experiments reveal algorithm failure modes?"],
+  "methods": ["Multi sensor simulation", "Algorithm comparisons"],
+  "memberSlugs": ["brandon-chen"],
+  "publicationSlugs": [],
+  "projectSlugs": ["uavlab"],
+  "primary": true,
+  "order": 4
+}

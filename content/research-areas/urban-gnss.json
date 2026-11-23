@@ -1,7 +1,7 @@
 {
   "slug": "urban-gnss",
   "number": "01",
-  "title": "Urban GNSS",
+  "title": "Urban GNSS Positioning",
   "dek": "Positioning in dense cities where satellite signals are blocked, reflected, or unreliable.",
   "image": "assets/kaohsiung-backdrop.webp",
   "tags": ["Urban canyons", "Multipath", "NLOS"],
@@ -11,5 +11,8 @@
   ],
   "memberSlugs": ["brandon-chen", "ng-derek-hoi-wah", "li-ta-hsu"],
   "publicationSlugs": ["urban-smartphone-gnss", "uncertainty-aware-3dma-gnss", "value-of-information-smartphone-3dma"],
+  "questions": ["How can an urban receiver identify unreliable satellite measurements?", "How can building geometry inform a position estimate?"],
+  "methods": ["Measurement weighting", "3D mapping aided GNSS", "Urban signal assessment"],
+  "primary": true,
   "order": 1
 }

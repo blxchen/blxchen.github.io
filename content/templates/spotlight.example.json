@@ -1,0 +1,11 @@
+{
+  "slug": "example-spotlight",
+  "title": "Example update",
+  "date": "2026-01-01",
+  "category": "Research note",
+  "dek": "A factual summary of the update.",
+  "image": "assets/research-hero.webp",
+  "body": ["Verified details of this update."],
+  "relatedLinks": [],
+  "order": 10
+}

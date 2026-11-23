@@ -1,0 +1,14 @@
+{
+  "slug": "navlab",
+  "title": "NavLab",
+  "dek": "An open source browser laboratory for urban GNSS, satellite geometry, and atmospheric effects.",
+  "image": "assets/research-hero.webp",
+  "motivation": "Make navigation algorithms and error sources easier to inspect through interactive experiments.",
+  "methods": ["Synthetic satellite geometry", "Weighted least squares and 3D mapping aided positioning", "Atmospheric delay scenarios"],
+  "results": "Educational simulations; no measured navigation performance is claimed.",
+  "github": "https://github.com/blxchen/iono-gnss",
+  "areaSlugs": ["urban-gnss", "3d-mapping-aided-gnss"],
+  "contributorSlugs": ["brandon-chen"],
+  "featured": true,
+  "order": 1
+}

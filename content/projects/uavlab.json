@@ -1,0 +1,14 @@
+{
+  "slug": "uavlab",
+  "title": "UAVLab",
+  "dek": "Browser based experiments in UAV dynamics and multi sensor navigation.",
+  "image": "assets/kaohsiung-backdrop.webp",
+  "motivation": "Explore navigation behavior and sensor fusion in a reproducible teaching environment.",
+  "methods": ["UAV dynamics simulation", "Synthetic GNSS and inertial measurements", "Navigation algorithm comparisons"],
+  "results": "An educational simulator; no field validation is implied.",
+  "github": "https://github.com/blxchen/UAVLab",
+  "areaSlugs": ["autonomous-navigation"],
+  "contributorSlugs": ["brandon-chen"],
+  "featured": true,
+  "order": 2
+}

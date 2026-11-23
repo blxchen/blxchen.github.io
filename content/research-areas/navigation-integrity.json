@@ -1,0 +1,15 @@
+{
+  "slug": "navigation-integrity",
+  "number": "03",
+  "title": "Navigation Integrity",
+  "dek": "Assessing when satellite positioning measurements and solutions can be trusted.",
+  "image": "assets/research-hero.webp",
+  "tags": ["Uncertainty", "Measurement reliability", "Urban GNSS"],
+  "body": ["Urban satellite positioning depends on recognizing measurements affected by obstruction, reflection, and uncertain building geometry.", "The related manuscripts examine uncertainty-aware map models and information value for smartphone 3D mapping aided GNSS. Their individual review statuses are shown on each record."],
+  "questions": ["How should uncertain building geometry enter a navigation solution?", "Which observations add useful information to a smartphone position estimate?"],
+  "methods": ["Probabilistic building models", "Measurement reliability assessment", "Information value analysis"],
+  "memberSlugs": ["brandon-chen"],
+  "publicationSlugs": ["uncertainty-aware-3dma-gnss", "value-of-information-smartphone-3dma"],
+  "primary": true,
+  "order": 3
+}

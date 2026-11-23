@@ -35,12 +35,15 @@ http://localhost:8080/
 
 ## Folder Map
 
-- Homepage, nav, page intros: `content/site.json`
+- Homepage profile and page intros: `content/site.json` (the eight-tab nav is assembled by the generator)
 - Research interests: `content/research/`
 - Research areas and contributor mappings: `content/research-areas/`
 - Publications: `content/publications/`
+- Projects: `content/projects/`
+- Spotlight: `content/spotlight/`
 - Static content control room: `admin/`
 - Team members: `content/team/`
+- New record starters: `content/templates/`
 - Media items: `content/media/`
 - News posts: `content/news/`
 - Blog posts: `content/blog/`
@@ -118,6 +121,26 @@ Each area is one file in `content/research-areas/`. Copy an existing file to add
 - A new publication can also select the area with its own `areaSlugs` field.
 
 The generator checks these references and stops with an error if a slug is misspelled. Run `node tools/generate-pages.js` to preview locally; on GitHub, committing content JSON runs it automatically.
+## Add a project, spotlight item, or person
+
+Copy `content/templates/project.example.json` to `content/projects/<slug>.json` for a project. Its `featured` flag controls whether it appears on the homepage. `areaSlugs`, `publicationSlugs`, and `contributorSlugs` create links to existing records. The generated page is `projects/<slug>/`.
+
+Copy `content/templates/spotlight.example.json` to `content/spotlight/<slug>.json` for a dated update. The generated page is `spotlight/<slug>/`.
+
+Copy `content/templates/person.example.json` to `content/team/<slug>.json` for a research profile. State the person's verified role and affiliation; an external collaborator is not a member of an independent lab by default. The generated page is `people/<slug>/`; earlier `research/team/` URLs remain valid.
+
+Research dropdown entries come from `content/research-areas/*.json`. A new area JSON automatically creates its own page and dropdown link unless `"primary": false` marks it as a connected topic; those pages still appear in the research index. The generator checks duplicate slugs, required fields, images, dates, publication statuses, and related record slugs. Run `node tools/generate-pages.js` and resolve any named content errors before committing.
+
+Five broad directions appear in the dropdown; four earlier focused topic pages remain available in the research index.
+
+## Scientific dashboard
+
+The homepage graphs are computed in `js/science/model.js` and rendered in `js/science/visualization.js`. The model uses a circular 550 km LEO pass, an 11.45 GHz carrier, Earth rotation, an ECEF-to-ENU skyplot, and an STFT of synthetic complex baseband samples. The visible spectrogram is frequency centered after modeled first-order Doppler tracking; it is not a measured waveform. Run `node tools/test-science.js` after changing equations or sampling parameters.
+
+## Contact form delivery
+
+The static GitHub Pages site has no form backend. The form validates the visitor's fields and opens a draft in their email application. The visitor must send that draft. If you want server delivery, create an endpoint with a hosted form service, configure its spam protection, and replace the `mailto:` action in `bindContactForm()` in `js/main.js`. Do not commit service secrets. Keep the direct email link as a fallback.
+
 ## Add A Research Interest
 
 Copy any file in:
@@ -495,40 +518,35 @@ node tools/generate-pages.js
 
 ## Commit To GitHub
 
-The deployed GitHub Pages repo is:
+The local Git checkout for the deployed site is:
 
 ```text
-C:\tmp\blxchen.github.io-deploy
+C:\Users\Lilian CHan\Desktop\pntbrandon\deploy
 ```
 
 Best workflow:
 
-1. Edit files in `C:\Users\Lilian CHan\Desktop\pntbrandon`.
+1. Edit files in the `deploy` checkout.
 2. Run:
 
 ```powershell
 node tools/generate-pages.js
 ```
 
-3. Copy the updated project files into the deploy repo.
-
-For a full sync:
+3. Run tests, then commit and push:
 
 ```powershell
-Copy-Item "C:\Users\Lilian CHan\Desktop\pntbrandon\*" "C:\tmp\blxchen.github.io-deploy" -Recurse -Force
-```
-
-4. Commit and push:
-
-```powershell
-cd "C:\tmp\blxchen.github.io-deploy"
+cd "C:\Users\Lilian CHan\Desktop\pntbrandon\deploy"
+node tools/test-science.js
+node tools/test-site.js
+node tools/test-research-profile.js
 git status
 git add -A
 git commit -m "Update website"
 git push origin main
 ```
 
-5. Check:
+4. Check:
 
 ```text
 https://blxchen.github.io/
@@ -540,4 +558,4 @@ https://blxchen.github.io/
 - Page URL is wrong: check the `slug`.
 - JSON error: look for a missing comma or quote.
 - Old page still exists after deleting an item: delete the old generated folder too.
-- Git says nothing to commit: make sure you copied changes into `C:\tmp\blxchen.github.io-deploy`.
+- Git says nothing to commit: check that edits were made in the `deploy` checkout.

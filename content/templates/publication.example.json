@@ -10,5 +10,7 @@
   "keywords": ["GNSS", "Positioning"],
   "profileSlugs": ["brandon-chen"],
   "areaSlugs": ["urban-gnss"],
+  "relatedProjects": [],
+  "featured": false,
   "order": 0
 }

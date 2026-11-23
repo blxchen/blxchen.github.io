@@ -1,0 +1,11 @@
+{
+  "slug": "open-source-navigation-labs",
+  "title": "UAVLab and NavLab Available on GitHub",
+  "date": "2026-07-30",
+  "category": "Project update",
+  "dek": "Two public browser based simulation projects cover UAV navigation, urban GNSS, sensor fusion, and atmospheric effects.",
+  "image": "assets/research-hero.webp",
+  "body": ["NavLab and UAVLab provide synthetic experiments for exploring satellite positioning, sensor fusion, and autonomous navigation.", "The simulations are educational models and should not be interpreted as measured receiver performance."],
+  "relatedLinks": [{"label":"Navigation simulation research", "href":"research/navigation-simulation/"}],
+  "order": 1
+}

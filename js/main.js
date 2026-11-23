@@ -20,22 +20,15 @@
   const url = (path) => (path.startsWith("http") || path.startsWith("#") ? path : base + path);
   const asset = (path) => url(path);
 
-  function formatPhone(value) {
-    const raw = String(value || "").trim();
-    if (!raw) return "";
-    if (/^\(\+852\)/.test(raw)) return raw;
-    const digits = raw.replace(/\D/g, "");
-    if (digits.length === 8) return `(+852) ${digits.slice(0, 4)} ${digits.slice(4)}`;
-    if (digits.length === 11 && digits.startsWith("852")) return `(+852) ${digits.slice(3, 7)} ${digits.slice(7)}`;
-    return raw;
-  }
-
   function detailForPage() {
     const groups = [
       { prefix: "research/areas/", items: data.researchAreas, description: "dek" },
       { prefix: "research/", items: data.research, description: "dek" },
       { prefix: "research/team/", items: data.team, description: "bio" },
       { prefix: "research/publications/", items: data.publications, description: "abstract" },
+      { prefix: "projects/", items: data.projects || [], description: "dek" },
+      { prefix: "spotlight/", items: data.spotlight || [], description: "dek" },
+      { prefix: "people/", items: data.team, description: "bio" },
       { prefix: "media/", items: data.media, description: "dek" },
       { prefix: "news/", items: data.news, description: "dek" },
       { prefix: "blog/", items: data.blog, description: "dek" },
@@ -52,7 +45,7 @@
   function setPageMeta() {
     const detail = detailForPage();
     document.documentElement.lang = "en-US";
-    document.title = `${text(detail ? detail.item.title : page.title)} | ${data.profile.name}`;
+    document.title = `${text(detail ? (detail.item.title || detail.item.name) : page.title)} | ${data.profile.name}`;
     const description = text(detail ? detail.item[detail.description] : (page.intro || data.profile.shortBio));
     let meta = $('meta[name="description"]');
     if (!meta) {
@@ -75,10 +68,11 @@
     const children = item.children || [];
     const key = item.url === "index.html" ? "home" : item.url.replace(/\/$/, "");
     const isCurrent = pageKey === key || (key !== "home" && pageKey.startsWith(`${key}/`));
+    const menuId = `nav-submenu-${key.replace(/[^a-z0-9]/g, "-")}`;
     return `
       <li class="nav-item ${children.length ? "has-menu" : ""} ${isCurrent ? "current" : ""}">
         <a href="${url(item.url)}" ${isCurrent ? 'aria-current="page"' : ""}>${text(item.label)}</a>
-        ${children.length ? `<div class="subnav">${children.map((child) => `<a href="${url(child.url)}">${text(child.label)}</a>`).join("")}</div>` : ""}
+        ${children.length ? `<button class="nav-expand" type="button" aria-label="Toggle ${attr(item.label)} menu" aria-expanded="false" aria-controls="${menuId}">⌄</button><div class="subnav" id="${menuId}">${children.map((child) => `<a href="${url(child.url)}">${text(child.label)}</a>`).join("")}</div>` : ""}
       </li>
     `;
   }
@@ -89,14 +83,13 @@
       <header class="site-header" id="top">
         <a class="skip-link" href="#main">Skip to content</a>
         <div class="site-header-inner">
-          <a href="${url("index.html")}" class="site-brand" aria-label="Brandon Chen home"><span class="site-brand-symbol" aria-hidden="true">B<span>／</span>C</span><span class="site-brand-name">Brandon Chen<small>Navigation research</small></span></a>
+          <a href="${url("index.html")}" class="site-brand" aria-label="Brandon Chen home"><span class="site-brand-symbol" aria-hidden="true">B / C</span><span class="site-brand-name">Brandon Chen<small>Navigation research</small></span></a>
           <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
             <span></span><span></span><span></span>
           </button>
           <nav id="primary-nav" class="primary-nav" aria-label="Primary">
             <ul>${data.nav.map(navItem).join("")}</ul>
           </nav>
-          <a class="header-contact" href="${url("get-involved/contact/")}">Get in touch <span aria-hidden="true">↗</span></a>
         </div>
       </header>
       <main id="main" tabindex="-1"></main>
@@ -108,6 +101,11 @@
       event.currentTarget.setAttribute("aria-expanded", String(!expanded));
       $(".primary-nav").classList.toggle("open", !expanded);
     });
+    document.querySelectorAll(".nav-expand").forEach((button) => button.addEventListener("click", () => {
+      const expanded = button.getAttribute("aria-expanded") === "true";
+      button.setAttribute("aria-expanded", String(!expanded));
+      button.closest(".nav-item").classList.toggle("menu-open", !expanded);
+    }));
 
   }
 
@@ -119,6 +117,7 @@
           <div class="footer-brand-block">
             <strong>BRANDON<br>CHEN<span class="footer-period">.</span></strong>
             <p>Research in GNSS, positioning, navigation and timing.</p>
+            <p>Personal academic website. Affiliations are listed on the CV.</p>
             <p>${text(data.contact.location)}</p>
           </div>
           <div class="footer-column">
@@ -367,7 +366,7 @@
                 <img src="${researcherPhoto(person)}" alt="">
               </span>
               <span class="person-card-body">
-                <small>Team Member</small>
+                <small>Research profile</small>
                 <h2>${text(person.name)}</h2>
                 <p>${text(person.role)}</p>
               </span>
@@ -379,28 +378,26 @@
     `;
   }
 
-  function renderHome() {
-    return `
-      ${hero()}
-      ${orbitStory()}
-      <section class="home-manifesto" id="research-intro">
-        <div class="manifesto-grid"><p class="eyebrow">Meet the research</p><div><h2>Navigation intelligence<br>for a changing world.</h2><p>Positioning is invisible infrastructure. My work explores how satellite signals, maps, and sensors can make navigation more resilient in the environments where it matters most.</p><a class="text-link" href="${url("about/")}">Meet Brandon <span>↗</span></a></div></div>
-        <div class="manifesto-stats">${data.profile.stats.map((stat) => `<div class="metric reveal"><strong>${stat.value}</strong><span>${text(stat.label)}</span></div>`).join("")}</div>
-      </section>
-      ${applicationsScene()}
-      <section class="home-ecosystem" id="research-directions">
-        <div class="ecosystem-intro"><p class="eyebrow">Ecosystem</p><h2>Building the <span class="ecosystem-inline-orbit" aria-hidden="true">↗</span> tools<br>for better navigation.</h2><p>Satellite signals, simulations, and sensor fusion connect across each research direction.</p></div>
-        <div class="ecosystem-grid">${data.research.slice(0, 2).map((item, index) => `<a class="ecosystem-card reveal" href="${url(item.url)}"><img src="${asset(index ? "assets/kaohsiung-backdrop.webp" : "assets/research-hero.webp")}" loading="lazy" decoding="async" alt=""><span>0${index + 1} / RESEARCH</span><div><h3>${text(item.title)}</h3><p>${text(item.dek)}</p><b aria-hidden="true">↗</b></div></a>`).join("")}</div>
-        <a class="ecosystem-link" href="${url("research/")}">Explore all research <span aria-hidden="true">↗</span></a>
-      </section>
-      ${homeResearchAreas()}
-      <section class="home-technology" id="technology"><img src="${asset("assets/orbital-horizon.webp")}" alt="" loading="lazy" decoding="async"><div class="technology-copy"><p class="eyebrow">Technology</p><h2>Research at the edge<br>of what is possible.</h2><p>From satellite signals to navigation in complex cities, each project tests how positioning can work in the real world.</p><a class="text-link" href="${url("research/")}">Explore the research <span>↗</span></a></div></section>
-      ${homeTabConsole()}
-      <section class="home-updates"><div class="home-section-head"><p class="eyebrow">Blog</p><h2>Updates from<br>the research.</h2><a class="text-link" href="${url("blog/")}">View all notes <span>↗</span></a></div><div class="updates-list">${[...data.news.slice(0, 1), ...data.blog.slice(0, 2)].map((item) => `<a class="update-row reveal" href="${url(item.url)}"><span>${text(item.date || "Research note")}</span><h3>${text(item.title)}</h3><b aria-hidden="true">↗</b></a>`).join("")}</div></section>
-      <section class="home-appointment"><div class="appointment-art" aria-hidden="true"></div><div class="appointment-copy"><p class="eyebrow">Collaboration</p><h2>Work with me<br>on what comes next.</h2><p>Open to focused research collaboration in GNSS, positioning, navigation, and simulation.</p><a class="text-link" href="${url("get-involved/")}">Explore opportunities <span>↗</span></a></div></section>
-      <section class="home-record"><div class="home-section-head"><p class="eyebrow">Research record</p><h2>Selected<br>publications.</h2><a class="text-link" href="${url("research/publications/")}">View all publications <span>↗</span></a></div><div class="record-list">${data.publications.slice(0, 4).map((item) => `<article class="record-row reveal"><span>${text(item.year)} / ${text(item.type)}</span><h3><a href="${url(item.url)}">${text(item.title)}</a></h3><p class="record-authors">${publicationAuthorLinks(item)}</p><b aria-hidden="true">↗</b></article>`).join("")}</div></section>
-    `;
+  function scientificDashboard() {
+    return `<section class="science-section" id="science" aria-labelledby="science-title">
+      <div class="academic-wrap"><div class="section-heading on-dark"><p class="academic-kicker">Scientific visualization / synthetic data</p><h2 id="science-title">From Signals to Solutions</h2><p>Signal analysis, estimation, and positioning in complex environments.</p></div>
+        <div class="science-toolbar"><label>Orbit altitude <input type="range" name="altitude" min="450" max="700" step="50" value="550"><output data-altitude-value>550 km</output></label><label>Baseband SNR <input type="range" name="snr" min="5" max="35" step="5" value="20"><output data-snr-value>20 dB</output></label><div class="science-actions"><button type="button" data-science-play>Pause</button><button type="button" data-science-reset>Reset</button></div></div>
+        <div class="science-grid"><figure class="science-panel spectrum-panel"><figcaption><strong>Frequency-centered signal spectrogram</strong><span>Simulated complex baseband · actual STFT · 2048 samples/s</span></figcaption><canvas data-graph="spectrogram" role="img" aria-label="Synthetic signal spectrogram, frequency in hertz versus time in seconds"></canvas></figure><figure class="science-panel"><figcaption><strong>Simulated LEO Doppler</strong><span>11.45 GHz carrier · circular orbit · Earth rotation included</span></figcaption><canvas data-graph="doppler" role="img" aria-label="Calculated Doppler shift in kilohertz over a modeled low Earth orbit pass"></canvas></figure><figure class="science-panel"><figcaption><strong>Modeled satellite skyplot</strong><span>Azimuth and elevation · five synthetic orbital phases</span></figcaption><canvas data-graph="skyplot" role="img" aria-label="Modeled satellite positions with north at top and horizon at the outer circle"></canvas></figure></div>
+        <p class="science-readout" data-science-readout aria-live="off">Loading simulation…</p><p class="science-note">Educational simulation with synthetic satellite orbits and noise. The spectrogram shows a frequency-centered residual after modeled first-order Doppler tracking; it is not a Starlink waveform or measured GNSS data. Doppler and skyplot share the displayed pass time.</p>
+      </div></section>`;
   }
+
+  function renderHome() {
+    const publications = (data.publications || []).filter((item) => item.featured).concat((data.publications || []).filter((item) => !item.featured)).slice(0, 3);
+    const projects = (data.projects || []).filter((item) => item.featured).slice(0, 3);
+    return `<section class="academic-hero"><img class="academic-hero-image" src="${asset(data.profile.heroImage || "assets/orbital-horizon.webp")}" alt="Earth horizon with a satellite above it" fetchpriority="high"><div class="academic-hero-shade"></div><div class="academic-wrap academic-hero-content"><p class="academic-kicker">Brandon Ling-xuan Chen / Navigation research</p><h1>Understanding signals.<br>Advancing navigation.</h1><p class="academic-hero-intro">Research in GNSS, LEO PNT, and urban positioning at the intersection of geodesy, signal processing, and navigation systems.</p><div class="academic-actions"><a class="academic-button primary" href="${url("research/")}">Explore Research</a><a class="academic-button secondary" href="${url("about/")}">About Me</a></div></div><div class="hero-focus academic-wrap" aria-label="Research focus"><a href="${url("research/areas/urban-gnss/")}">Urban GNSS</a><a href="${url("research/areas/leo-pnt/")}">LEO PNT</a><a href="${url("research/areas/remote-sensing/")}">Atmospheric sensing</a></div></section>
+      ${scientificDashboard()}
+      <section class="academic-section" id="research-areas"><div class="academic-wrap"><div class="section-heading"><p class="academic-kicker">Research areas</p><h2>Where the work happens</h2><p>Connected questions in urban positioning, satellite navigation, and environmental sensing.</p><a class="section-link" href="${url("research/areas/")}">All research areas</a></div><div class="academic-card-grid">${data.researchAreas.filter((area) => area.primary !== false).map((area) => `<a class="academic-card research-feature" href="${url(area.url)}"><img src="${asset(area.image)}" loading="lazy" alt=""><div><small>${text((area.tags || [])[0] || "Research")}</small><h3>${text(area.title)}</h3><p>${text(area.dek)}</p><span class="card-link">Explore area</span></div></a>`).join("")}</div></div></section>
+      <section class="academic-section publications-section"><div class="academic-wrap"><div class="section-heading"><p class="academic-kicker">Research record</p><h2>Selected publications</h2><p>Each manuscript and contribution is labeled with its current status.</p><a class="section-link" href="${url("research/publications/")}">All publications</a></div><div class="academic-list">${publications.map((item) => `<a class="academic-paper" href="${url(item.url)}"><span class="paper-status">${text(item.status || item.type)}</span><h3>${text(item.title)}</h3><span>${text(Array.isArray(item.authors) ? item.authors.join(", ") : item.authors)}</span><span>${text(item.venue)} · ${text(item.year)}</span></a>`).join("")}</div></div></section>
+      <section class="academic-section projects-section"><div class="academic-wrap"><div class="section-heading"><p class="academic-kicker">Open source work</p><h2>Featured projects</h2><p>Experimental tools for asking better navigation questions.</p><a class="section-link" href="${url("projects/")}">All projects</a></div><div class="academic-card-grid projects-grid">${projects.map((item) => `<a class="academic-card" href="${url(item.url)}"><img src="${asset(item.image)}" loading="lazy" alt=""><div><small>Project</small><h3>${text(item.title)}</h3><p>${text(item.dek)}</p><span class="card-link">View project</span></div></a>`).join("")}</div></div></section>
+      <section class="academic-section spotlight-section"><div class="academic-wrap"><div class="section-heading"><p class="academic-kicker">Recent notes</p><h2>Spotlight</h2><a class="section-link" href="${url("spotlight/")}">All updates</a></div><div class="academic-list">${data.spotlight.slice(0, 3).map((item) => `<a class="academic-paper" href="${url(item.url)}"><span class="paper-status">${text(item.category)} · ${text(item.date)}</span><h3>${text(item.title)}</h3><span>${text(item.dek)}</span></a>`).join("")}</div></div></section>`;
+  }
+
   function renderAbout() {
     const owner = data.team.find((person) => person.slug === "brandon-chen") || {};
     const linkedin = data.profile.links.find((link) => link.label === "LinkedIn");
@@ -417,6 +414,13 @@
           ${linkedin ? `<p><a class="button primary" href="${attr(linkedin.href)}">View experience and interests on LinkedIn</a></p>` : ""}
           <h2>Research interests</h2>
           <ul>${(owner.interests || []).map((interest) => `<li>${text(interest)}</li>`).join("")}</ul>
+          <h2>Research appointments and experience</h2>
+          <ul>${(owner.experience || []).slice(0, 3).map((entry) => `<li><strong>${text(entry.title)}</strong> · ${text(entry.year)}<br>${text(entry.text)}</li>`).join("")}</ul>
+          <h2>Education</h2>
+          <ul>${(owner.education || []).map((entry) => `<li>${text(entry.qualification)}, ${text(entry.institution)} · ${text(entry.year)}</li>`).join("")}</ul>
+          <p><a href="${url("cv/")}">View the full CV</a></p>
+          <h2>Professional profiles</h2>
+          <ul>${data.profile.links.map((link) => `<li><a href="${attr(link.href)}" target="_blank" rel="noopener noreferrer">${text(link.label)}</a></li>`).join("")}</ul>
         </article>
       </section>
     `;
@@ -433,8 +437,8 @@
 
   function homeResearchAreas() {
     return `<section class="home-research-areas" id="research-areas">
-      <div class="research-areas-heading"><p class="eyebrow">Research areas</p><h2>Choose a direction.<br>Explore the work.</h2><p>Seven connected areas drawn from my current research and CV.</p></div>
-      <div class="research-area-grid">${data.researchAreas.map(researchAreaCard).join("")}</div>
+      <div class="research-areas-heading"><p class="eyebrow">Research areas</p><h2>Choose a direction.<br>Explore the work.</h2><p>${data.researchAreas.filter((area) => area.primary !== false).length} main directions drawn from my current research and CV.</p></div>
+      <div class="research-area-grid">${data.researchAreas.filter((area) => area.primary !== false).map(researchAreaCard).join("")}</div>
       <a class="ecosystem-link" href="${url("research/areas/")}">View all research areas <span aria-hidden="true">↗</span></a>
     </section>`;
   }
@@ -443,13 +447,16 @@
     return `<section class="page-hero">${sectionHeader(page.kicker, page.title, page.intro)}</section>
       <section class="home-research-areas research-area-index">
         <div class="research-areas-heading"><p class="eyebrow">Signal to application</p><h2>Research areas.</h2><p>Each page brings together the relevant questions, contributors, and publications.</p></div>
-        <div class="research-area-grid">${data.researchAreas.map(researchAreaCard).join("")}</div>
+        <div class="research-area-grid">${data.researchAreas.filter((area) => area.primary !== false).map(researchAreaCard).join("")}</div>
+        <div class="research-areas-heading"><p class="eyebrow">Connected topics</p><h2>More focused work.</h2><p>Earlier research topic pages remain available with their related records.</p></div>
+        <div class="research-area-grid">${data.researchAreas.filter((area) => area.primary === false).map(researchAreaCard).join("")}</div>
       </section>`;
   }
 
   function renderResearchArea(area) {
     const members = (area.memberSlugs || []).map((slug) => data.team.find((person) => person.slug === slug)).filter(Boolean).map(resolvedTeamMember);
     const publications = (area.publicationSlugs || []).map((slug) => data.publications.find((item) => item.slug === slug)).filter(Boolean);
+    const projects = (data.projects || []).filter((item) => (item.areaSlugs || []).includes(area.slug) || (area.projectSlugs || []).includes(item.slug));
     return `
       <section class="page-hero research-area-hero"><img class="research-area-hero-image" src="${asset(area.image)}" alt="">
         ${backLink("research/areas/", "All research areas")}
@@ -457,7 +464,7 @@
         <div class="tag-row reveal">${(area.tags || []).map((tag) => `<em>${text(tag)}</em>`).join("")}</div>
       </section>
       <section class="research-area-detail">
-        <div class="area-narrative"><p class="eyebrow">The research</p><div>${(area.body || []).map((paragraph) => `<p>${text(paragraph)}</p>`).join("")}</div></div>
+        <div class="area-narrative"><p class="eyebrow">The research</p><div>${(area.body || []).map((paragraph) => `<p>${text(paragraph)}</p>`).join("")}${area.questions?.length ? `<h2>Research questions</h2><ul>${area.questions.map((question) => `<li>${text(question)}</li>`).join("")}</ul>` : ""}${area.methods?.length ? `<h2>Methods</h2><ul>${area.methods.map((method) => `<li>${text(method)}</li>`).join("")}</ul>` : ""}</div></div>
         <div class="area-related">
           <section><header><p class="eyebrow">People</p><h2>Contributors</h2><span>${members.length}</span></header>
             <div class="area-member-grid">${members.map((member) => `<a class="area-member" href="${url(member.url)}"><img src="${researcherPhoto(member)}" loading="lazy" alt=""><div><h3>${text(member.name)}</h3><p>${text(member.role)}</p></div><b aria-hidden="true">↗</b></a>`).join("")}</div>
@@ -465,6 +472,7 @@
           <section><header><p class="eyebrow">Research record</p><h2>Related publications</h2><span>${publications.length}</span></header>
             <div class="area-publication-list">${publications.length ? publications.map((publication) => `<article class="area-publication"><span>${text(publication.year)} / ${text(publication.status || publication.type)}</span><h3><a href="${url(publication.url)}">${text(publication.title)}</a></h3><p class="area-publication-authors">${publicationAuthorLinks(publication)}</p><b aria-hidden="true">↗</b></article>`).join("") : `<p class="area-empty">No publication is assigned to this area yet. New records can be linked in its research-area JSON file.</p>`}</div>
           </section>
+          ${projects.length ? `<section><header><p class="eyebrow">Applications</p><h2>Related projects</h2><span>${projects.length}</span></header><div class="area-publication-list">${projects.map((project) => `<article class="area-publication"><h3><a href="${url(project.url)}">${text(project.title)}</a></h3><p>${text(project.dek)}</p></article>`).join("")}</div></section>` : ""}
         </div>
       </section>`;
   }
@@ -863,7 +871,6 @@
     const affiliations = person.affiliations && person.affiliations.length ? person.affiliations : [person.role];
     const collaborationLocations = person.collaborationLocations || [];
     const contactLines = [
-      person.phone ? `<span><b>Phone</b>${text(formatPhone(person.phone))}</span>` : "",
       person.email ? `<a href="mailto:${attr(person.email)}"><span>Email</span>${text(person.email)}</a>` : "",
       person.linkedin ? `<a href="${attr(person.linkedin)}"><span>LinkedIn</span>Professional profile</a>` : "",
       scholarHref ? `<a href="${attr(scholarHref)}"><span>Scholar</span>Google Scholar</a>` : ""
@@ -1071,7 +1078,7 @@
               <img src="${researcherPhoto(person)}" alt="">
             </span>
             <span class="person-card-body">
-              <small>Team Member</small>
+              <small>Research profile</small>
               <h2>${text(person.name)}</h2>
               <p>${text(person.role)}</p>
             </span>
@@ -1084,15 +1091,20 @@
 
   function renderPerson(person) {
     person = resolvedTeamMember(person);
+    const linkedPapers = publicationsFor(person);
     return `
-      <section class="page-hero">${backLink("research/team/", "Back to team")}${sectionHeader("Team member", person.name, person.role)}</section>
+      <section class="page-hero">${backLink("people/", "All people")}${sectionHeader("Researcher profile", person.name, person.role)}</section>
       <section class="two-column">
         <div class="portrait-card reveal"><img src="${researcherPhoto(person)}" alt="${text(person.name)}"></div>
         <article class="prose reveal">
           <p>${text(person.bio)}</p>
+          ${(person.affiliations || []).length ? `<h2>Affiliations</h2><ul>${person.affiliations.map((affiliation) => `<li>${text(affiliation)}</li>`).join("")}</ul>` : ""}
           ${person.linkedin ? `<p><a class="button primary" href="${attr(person.linkedin)}">View LinkedIn profile</a></p>` : ""}
           <h2>Research interests</h2>
           <ul>${(person.interests || []).map((interest) => `<li>${text(interest)}</li>`).join("")}</ul>
+          ${linkedPapers.length ? `<h2>Research record</h2><ul>${linkedPapers.map((paper) => `<li><a href="${url(paper.url)}">${text(paper.title)}</a> · ${text(paper.status || paper.type)}</li>`).join("")}</ul>` : ""}
+          ${person.orcid ? `<p><a href="${attr(person.orcid)}" target="_blank" rel="noopener noreferrer">ORCID profile</a></p>` : ""}
+          ${person.github ? `<p><a href="${attr(person.github)}" target="_blank" rel="noopener noreferrer">GitHub profile</a></p>` : ""}
         </article>
       </section>
     `;
@@ -1130,6 +1142,10 @@
           <h2>Resources</h2>
           ${item.paperUrl ? `<p><a class="button primary" href="${attr(item.paperUrl)}">Open attached paper</a></p>` : `<p>No public paper file has been attached.</p>`}
           ${item.doi ? `<p><a href="https://doi.org/${attr(String(item.doi).replace(/^https?:\/\/(?:dx\.)?doi\.org\//, ""))}">View DOI record</a></p>` : ""}
+          ${item.links?.arxiv ? `<p><a href="${attr(item.links.arxiv)}">Open arXiv record</a></p>` : ""}
+          ${item.links?.code ? `<p><a href="${attr(item.links.code)}">View code</a></p>` : ""}
+          ${(() => { const related = data.researchAreas.filter((area) => (area.publicationSlugs || []).includes(item.slug) || (item.areaSlugs || []).includes(area.slug)); return related.length ? `<h2>Related research areas</h2><ul>${related.map((area) => `<li><a href="${url(area.url)}">${text(area.title)}</a></li>`).join("")}</ul>` : ""; })()}
+          ${(() => { const related = (data.projects || []).filter((project) => (project.publicationSlugs || []).includes(item.slug) || (item.relatedProjects || []).includes(project.slug)); return related.length ? `<h2>Related projects</h2><ul>${related.map((project) => `<li><a href="${url(project.url)}">${text(project.title)}</a></li>`).join("")}</ul>` : ""; })()}
         </article>
       </section>
     `;
@@ -1168,7 +1184,6 @@
                 <label class="admin-field-wide">Biography<textarea required name="bio" rows="6"></textarea></label>
                 <label>Google Scholar URL<input type="url" name="scholarUrl"></label>
                 <label>ORCID URL<input type="url" name="orcid"></label>
-                <label>Phone<input name="phone" autocomplete="tel"></label>
                 <label>Public contact email<input type="email" name="publicEmail"></label>
                 <label class="admin-field-wide">Research interests <small>Comma-separated; also used by fingerprinting</small><textarea name="interests" rows="3"></textarea></label>
               </div>
@@ -1309,6 +1324,22 @@
     `;
   }
 
+  function renderProjects() {
+    return `<section class="page-hero">${sectionHeader(page.kicker, page.title, page.intro)}</section><section class="academic-section"><div class="academic-wrap"><div class="academic-card-grid projects-grid">${(data.projects || []).map((item) => `<a class="academic-card" href="${url(item.url)}"><img src="${asset(item.image)}" loading="lazy" alt=""><div><small>Project</small><h3>${text(item.title)}</h3><p>${text(item.dek)}</p><span class="card-link">View project</span></div></a>`).join("")}</div></div></section>`;
+  }
+  function renderProject(item) {
+    const areas = (item.areaSlugs || []).map((slug) => data.researchAreas.find((area) => area.slug === slug)).filter(Boolean);
+    const papers = (item.publicationSlugs || []).map((slug) => data.publications.find((paper) => paper.slug === slug)).filter(Boolean);
+    const people = (item.contributorSlugs || []).map((slug) => data.team.find((person) => person.slug === slug)).filter(Boolean);
+    return `<section class="page-hero">${backLink("projects/", "All projects")}${sectionHeader("Project", item.title, item.dek)}</section><section class="academic-detail academic-wrap"><img class="detail-image" src="${asset(item.image)}" alt="" loading="lazy"><article><h2>Research motivation</h2><p>${text(item.motivation)}</p><h2>Methods</h2><ul>${(item.methods || []).map((method) => `<li>${text(method)}</li>`).join("")}</ul><h2>Results and scope</h2><p>${text(item.results || "Results have not been posted.")}</p>${item.github ? `<p><a href="${attr(item.github)}" target="_blank" rel="noopener noreferrer">Open GitHub repository</a></p>` : ""}<h2>Related research</h2><ul>${areas.map((area) => `<li><a href="${url(area.url)}">${text(area.title)}</a></li>`).join("") || "<li>Not assigned yet.</li>"}</ul>${papers.length ? `<h2>Related publications</h2><ul>${papers.map((paper) => `<li><a href="${url(paper.url)}">${text(paper.title)}</a></li>`).join("")}</ul>` : ""}<h2>Contributors</h2><ul>${people.map((person) => `<li><a href="${url(person.url)}">${text(person.name)}</a></li>`).join("") || "<li>Not listed.</li>"}</ul></article></section>`;
+  }
+  function renderSpotlight() {
+    return `<section class="page-hero">${sectionHeader(page.kicker, page.title, page.intro)}</section><section class="academic-section"><div class="academic-wrap"><div class="academic-list">${(data.spotlight || []).map((item) => `<a class="academic-paper" href="${url(item.url)}"><span class="paper-status">${text(item.category)} · ${text(item.date)}</span><h3>${text(item.title)}</h3><span>${text(item.dek)}</span></a>`).join("")}</div></div></section>`;
+  }
+  function renderSpotlightEntry(item) {
+    return `<section class="page-hero">${backLink("spotlight/", "All spotlight")}${sectionHeader(item.category, item.title, item.dek)}</section><section class="academic-detail academic-wrap"><img class="detail-image" src="${asset(item.image)}" alt="" loading="lazy"><article><p class="academic-kicker">${text(item.date)}</p>${(item.body || []).map((paragraph) => `<p>${text(paragraph)}</p>`).join("")}${item.relatedLinks?.length ? `<h2>Related links</h2><ul>${item.relatedLinks.map((link) => `<li><a href="${url(link.href)}">${text(link.label)}</a></li>`).join("")}</ul>` : ""}</article></section>`;
+  }
+
   function renderEntry(item, type, backPath) {
     const bodyText = item.body ? text(item.body) : [text(item.dek)];
     return `
@@ -1359,7 +1390,9 @@
           <label>Email<input required type="email" name="email" autocomplete="email"></label>
           <label>Subject<input required name="subject"></label>
           <label>Message<textarea required name="message" rows="7"></textarea></label>
-          <button class="button primary" type="submit">Send email</button>
+          <label class="form-trap" aria-hidden="true">Leave this field blank<input name="website" tabindex="-1" autocomplete="off"></label>
+          <button class="button primary" type="submit">Compose email</button>
+          <p class="form-note" role="status" aria-live="polite">This opens your email app. Send the drafted message there to complete delivery. You can also email the address shown here directly.</p>
         </form>
         <aside class="contact-card reveal">
           <h2>${data.profile.name}</h2>
@@ -1501,7 +1534,9 @@
     if (!form) return;
     form.addEventListener("submit", (event) => {
       event.preventDefault();
+      if (!form.reportValidity()) return;
       const formData = new FormData(form);
+      if (formData.get("website")) return;
       const subject = encodeURIComponent(formData.get("subject"));
       const bodyLines = [
         `Name: ${formData.get("name")}`,
@@ -2087,7 +2122,6 @@
           name: String(fields.get("name") || "").trim(),
           role: String(fields.get("role") || "").trim(),
           email: String(fields.get("email") || "").trim(),
-          phone: String(fields.get("phone") || "").trim(),
           orcid: String(fields.get("orcid") || "").trim(),
           scopusUrl: String(fields.get("scopusUrl") || "").trim(),
           scholarUrl: String(fields.get("scholarUrl") || "").trim(),
@@ -2231,7 +2265,6 @@
       profileForm.elements.bio.value = value.bio || "";
       profileForm.elements.scholarUrl.value = value.scholarUrl || "";
       profileForm.elements.orcid.value = value.orcid || "";
-      profileForm.elements.phone.value = value.phone || "";
       profileForm.elements.publicEmail.value = value.email || user.email || "";
       profileForm.elements.interests.value = (value.interests || []).join(", ");
       $("[data-own-profile-preview]").src = value.photo || value.photoUrl || user.photoURL || asset(data.profile.headshot);
@@ -2388,7 +2421,6 @@
         bio: String(fields.get("bio") || "").trim(),
         scholarUrl: String(fields.get("scholarUrl") || "").trim(),
         orcid: String(fields.get("orcid") || "").trim(),
-        phone: String(fields.get("phone") || "").trim(),
         publicEmail: String(fields.get("publicEmail") || "").trim(),
         interests: String(fields.get("interests") || "").split(/[,;\n]/).map((item) => item.trim()).filter(Boolean),
         publicationNames: [String(fields.get("name") || "").trim()],
@@ -2514,7 +2546,10 @@
     const researchArea = data.researchAreas.find((item) => `research/areas/${item.slug}` === pageKey);
     const researchItem = data.research.find((item) => `research/${item.slug}` === pageKey);
     const person = data.team.find((item) => `research/team/${item.slug}` === pageKey);
+    const publicPerson = data.team.find((item) => `people/${item.slug}` === pageKey);
     const publication = data.publications.find((item) => `research/publications/${item.slug}` === pageKey);
+    const project = (data.projects || []).find((item) => `projects/${item.slug}` === pageKey);
+    const spotlightEntry = (data.spotlight || []).find((item) => `spotlight/${item.slug}` === pageKey);
     const media = data.media.find((item) => `media/${item.slug}` === pageKey);
     const news = data.news.find((item) => `news/${item.slug}` === pageKey);
     const blog = data.blog.find((item) => `blog/${item.slug}` === pageKey);
@@ -2522,8 +2557,10 @@
 
     if (researchArea) return renderResearchArea(researchArea);
     if (researchItem) return renderResearchDetail(researchItem);
-    if (person) return renderPerson(person);
+    if (person || publicPerson) return renderPerson(person || publicPerson);
     if (publication) return renderPublication(publication);
+    if (project) return renderProject(project);
+    if (spotlightEntry) return renderSpotlightEntry(spotlightEntry);
     if (media) return renderEntry(media, "Media", "media/");
     if (news) return renderEntry(news, "News", "news/");
     if (blog) return renderEntry(blog, "Blog", "blog/");
@@ -2539,6 +2576,8 @@
       case "timeline": return renderTimeline();
       case "team": return renderTeam();
       case "publications": return renderPublications();
+      case "projects": return renderProjects();
+      case "spotlight": return renderSpotlight();
       case "collection": return renderCollection();
       case "cv": return renderCv();
       case "getInvolved": return renderGetInvolved();
@@ -2565,6 +2604,7 @@
     bindXonaMotion();
     bindNewTabLinks();
     bindBackToTop();
+    window.NavigationVisualization?.mount(document.querySelector(".science-section"));
     if (pageKey === "home") requestAnimationFrame(() => document.body.classList.add("hero-ready"));
     if (window.location.hash.length > 1) {
       requestAnimationFrame(() => document.getElementById(decodeURIComponent(window.location.hash.slice(1)))?.scrollIntoView({ block: "start" }));

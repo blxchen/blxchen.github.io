@@ -9,7 +9,11 @@
     "Explain the central research question and approach.",
     "Describe the specific work supported by existing projects or publications."
   ],
+  "questions": ["A specific research question supported by current work."],
+  "methods": ["A documented method."],
   "memberSlugs": ["brandon-chen"],
   "publicationSlugs": [],
-  "order": 8
+  "projectSlugs": [],
+  "primary": true,
+  "order": 10
 }

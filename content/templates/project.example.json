@@ -1,0 +1,15 @@
+{
+  "slug": "example-project",
+  "title": "Example project",
+  "dek": "One sentence describing verified work.",
+  "image": "assets/research-hero.webp",
+  "motivation": "Why this project exists.",
+  "methods": ["A verified method"],
+  "results": "State only documented results.",
+  "github": null,
+  "areaSlugs": [],
+  "publicationSlugs": [],
+  "contributorSlugs": [],
+  "featured": false,
+  "order": 10
+}

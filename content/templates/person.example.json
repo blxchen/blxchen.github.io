@@ -1,0 +1,11 @@
+{
+  "slug": "example-person",
+  "name": "Person name",
+  "role": "Verified role or external collaborator",
+  "bio": "Verified biography.",
+  "photo": "assets/headshot-placeholder.svg",
+  "affiliations": [],
+  "interests": [],
+  "publicationNames": [],
+  "order": 10
+}

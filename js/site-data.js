@@ -14,7 +14,7 @@ window.SITE_DATA = {
     },
     "shortBio": "Brandon Ling-xuan Chen is a Research Assistant at the Intelligent Positioning and Navigation Laboratory, Hong Kong Polytechnic University, and an International Baccalaureate student at Island School. His research spans positioning, navigation and timing, urban GNSS, 3D mapping aided GNSS, smartphone and wearable positioning, and low Earth orbit navigation.",
     "headshot": "assets/headshot-placeholder.svg",
-    "heroImage": "assets/kaohsiung-backdrop.webp",
+    "heroImage": "assets/orbital-horizon.webp",
     "heroCredit": null,
     "links": [
       {
@@ -195,68 +195,62 @@ window.SITE_DATA = {
       "url": "index.html"
     },
     {
-      "label": "About",
-      "url": "about/"
-    },
-    {
       "label": "Research",
       "url": "research/",
       "children": [
         {
-          "label": "Interests",
+          "label": "All research",
           "url": "research/"
         },
         {
-          "label": "Research Areas",
-          "url": "research/areas/"
+          "label": "Urban GNSS Positioning",
+          "url": "research/areas/urban-gnss/"
         },
         {
-          "label": "Experience",
-          "url": "research/experience/"
+          "label": "LEO Satellite Navigation / LEO PNT",
+          "url": "research/areas/leo-pnt/"
         },
         {
-          "label": "Research Profile",
+          "label": "Navigation Integrity",
+          "url": "research/areas/navigation-integrity/"
+        },
+        {
+          "label": "Autonomous Navigation",
+          "url": "research/areas/autonomous-navigation/"
+        },
+        {
+          "label": "Atmospheric GNSS Sensing",
+          "url": "research/areas/remote-sensing/"
+        },
+        {
+          "label": "Research profile",
           "url": "research/profile/"
-        },
-        {
-          "label": "Team",
-          "url": "research/team/"
-        },
-        {
-          "label": "Publications",
-          "url": "research/publications/"
         }
       ]
     },
     {
-      "label": "Media",
-      "url": "media/"
+      "label": "Publications",
+      "url": "research/publications/"
     },
     {
-      "label": "News",
-      "url": "news/"
+      "label": "Projects",
+      "url": "projects/"
     },
     {
-      "label": "Blog",
-      "url": "blog/"
+      "label": "Spotlight",
+      "url": "spotlight/"
     },
     {
-      "label": "CV",
-      "url": "cv/"
+      "label": "People",
+      "url": "people/"
     },
     {
-      "label": "Get Involved",
-      "url": "get-involved/",
-      "children": [
-        {
-          "label": "Contact",
-          "url": "get-involved/contact/"
-        },
-        {
-          "label": "Recruitment",
-          "url": "get-involved/recruitment/"
-        }
-      ]
+      "label": "About",
+      "url": "about/"
+    },
+    {
+      "label": "Contact",
+      "url": "contact/"
     }
   ],
   "pages": {
@@ -284,7 +278,7 @@ window.SITE_DATA = {
       "template": "researchAreas",
       "title": "Research Areas",
       "kicker": "Research pillars",
-      "intro": "Seven connected areas across urban positioning, satellite navigation, and remote sensing."
+      "intro": "Five main directions, with connected topics retained from the earlier site."
     },
     "research/experience": {
       "template": "timeline",
@@ -403,6 +397,24 @@ window.SITE_DATA = {
       "title": "Contact",
       "kicker": "Contact",
       "intro": "For GNSS, navigation simulation, or research collaboration inquiries, send a note directly by email."
+    },
+    "projects": {
+      "template": "projects",
+      "title": "Projects",
+      "kicker": "Selected work",
+      "intro": "Open source experiments in navigation, GNSS, and simulation."
+    },
+    "spotlight": {
+      "template": "spotlight",
+      "title": "Spotlight",
+      "kicker": "Research notes",
+      "intro": "Updates, presentations, and project milestones."
+    },
+    "people": {
+      "template": "team",
+      "title": "People",
+      "kicker": "Research connections",
+      "intro": "Brandon's profile and researchers connected through published work. External collaborators are identified by their own affiliations."
     }
   },
   "research": [
@@ -465,7 +477,7 @@ window.SITE_DATA = {
     {
       "slug": "urban-gnss",
       "number": "01",
-      "title": "Urban GNSS",
+      "title": "Urban GNSS Positioning",
       "dek": "Positioning in dense cities where satellite signals are blocked, reflected, or unreliable.",
       "image": "assets/kaohsiung-backdrop.webp",
       "tags": [
@@ -487,39 +499,156 @@ window.SITE_DATA = {
         "uncertainty-aware-3dma-gnss",
         "value-of-information-smartphone-3dma"
       ],
+      "questions": [
+        "How can an urban receiver identify unreliable satellite measurements?",
+        "How can building geometry inform a position estimate?"
+      ],
+      "methods": [
+        "Measurement weighting",
+        "3D mapping aided GNSS",
+        "Urban signal assessment"
+      ],
+      "primary": true,
       "order": 1,
       "url": "research/areas/urban-gnss/"
     },
     {
-      "slug": "multipath-nlos-urban-canyons",
+      "slug": "leo-pnt",
       "number": "02",
-      "title": "Multipath/NLOS in Urban Canyons",
-      "dek": "Recognizing reflected and blocked satellite signals before they distort a position fix.",
-      "image": "assets/kaohsiung-backdrop.webp",
+      "title": "LEO Satellite Navigation / LEO PNT",
+      "dek": "Exploring low Earth orbit signals and shadow edge timing for positioning.",
+      "image": "assets/orbital-horizon.webp",
       "tags": [
-        "Multipath",
-        "NLOS",
-        "Urban canyons"
+        "LEO",
+        "PNT",
+        "Shadow edge timing"
       ],
       "body": [
-        "Tall buildings can obstruct line of sight and create reflected paths that bias GNSS measurements.",
-        "The selected work considers learning assisted pseudorange reweighting and probabilistic building models as ways to improve measurement reliability."
+        "Low Earth orbit constellations create different geometry and timing opportunities for positioning.",
+        "The linked working paper examines shadow edge timing for urban positioning with LEO satellites; its status remains a working paper."
+      ],
+      "questions": [
+        "What positioning information can LEO signals and shadow transitions provide?"
+      ],
+      "methods": [
+        "Orbital geometry modelling",
+        "Timing analysis"
       ],
       "memberSlugs": [
-        "brandon-chen",
-        "ng-derek-hoi-wah",
-        "li-ta-hsu"
+        "brandon-chen"
       ],
       "publicationSlugs": [
-        "urban-smartphone-gnss",
-        "uncertainty-aware-3dma-gnss"
+        "shadow-edge-leo-positioning"
       ],
+      "primary": true,
       "order": 2,
-      "url": "research/areas/multipath-nlos-urban-canyons/"
+      "url": "research/areas/leo-pnt/"
+    },
+    {
+      "slug": "navigation-integrity",
+      "number": "03",
+      "title": "Navigation Integrity",
+      "dek": "Assessing when satellite positioning measurements and solutions can be trusted.",
+      "image": "assets/research-hero.webp",
+      "tags": [
+        "Uncertainty",
+        "Measurement reliability",
+        "Urban GNSS"
+      ],
+      "body": [
+        "Urban satellite positioning depends on recognizing measurements affected by obstruction, reflection, and uncertain building geometry.",
+        "The related manuscripts examine uncertainty-aware map models and information value for smartphone 3D mapping aided GNSS. Their individual review statuses are shown on each record."
+      ],
+      "questions": [
+        "How should uncertain building geometry enter a navigation solution?",
+        "Which observations add useful information to a smartphone position estimate?"
+      ],
+      "methods": [
+        "Probabilistic building models",
+        "Measurement reliability assessment",
+        "Information value analysis"
+      ],
+      "memberSlugs": [
+        "brandon-chen"
+      ],
+      "publicationSlugs": [
+        "uncertainty-aware-3dma-gnss",
+        "value-of-information-smartphone-3dma"
+      ],
+      "primary": true,
+      "order": 3,
+      "url": "research/areas/navigation-integrity/"
+    },
+    {
+      "slug": "autonomous-navigation",
+      "number": "04",
+      "title": "Autonomous Navigation",
+      "dek": "GNSS and multi sensor navigation questions for autonomous platforms.",
+      "image": "assets/kaohsiung-backdrop.webp",
+      "tags": [
+        "UAVs",
+        "Sensor fusion",
+        "Simulation"
+      ],
+      "body": [
+        "Autonomous platforms need navigation estimates that remain interpretable when sensors disagree or signals are limited.",
+        "The current portfolio includes browser based simulation and research interests in UAVs, intelligent transport, and multi sensor navigation. No field validated autonomy result is claimed here."
+      ],
+      "questions": [
+        "How can synthetic navigation experiments reveal algorithm failure modes?"
+      ],
+      "methods": [
+        "Multi sensor simulation",
+        "Algorithm comparisons"
+      ],
+      "memberSlugs": [
+        "brandon-chen"
+      ],
+      "publicationSlugs": [],
+      "projectSlugs": [
+        "uavlab"
+      ],
+      "primary": true,
+      "order": 4,
+      "url": "research/areas/autonomous-navigation/"
+    },
+    {
+      "slug": "remote-sensing",
+      "number": "05",
+      "title": "Atmospheric GNSS Sensing",
+      "dek": "Using GNSS radio occultation and reflectometry to observe the atmosphere and Earth.",
+      "image": "assets/earth-globe.webp",
+      "tags": [
+        "Radio occultation",
+        "Typhoons",
+        "GNSS-R"
+      ],
+      "body": [
+        "GNSS signals can serve as environmental observations as well as navigation measurements.",
+        "The selected records examine typhoon relative radio occultation sampling and a GNSS reflectometry project in Arctic environments. Their individual statuses are shown on each record."
+      ],
+      "questions": [
+        "How does sampling geometry affect typhoon-relative atmospheric analysis?"
+      ],
+      "methods": [
+        "GNSS radio occultation analysis",
+        "GNSS reflectometry processing"
+      ],
+      "memberSlugs": [
+        "brandon-chen"
+      ],
+      "publicationSlugs": [
+        "gnss-radio-occultation-typhoons-formosat-7-cosmic-2",
+        "typhoon-radio-occultation-tasti",
+        "gnss-r-within-arctic-environments"
+      ],
+      "primary": true,
+      "order": 5,
+      "url": "research/areas/remote-sensing/"
     },
     {
       "slug": "3d-mapping-aided-gnss",
-      "number": "03",
+      "number": "06",
       "title": "3D Mapping Aided GNSS",
       "dek": "Using building geometry and map uncertainty to inform satellite positioning.",
       "image": "assets/research-hero.webp",
@@ -539,12 +668,13 @@ window.SITE_DATA = {
         "uncertainty-aware-3dma-gnss",
         "value-of-information-smartphone-3dma"
       ],
-      "order": 3,
+      "primary": false,
+      "order": 6,
       "url": "research/areas/3d-mapping-aided-gnss/"
     },
     {
       "slug": "ai-ml-gnss",
-      "number": "04",
+      "number": "07",
       "title": "AI/ML GNSS",
       "dek": "Lightweight learning and uncertainty aware models for difficult GNSS measurements.",
       "image": "assets/research-hero.webp",
@@ -565,12 +695,13 @@ window.SITE_DATA = {
       "publicationSlugs": [
         "urban-smartphone-gnss"
       ],
-      "order": 4,
+      "primary": false,
+      "order": 7,
       "url": "research/areas/ai-ml-gnss/"
     },
     {
       "slug": "smartphone-wearables-gnss",
-      "number": "05",
+      "number": "08",
       "title": "Smartphone and Wearables GNSS",
       "dek": "Reliable positioning using the compact antennas and measurements of everyday devices.",
       "image": "assets/terraced-fields.webp",
@@ -592,58 +723,37 @@ window.SITE_DATA = {
         "urban-smartphone-gnss",
         "value-of-information-smartphone-3dma"
       ],
-      "order": 5,
+      "primary": false,
+      "order": 8,
       "url": "research/areas/smartphone-wearables-gnss/"
     },
     {
-      "slug": "leo-pnt",
-      "number": "06",
-      "title": "Low Earth Orbit Positioning, Navigation and Timing",
-      "dek": "Exploring low Earth orbit signals and shadow edge timing for positioning.",
-      "image": "assets/orbital-horizon.webp",
+      "slug": "multipath-nlos-urban-canyons",
+      "number": "09",
+      "title": "Multipath/NLOS in Urban Canyons",
+      "dek": "Recognizing reflected and blocked satellite signals before they distort a position fix.",
+      "image": "assets/kaohsiung-backdrop.webp",
       "tags": [
-        "LEO",
-        "PNT",
-        "Shadow edge timing"
+        "Multipath",
+        "NLOS",
+        "Urban canyons"
       ],
       "body": [
-        "Low Earth orbit constellations create different geometry and timing opportunities for positioning.",
-        "The linked working paper examines shadow edge timing for urban positioning with LEO satellites; its status remains a working paper."
+        "Tall buildings can obstruct line of sight and create reflected paths that bias GNSS measurements.",
+        "The selected work considers learning assisted pseudorange reweighting and probabilistic building models as ways to improve measurement reliability."
       ],
       "memberSlugs": [
-        "brandon-chen"
+        "brandon-chen",
+        "ng-derek-hoi-wah",
+        "li-ta-hsu"
       ],
       "publicationSlugs": [
-        "shadow-edge-leo-positioning"
+        "urban-smartphone-gnss",
+        "uncertainty-aware-3dma-gnss"
       ],
-      "order": 6,
-      "url": "research/areas/leo-pnt/"
-    },
-    {
-      "slug": "remote-sensing",
-      "number": "07",
-      "title": "Remote Sensing",
-      "dek": "Using GNSS radio occultation and reflectometry to observe the atmosphere and Earth.",
-      "image": "assets/earth-globe.webp",
-      "tags": [
-        "Radio occultation",
-        "Typhoons",
-        "GNSS-R"
-      ],
-      "body": [
-        "GNSS signals can serve as environmental observations as well as navigation measurements.",
-        "The selected records examine typhoon relative radio occultation sampling and a GNSS reflectometry project in Arctic environments. Their individual statuses are shown on each record."
-      ],
-      "memberSlugs": [
-        "brandon-chen"
-      ],
-      "publicationSlugs": [
-        "gnss-radio-occultation-typhoons-formosat-7-cosmic-2",
-        "typhoon-radio-occultation-tasti",
-        "gnss-r-within-arctic-environments"
-      ],
-      "order": 7,
-      "url": "research/areas/remote-sensing/"
+      "primary": false,
+      "order": 9,
+      "url": "research/areas/multipath-nlos-urban-canyons/"
     }
   ],
   "team": [
@@ -872,8 +982,7 @@ window.SITE_DATA = {
         }
       ],
       "order": 1,
-      "phone": "",
-      "url": "research/team/brandon-chen/"
+      "url": "people/brandon-chen/"
     },
     {
       "slug": "li-ta-hsu",
@@ -1335,7 +1444,7 @@ window.SITE_DATA = {
         }
       ],
       "order": 2,
-      "url": "research/team/li-ta-hsu/"
+      "url": "people/li-ta-hsu/"
     },
     {
       "slug": "ng-derek-hoi-wah",
@@ -1478,7 +1587,7 @@ window.SITE_DATA = {
         }
       ],
       "order": 3,
-      "url": "research/team/ng-derek-hoi-wah/"
+      "url": "people/ng-derek-hoi-wah/"
     }
   ],
   "publications": [
@@ -1627,6 +1736,77 @@ window.SITE_DATA = {
       ],
       "order": 7,
       "url": "research/publications/value-of-information-smartphone-3dma/"
+    }
+  ],
+  "projects": [
+    {
+      "slug": "navlab",
+      "title": "NavLab",
+      "dek": "An open source browser laboratory for urban GNSS, satellite geometry, and atmospheric effects.",
+      "image": "assets/research-hero.webp",
+      "motivation": "Make navigation algorithms and error sources easier to inspect through interactive experiments.",
+      "methods": [
+        "Synthetic satellite geometry",
+        "Weighted least squares and 3D mapping aided positioning",
+        "Atmospheric delay scenarios"
+      ],
+      "results": "Educational simulations; no measured navigation performance is claimed.",
+      "github": "https://github.com/blxchen/iono-gnss",
+      "areaSlugs": [
+        "urban-gnss",
+        "3d-mapping-aided-gnss"
+      ],
+      "contributorSlugs": [
+        "brandon-chen"
+      ],
+      "featured": true,
+      "order": 1,
+      "url": "projects/navlab/"
+    },
+    {
+      "slug": "uavlab",
+      "title": "UAVLab",
+      "dek": "Browser based experiments in UAV dynamics and multi sensor navigation.",
+      "image": "assets/kaohsiung-backdrop.webp",
+      "motivation": "Explore navigation behavior and sensor fusion in a reproducible teaching environment.",
+      "methods": [
+        "UAV dynamics simulation",
+        "Synthetic GNSS and inertial measurements",
+        "Navigation algorithm comparisons"
+      ],
+      "results": "An educational simulator; no field validation is implied.",
+      "github": "https://github.com/blxchen/UAVLab",
+      "areaSlugs": [
+        "autonomous-navigation"
+      ],
+      "contributorSlugs": [
+        "brandon-chen"
+      ],
+      "featured": true,
+      "order": 2,
+      "url": "projects/uavlab/"
+    }
+  ],
+  "spotlight": [
+    {
+      "slug": "open-source-navigation-labs",
+      "title": "UAVLab and NavLab Available on GitHub",
+      "date": "2026-07-30",
+      "category": "Project update",
+      "dek": "Two public browser based simulation projects cover UAV navigation, urban GNSS, sensor fusion, and atmospheric effects.",
+      "image": "assets/research-hero.webp",
+      "body": [
+        "NavLab and UAVLab provide synthetic experiments for exploring satellite positioning, sensor fusion, and autonomous navigation.",
+        "The simulations are educational models and should not be interpreted as measured receiver performance."
+      ],
+      "relatedLinks": [
+        {
+          "label": "Navigation simulation research",
+          "href": "research/navigation-simulation/"
+        }
+      ],
+      "order": 1,
+      "url": "spotlight/open-source-navigation-labs/"
     }
   ],
   "media": [],
