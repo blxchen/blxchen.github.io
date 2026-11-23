@@ -188,8 +188,7 @@ function htmlFor(pageKey, title, base, data) {
   <link rel="stylesheet" href="${base}css/xona.css">
   <link rel="stylesheet" href="${base}css/xona-motion.css">
   <link rel="stylesheet" href="${base}css/research-areas.css">
-  <link rel="stylesheet" href="${base}css/texas-editorial.css">
-  <link rel="stylesheet" href="${base}css/research-site.css">
+${pageKey === "home" ? "" : `  <link rel="stylesheet" href="${base}css/texas-editorial.css">\n`}  <link rel="stylesheet" href="${base}css/research-site.css">
   <meta name="description" content="${htmlEscape(description)}">
   <meta property="og:title" content="${htmlEscape(title)} | ${htmlEscape(data.profile.name)}">
   <meta property="og:description" content="${htmlEscape(description)}">

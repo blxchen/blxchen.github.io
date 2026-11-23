@@ -4,7 +4,7 @@ window.SITE_DATA = {
     "location": "Hong Kong / Taiwan"
   },
   "profile": {
-    "name": "Brandon Ling-xuan Chen",
+    "name": "Brandon Ling-Xuan Chen",
     "title": "Research Assistant, Hong Kong Polytechnic University",
     "brand": {
       "leftLogo": "assets/logo-left-placeholder.svg",
@@ -12,7 +12,7 @@ window.SITE_DATA = {
       "wordmark": "Brandon Chen",
       "subtitle": "Navigation research"
     },
-    "shortBio": "Brandon Ling-xuan Chen is a Research Assistant at the Intelligent Positioning and Navigation Laboratory, Hong Kong Polytechnic University, and an International Baccalaureate student at Island School. His research spans positioning, navigation and timing, urban GNSS, 3D mapping aided GNSS, smartphone and wearable positioning, and low Earth orbit navigation.",
+    "shortBio": "Brandon Ling-Xuan Chen is a Research Assistant at the Intelligent Positioning and Navigation Laboratory, Hong Kong Polytechnic University, and an International Baccalaureate student at Island School. His research spans positioning, navigation and timing, urban GNSS, 3D mapping aided GNSS, smartphone and wearable positioning, and low Earth orbit navigation.",
     "headshot": "assets/headshot-placeholder.svg",
     "heroImage": "assets/orbital-horizon.webp",
     "heroCredit": null,
@@ -260,7 +260,7 @@ window.SITE_DATA = {
     },
     "about": {
       "template": "about",
-      "title": "About Brandon Ling-xuan Chen",
+      "title": "About Brandon Ling-Xuan Chen",
       "kicker": "About",
       "intro": "Research Assistant at the Intelligent Positioning and Navigation Laboratory and IB student at Island School.",
       "paragraphs": [
@@ -759,16 +759,16 @@ window.SITE_DATA = {
   "team": [
     {
       "slug": "brandon-chen",
-      "name": "Brandon Ling-xuan Chen",
+      "name": "Brandon Ling-Xuan Chen",
       "role": "Research Assistant, Hong Kong Polytechnic University",
       "photo": "assets/headshot-placeholder.svg",
-      "bio": "Brandon Ling-xuan Chen is a Research Assistant at the Intelligent Positioning and Navigation Laboratory, Hong Kong Polytechnic University, and an International Baccalaureate student at Island School. His research spans positioning, navigation and timing, urban GNSS, 3D mapping aided GNSS, smartphone and wearable positioning, and low Earth orbit navigation.",
+      "bio": "Brandon Ling-Xuan Chen is a Research Assistant at the Intelligent Positioning and Navigation Laboratory, Hong Kong Polytechnic University, and an International Baccalaureate student at Island School. His research spans positioning, navigation and timing, urban GNSS, 3D mapping aided GNSS, smartphone and wearable positioning, and low Earth orbit navigation.",
       "email": "chen.brandon1213@gmail.com",
       "orcid": "https://orcid.org/0009-0007-6761-0259",
       "linkedin": "https://www.linkedin.com/in/brandon-chen-gnss/",
       "github": "https://github.com/blxchen",
       "publicationNames": [
-        "Brandon Ling-xuan Chen",
+        "Brandon Ling-Xuan Chen",
         "Brandon Chen"
       ],
       "affiliations": [
@@ -1596,7 +1596,7 @@ window.SITE_DATA = {
       "year": "2026",
       "type": "Working paper",
       "title": "GNSS-R Within Arctic Environments",
-      "authors": "Brandon Ling-xuan Chen",
+      "authors": "Brandon Ling-Xuan Chen",
       "venue": "Working project — title to be updated upon publication",
       "abstract": "An ongoing project using TRITON (FORMOSAT-7R) data for Arctic data processing, GNSS reflectometry through Python, and self-taught mathematical modelling for data analysis and processing.",
       "status": "In progress since June 2026",
@@ -1620,7 +1620,7 @@ window.SITE_DATA = {
       "year": "2026",
       "type": "Conference peer review",
       "title": "Lightweight-Learning Assisted Pseudorange Reweighting for Smartphone GNSS in Urban Canyons",
-      "authors": "Brandon Ling-xuan Chen, Derek Hoi Wah Ng, Li-Ta Hsu",
+      "authors": "Brandon Ling-Xuan Chen, Derek Hoi Wah Ng, Li-Ta Hsu",
       "venue": "Under conference peer review",
       "abstract": "Manuscript on smartphone GNSS pseudorange reweighting for urban canyons, listed as under conference peer review in Brandon’s CV.",
       "status": "Conference peer review",
@@ -1644,7 +1644,7 @@ window.SITE_DATA = {
       "year": "2026",
       "type": "Journal revision",
       "title": "Altitude-Dependent Geolocation Effects on Typhoon-Relative FORMOSAT-7/COSMIC-2 Radio Occultation Sampling and Refractivity Compositing",
-      "authors": "Brandon Ling-xuan Chen",
+      "authors": "Brandon Ling-Xuan Chen",
       "venue": "In journal revision process",
       "abstract": "Manuscript on altitude-dependent geolocation effects in typhoon-relative FORMOSAT-7/COSMIC-2 radio occultation sampling and refractivity compositing, listed as in journal revision in Brandon’s CV.",
       "status": "Journal revision process",
@@ -1666,7 +1666,7 @@ window.SITE_DATA = {
       "year": "2026",
       "type": "Working paper",
       "title": "Shadow-Edge Timing for Urban Positioning with Low-Earth-Orbit Satellites",
-      "authors": "Brandon Ling-xuan Chen",
+      "authors": "Brandon Ling-Xuan Chen",
       "venue": "Working paper",
       "abstract": "Shadow-Edge Timing for Urban Positioning with Low-Earth-Orbit Satellites. Status listed in Brandon’s attached CV: Working paper.",
       "status": "Working paper",
@@ -1685,7 +1685,7 @@ window.SITE_DATA = {
       "year": "2026",
       "type": "Accepted conference paper",
       "title": "Altitude-Dependent Geolocation Effects on Typhoon-Relative FORMOSAT-7/COSMIC-2 Radio Occultation Sampling",
-      "authors": "Brandon Ling-xuan Chen",
+      "authors": "Brandon Ling-Xuan Chen",
       "venue": "Accepted, TASTI 2026",
       "abstract": "Altitude-Dependent Geolocation Effects on Typhoon-Relative FORMOSAT-7/COSMIC-2 Radio Occultation Sampling. Status listed in Brandon’s attached CV: Accepted, TASTI 2026.",
       "status": "Accepted, TASTI 2026",
@@ -1704,7 +1704,7 @@ window.SITE_DATA = {
       "year": "2026",
       "type": "Journal peer review",
       "title": "Uncertainty-Aware 3D-Mapping-Aided GNSS with Probabilistic Building Models",
-      "authors": "Brandon Ling-xuan Chen",
+      "authors": "Brandon Ling-Xuan Chen",
       "venue": "Under journal peer review",
       "abstract": "Uncertainty-Aware 3D-Mapping-Aided GNSS with Probabilistic Building Models. Status listed in Brandon’s attached CV: Under journal peer review.",
       "status": "Under journal peer review",
@@ -1723,7 +1723,7 @@ window.SITE_DATA = {
       "year": "2026",
       "type": "Journal peer review",
       "title": "The Value of Information in Smartphone 3D-Mapping-Aided GNSS",
-      "authors": "Brandon Ling-xuan Chen",
+      "authors": "Brandon Ling-Xuan Chen",
       "venue": "Under journal peer review",
       "abstract": "The Value of Information in Smartphone 3D-Mapping-Aided GNSS. Status listed in Brandon’s attached CV: Under journal peer review.",
       "status": "Under journal peer review",

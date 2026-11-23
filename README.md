@@ -1,6 +1,6 @@
 # Brandon Chen Academic Website
 
-Static personal academic website for Brandon Ling-xuan Chen. This is an independent site, not an official university or laboratory website.
+Static personal academic website for Brandon Ling-Xuan Chen. This is an independent site, not an official university or laboratory website.
 
 The eight primary tabs are Home, Research, Publications, Projects, Spotlight, People, About, and Contact. Existing CV, blog, news, media, recruitment, research profile, and earlier research URLs remain available.
 

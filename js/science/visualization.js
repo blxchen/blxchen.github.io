@@ -23,7 +23,7 @@
     return `rgb(${stops[i].map((v, j) => Math.round(v + (stops[i + 1][j] - v) * f)).join(",")})`;
   }
   function drawSpectrogram(canvas, spectrum) {
-    const { ctx, width, height } = canvasContext(canvas), left = 48, right = 16, top = 15, bottom = 32;
+    const { ctx, width, height } = canvasContext(canvas), left = 48, right = 16, top = 15, bottom = 45;
     const plotW = width - left - right, plotH = height - top - bottom, frames = spectrum.frames;
     const maxHz = 500, binMin = spectrum.frequenciesHz.findIndex((value) => value >= -maxHz), binMax = spectrum.frequenciesHz.findIndex((value) => value > maxHz);
     const count = binMax - binMin, frameWidth = plotW / frames.length, rowHeight = plotH / count;
@@ -33,8 +33,8 @@
     }
     ctx.strokeStyle = grid; ctx.lineWidth = 1; ctx.strokeRect(left, top, plotW, plotH);
     [-500, -250, 0, 250, 500].forEach((hz) => label(ctx, `${hz}`, left - 7, top + (500 - hz) / 1000 * plotH + 4, "right"));
-    [-8, -4, 0, 4, 8].forEach((sec) => label(ctx, `${sec}s`, left + (sec + 8) / 16 * plotW, height - 9, "center"));
-    label(ctx, "Hz", 9, 13); if (width > 500) label(ctx, "relative to closest approach", width - 12, height - 9, "right");
+    [-8, -4, 0, 4, 8].forEach((sec) => label(ctx, `${sec}s`, left + (sec + 8) / 16 * plotW, height - 27, "center"));
+    label(ctx, "Hz", 9, 13); label(ctx, "Time relative to closest approach / s", left + plotW / 2, height - 7, "center");
     const gradient = ctx.createLinearGradient(0, 0, 90, 0);
     [0, .25, .5, .75, 1].forEach((p) => gradient.addColorStop(p, spectrumColor(-65 + p * 65)));
     ctx.fillStyle = gradient; ctx.fillRect(width - 94, 20, 75, 5);
